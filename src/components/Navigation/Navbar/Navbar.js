@@ -6,7 +6,6 @@ import {
   BsArrowUpDown,
   BsBoxArrowInDown,
   BsBoxArrowInUp,
-  BsSquare,
   BsBoundingBoxCircles,
 } from "react-icons/bs";
 import "./Navbar.css";
