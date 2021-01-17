@@ -1,14 +1,18 @@
 import react from "react";
+import classes from "./Form.css";
 
 const Form = () => {
   return (
     <div>
-      <div>
-        <h3>...</h3>
-      </div>
-      <div>
-        <form></form>
-      </div>
+      <form className={classes.form}>
+        <select>
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
+        </select>
+        <input type="text" name="Category" placeholder="Category" />
+        <input type="text" name="Amount" placeholder="PLN" />
+        <input type="submit" value="Send" />
+      </form>
     </div>
   );
 };

@@ -14,18 +14,6 @@ const Layout = () => {
             <Main />
           </div>
         </div>
-        <div className="pricing__wrapper">
-          <h1 className="pricing__heading">Incomes</h1>
-          <div className="pricing__container">
-            <Cards />
-          </div>
-        </div>
-        <div className="pricing__wrapper">
-          <h1 className="pricing__heading">Expenses</h1>
-          <div className="pricing__container">
-            <Cards />
-          </div>
-        </div>
       </div>
     </Aux>
   );

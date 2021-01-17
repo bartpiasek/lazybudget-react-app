@@ -24,14 +24,14 @@
 }
 
 .pricing__container-card:nth-child(2) {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   background: black;
 }
 
 .pricing__container-card:hover {
-  transform: scale(1.06);
-  transition: all 0.3s ease-out;
-  border: 2px solid#f00946;
+  /* transform: scale(1.01); */
+  /* transition: all 0.3s ease-out; */
+  /* border: 2px solid#f00946; */
 }
 
 .pricing__container-card:nth-child(2) {

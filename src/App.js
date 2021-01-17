@@ -9,7 +9,6 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" component={Layout} />
-        {/* <Route path="/" component={Main} /> */}
       </Switch>
     </Router>
   );
