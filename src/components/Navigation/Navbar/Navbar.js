@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
+import { Link } from "react-router-dom";
+import { VscListSelection, VscClose } from "react-icons/vsc";
+import { BsArrowUpDown } from "react-icons/bs";
+import "./Navbar.css";
+
+function Navbar() {
+  const [clicked, setClicked] = useState(false);
+  const handleClicked = () => setClicked(!clicked);
+  return (
+    <div className="navbar">
+      <div className="navbar-container container">
+        <Link to="/" className="navbar-logo">
+          <img src={lazybudgetLogo} alt="lazybudget" height="40" width="40" />
+        </Link>
+        <div className="menu-icon" onClick={handleClicked}>
+          {clicked ? <VscClose /> : <VscListSelection />}
+        </div>
+        <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/aboutme" className="nav-links">
+              About Me
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/myprojects" className="nav-links">
+              My Projects
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/" className="nav-links">
+              My skills
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/" target="_blank" className="nav-links">
+              <BsArrowUpDown />
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className="nav-links">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;
