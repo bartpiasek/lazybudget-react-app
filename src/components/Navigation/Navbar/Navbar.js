@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 import { Link } from "react-router-dom";
 import { VscListSelection, VscClose } from "react-icons/vsc";
-import { BsArrowUpDown } from "react-icons/bs";
+import {
+  BsArrowUpDown,
+  BsBoxArrowInDown,
+  BsBoxArrowInUp,
+  BsSquare,
+  BsBoundingBoxCircles,
+} from "react-icons/bs";
 import "./Navbar.css";
 
 function Navbar() {
@@ -19,28 +25,23 @@ function Navbar() {
         </div>
         <ul className={clicked ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/aboutme" className="nav-links">
-              About Me
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/myprojects" className="nav-links">
-              My Projects
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link to="/" className="nav-links">
-              My skills
+              <BsBoundingBoxCircles />
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/" target="_blank" className="nav-links">
+            <Link to="/income" className="nav-links">
+              <BsBoxArrowInDown />
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/expenses" className="nav-links">
+              <BsBoxArrowInUp />
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/history" target="_blank" className="nav-links">
               <BsArrowUpDown />
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-links">
-              Contact
             </Link>
           </li>
         </ul>
