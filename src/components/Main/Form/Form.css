@@ -38,9 +38,11 @@ input[type="submit"]:hover {
   transform: scale(1.01);
   transition: all 0.3s ease-out;
   border: 1px solid#f00946;
+  cursor: pointer;
 }
 
 form > option {
   background: hsl(0, 0%, 93%);
   border: 1px solid#f00946;
+  cursor: pointer;
 }

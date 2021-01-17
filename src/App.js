@@ -2,6 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Navbar from "./components/Navigation/Navbar/Navbar";
+import LazyInput from "./components/LazyInput/LazyInputCard";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route path="/" component={Layout} />
       </Switch>
+      <LazyInput />
     </Router>
   );
 }
