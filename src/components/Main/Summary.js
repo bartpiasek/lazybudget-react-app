@@ -2,7 +2,7 @@ import react from "react";
 import { Link } from "react-router-dom";
 import Form from "./Form/Form";
 
-const Main = () => {
+const Summary = () => {
   return (
     <div className="pricing__container-card">
       <div className="pricing__container-cardInfo">
@@ -16,4 +16,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Summary;

@@ -1,8 +1,7 @@
 import React from "react";
 import "./Layout.css";
-import Cards from "./Cards/Cards";
 import Aux from "../../hoc/Aux";
-import Main from "../Main/Main";
+import Summary from "../Main/Summary";
 
 const Layout = () => {
   return (
@@ -11,11 +10,10 @@ const Layout = () => {
         <div className="pricing__wrapper">
           <h1 className="pricing__heading">Summary</h1>
           <div className="pricing__container">
-            <Main />
+            <Summary />
           </div>
         </div>
       </div>
-      <hr />
     </Aux>
   );
 };
