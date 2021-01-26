@@ -2,7 +2,7 @@ import React from "react";
 import "./Layout.css";
 import Aux from "../../hoc/Aux";
 import Summary from "../Main/Summary";
-import History from "../History/history";
+import History from "../History/History";
 
 const Layout = () => {
   return (
