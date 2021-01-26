@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form/AddTransactionForm";
+import { Form } from "./Form/AddTransactionForm";
 
 const Summary = () => {
   return (

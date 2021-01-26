@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./AddTransactionForm.css";
 
-const Form = () => {
+export const Form = () => {
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
+
   return (
     <div>
       <form className={classes.form}>
@@ -9,12 +12,20 @@ const Form = () => {
           <option value="Income">Income</option>
           <option value="Expense">Expense</option>
         </select>
-        <input type="text" name="Category" placeholder="Category" />
-        <input type="text" name="Amount" placeholder="PLN" />
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="PLN"
+        />
         <input type="submit" value="Send" />
       </form>
     </div>
   );
 };
-
-export default Form;
