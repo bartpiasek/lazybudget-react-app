@@ -3,14 +3,18 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Navbar from "./components/Navigation/Navbar/Navbar";
 
+import { GlobalProvider } from "./context/GlobalState";
+
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/" component={Layout} />
-      </Switch>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" component={Layout} />
+        </Switch>
+      </Router>
+    </GlobalProvider>
   );
 }
 
