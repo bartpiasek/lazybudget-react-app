@@ -1,5 +1,5 @@
-import react from "react";
-import classes from "./Form.css";
+import React from "react";
+import classes from "./AddTransactionForm.css";
 
 const Form = () => {
   return (
