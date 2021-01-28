@@ -55,7 +55,7 @@
 }
 
 .nav-item {
-  height: 80px;
+  height: 70px;
   border-bottom: 2px solid transparent;
 }
 
@@ -132,7 +132,6 @@
     position: absolute;
     top: 20px;
     left: 20;
-    /* transform: translate(25%, 50%); */
   }
 
   .menu-icon {

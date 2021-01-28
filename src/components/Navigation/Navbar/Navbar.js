@@ -7,6 +7,7 @@ import "./Navbar.css";
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const handleClicked = () => setClicked(!clicked);
+
   return (
     <div className="navbar">
       <div className="navbar-container container">
