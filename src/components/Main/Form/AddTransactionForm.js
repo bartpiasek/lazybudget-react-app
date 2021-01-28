@@ -6,6 +6,8 @@ export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
 
+  // select validation
+
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
@@ -19,14 +21,21 @@ export const Form = () => {
       amount: parseInt(amount),
     };
     addTransaction(newTransaction);
+    console.log(addTransaction);
   };
+
+  const options = [
+    { label: "Income", value: "income" },
+    { label: "Expense", value: "expense" },
+  ];
 
   return (
     <div>
       <form className={classes.form} onSubmit={onSubmit}>
         <select>
-          <option value="Income">Income</option>
-          <option value="Expense">Expense</option>
+          {options.map((option) => (
+            <option value={option.value}>{option.label}</option>
+          ))}
         </select>
         <input
           type="text"
