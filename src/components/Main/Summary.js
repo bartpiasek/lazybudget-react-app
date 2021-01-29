@@ -9,6 +9,9 @@ const Summary = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
+  // new summary
+  // const newtotal = incomeSum - expenseSum
+
   return (
     <div className={classes.LayoutContainerCard}>
       <div className="layout__container-cardInfo">

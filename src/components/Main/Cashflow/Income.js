@@ -5,9 +5,13 @@ export const Income = () => {
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
+  // income validation
+  const option = transactions.map((transaction) => transaction.option);
 
-  const incomeSum = amounts
-    .filter((item) => item > 0)
+  const newIncome = amounts.filter((item) => item === "income");
+
+  const incomeSum = newIncome
+    // .filter((item) => item > 0 && option.filter((item) => item === "income"))
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
