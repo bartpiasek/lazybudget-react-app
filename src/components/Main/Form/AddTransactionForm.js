@@ -17,7 +17,7 @@ export const Form = () => {
       id: Math.floor(Math.random() * 10000),
       // hooks [text, amount], form value
       text,
-      // amount must be a number, before it was string
+      // amount must be a number, before - it was string
       amount: parseInt(amount),
     };
     addTransaction(newTransaction);
@@ -32,7 +32,7 @@ export const Form = () => {
   return (
     <div>
       <form className={classes.form} onSubmit={onSubmit}>
-        <select>
+        <select value="expense">
           {options.map((option) => (
             <option value={option.value}>{option.label}</option>
           ))}
