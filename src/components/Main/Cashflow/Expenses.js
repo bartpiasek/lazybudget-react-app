@@ -5,8 +5,6 @@ export const Expenses = () => {
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
-  // expense validation
-  // const option = transactions.map((transaction) => transaction.option);
 
   const newExpense = amounts.filter((item) => item !== "income");
 

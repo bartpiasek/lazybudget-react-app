@@ -5,8 +5,6 @@ export const Income = () => {
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
-  // income validation
-  const option = transactions.map((transaction) => transaction.option);
 
   const newIncome = amounts.filter((item) => item === "income");
 

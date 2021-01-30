@@ -7,7 +7,7 @@ export const Form = () => {
   const [amount, setAmount] = useState(0);
 
   // select validation
-  const [option, setOption] = useState("expense");
+  const [option, setOption] = useState();
 
   const { addTransaction } = useContext(GlobalContext);
 
