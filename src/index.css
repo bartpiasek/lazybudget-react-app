@@ -5,9 +5,28 @@ body,
 html {
   height: 100%;
   margin: 0;
-}
-
-body {
   background-color: white;
   font-family: "Open Sans", sans-serif;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #10171d;
+  color: whitesmoke;
+}
+
+/* body.navbar {
+  background-color: #1b2938;
+} */
+
+.dark-mode-toggle > button {
+  color: #999;
+}
+.dark-mode-toggle > button:last-child {
+  color: lightblue;
 }
