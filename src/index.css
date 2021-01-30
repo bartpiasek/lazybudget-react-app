@@ -20,10 +20,6 @@ body.dark-mode {
   color: whitesmoke;
 }
 
-/* body.navbar {
-  background-color: #1b2938;
-} */
-
 .dark-mode-toggle > button {
   color: #999;
 }
