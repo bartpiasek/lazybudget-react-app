@@ -14,6 +14,7 @@ function Navbar() {
         <Link to="/" className="navbar-logo">
           <img src={lazybudgetLogo} alt="lazybudget" height="40" width="40" />
         </Link>
+
         <div className="menu-icon" onClick={handleClicked}>
           {clicked ? <VscClose /> : <VscListSelection />}
         </div>
