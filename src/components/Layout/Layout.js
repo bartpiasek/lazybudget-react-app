@@ -4,6 +4,7 @@ import History from "../History/History";
 import { Income } from "../Main/Cashflow/Income";
 import { Expenses } from "../Main/Cashflow/Expenses";
 import classes from "./Layout.css";
+import { LazyInput } from "../Main/LazyInput/LazyInput";
 
 const Layout = () => {
   return (
@@ -17,7 +18,7 @@ const Layout = () => {
         </div>
         <div className={classes.LayoutWrapper}>
           <div className={classes.LayoutContainer}>
-            <History />
+            <LazyInput />
           </div>
         </div>
       </div>
