@@ -20,7 +20,7 @@ export const LazyInput = () => {
       option,
     };
     addTransaction(newTransaction);
-    console.log(newTransaction.text);
+    console.log(addTransaction);
   };
 
   const options = [
@@ -41,11 +41,6 @@ export const LazyInput = () => {
 
     <div>
       <form className={classes.form} onSubmit={onSubmit}>
-        {/* <select value={option} onChange={(e) => setOption(e.target.value)}>
-          {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select> */}
         <h5 value={Rent.option}>{Rent.option}</h5>
         <h3 value={Rent.text}>{Rent.text}</h3>
         <h3 value={Rent.amount}>{Rent.amount}</h3>

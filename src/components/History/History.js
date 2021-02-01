@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { Transaction } from "./Transaction";
-import classes from "./History.css";
 
 export default function History() {
   const { transactions } = useContext(GlobalContext);

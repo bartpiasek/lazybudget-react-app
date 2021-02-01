@@ -1,6 +1,5 @@
 import React from "react";
 import Summary from "../Main/Summary";
-import History from "../History/History";
 import { Income } from "../Main/Cashflow/Income";
 import { Expenses } from "../Main/Cashflow/Expenses";
 import classes from "./Layout.css";
