@@ -4,8 +4,8 @@ import Data from "./Data";
 import classes from "../Form/AddTransactionForm.css";
 
 export const LazyInput = () => {
-  const [text, setText] = useState();
-  const [amount, setAmount] = useState();
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
   const [option, setOption] = useState();
 
   const { addTransaction } = useContext(GlobalContext);
@@ -41,9 +41,15 @@ export const LazyInput = () => {
 
     <div>
       <form className={classes.form} onSubmit={onSubmit}>
-        <h5 value={Rent.option}>{Rent.option}</h5>
-        <h3 value={Rent.text}>{Rent.text}</h3>
-        <h3 value={Rent.amount}>{Rent.amount}</h3>
+        <h5 value={Rent.option} onClick={(e) => setOption(Rent.option)}>
+          {Rent.option}
+        </h5>
+        <h3 value={Rent.text} onClick={(e) => setText(Rent.text)}>
+          {Rent.text}
+        </h3>
+        <h3 value={Rent.amount} onClick={(e) => setAmount(Rent.amount)}>
+          {Rent.amount}
+        </h3>
         <input type="submit" value="Send" />
       </form>
     </div>
