@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import Data from "./Data";
-import classes from "../Form/AddTransactionForm.css";
 
 export const LazyInput = () => {
   const [text, setText] = useState("");
@@ -34,23 +33,22 @@ export const LazyInput = () => {
     option: "expense",
   };
 
-  // const dla text option, amount
-
   return (
     // onclick nie onchange
-
     <div>
-      <form className={classes.form} onSubmit={onSubmit}>
-        <h5 value={Rent.option} onClick={(e) => setOption(Rent.option)}>
-          {Rent.option}
-        </h5>
-        <h3 value={Rent.text} onClick={(e) => setText(Rent.text)}>
-          {Rent.text}
-        </h3>
-        <h3 value={Rent.amount} onClick={(e) => setAmount(Rent.amount)}>
-          {Rent.amount}
-        </h3>
-        <input type="submit" value="Send" />
+      <form onSubmit={onSubmit}>
+        <div>
+          <h5 value={Rent.option} onClick={(e) => setOption(Rent.option)}>
+            {Rent.option}
+          </h5>
+          <h3 value={Rent.text} onClick={(e) => setText(Rent.text)}>
+            {Rent.text}
+          </h3>
+          <h3 value={Rent.amount} onClick={(e) => setAmount(Rent.amount)}>
+            {Rent.amount}
+          </h3>
+          <input type="submit" value="Send" />
+        </div>
       </form>
     </div>
   );
