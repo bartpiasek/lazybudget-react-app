@@ -1,5 +1,5 @@
 import React from "react";
-import Summary from "../Main/Summary";
+import Summary from "../Main/Summary/Summary";
 import { Income } from "../Main/Cashflow/Income";
 import { Expenses } from "../Main/Cashflow/Expenses";
 import classes from "./Layout.css";
@@ -10,8 +10,12 @@ const Layout = () => {
     <div className={classes.LayoutSection}>
       <div className={classes.LayoutWrapper}>
         <h1 className={classes.LayoutHeading}>Summary</h1>
-        <Expenses />
-        <Income />
+        {/* <div className={classes.LayoutContainer}>
+          <Expenses />
+        </div>
+        <div className={classes.LayoutContainer}>
+          <Income />
+        </div> */}
         <div className={classes.LayoutContainer}>
           <Summary />
         </div>

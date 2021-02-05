@@ -11,12 +11,12 @@ html {
 
 body.light-mode {
   background-color: #fff;
-  color: #333;
+  color: #1b1b1b;
   transition: background-color 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #10171d;
+  background-color: #1b1b1b;
   color: whitesmoke;
   height: fit-content;
 }
