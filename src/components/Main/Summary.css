@@ -3,10 +3,8 @@
 }
 
 .LayoutContainerCardInfo {
-  display: flex;
-  flex-direction: column;
+  display: block;
   height: 500px;
   padding: 24px;
   align-items: center;
-  color: black;
 }

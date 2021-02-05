@@ -14,7 +14,7 @@ const Summary = () => {
 
   return (
     <div className={classes.LayoutContainerCard}>
-      <div className="layout__container-cardInfo">
+      <div className={classes.LayoutContainerCardInfo}>
         <h3>Total balance</h3>
         <h3>{total} PLN</h3>
         <div>
