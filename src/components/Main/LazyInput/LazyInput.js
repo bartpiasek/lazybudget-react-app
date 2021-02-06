@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
-import Data from "./Data";
 
 export const LazyInput = () => {
   const [text, setText] = useState("");

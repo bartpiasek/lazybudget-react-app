@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Form } from "../Form/AddTransactionForm";
 import classes from "./Summary.css";
@@ -6,12 +6,7 @@ import classes from "./Summary.css";
 import Income from "../Cashflow/Income";
 import Expense from "../Cashflow/Expenses";
 
-//context
-export const Context = React.createContext({ value: null, setValue: () => {} });
-
 const Summary = () => {
-  // const [value, setValue] = useState(null);
-
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
@@ -20,7 +15,6 @@ const Summary = () => {
   // Cashflow/Income - Cashflow/Expense = totalSum
 
   return (
-    // <Context.Provider value={{ value, setValue }}>
     <div className={classes.LayoutContainerCard}>
       <div className={classes.LayoutContainerCardInfo}>
         <Income />
@@ -33,7 +27,6 @@ const Summary = () => {
         </div>
       </div>
     </div>
-    // </Context.Provider>
   );
 };
 

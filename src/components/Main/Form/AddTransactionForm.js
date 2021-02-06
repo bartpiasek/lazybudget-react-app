@@ -27,8 +27,8 @@ export const Form = () => {
   };
 
   const options = [
-    { label: "Income", value: "income" },
-    { label: "Expense", value: "expense" },
+    { label: "Income", value: "income", key: "1" },
+    { label: "Expense", value: "expense", key: "2" },
   ];
 
   return (
@@ -36,7 +36,9 @@ export const Form = () => {
       <form className={classes.form} onSubmit={onSubmit}>
         <select value={option} onChange={(e) => setOption(e.target.value)}>
           {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
+            <option key={option.key} value={option.value}>
+              {option.label}
+            </option>
           ))}
         </select>
         <input
