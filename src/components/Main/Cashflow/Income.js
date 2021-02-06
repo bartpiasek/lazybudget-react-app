@@ -6,7 +6,7 @@ export const Income = () => {
 
   const amounts = transactions.map((transaction) => transaction.amount);
 
-  const newIncome = amounts.filter((item) => item === "income");
+  const newIncome = amounts.filter((item) => item !== "expense");
 
   const incomeSum = newIncome
     // .filter((item) => item > 0 && option.filter((item) => item === "income"))
