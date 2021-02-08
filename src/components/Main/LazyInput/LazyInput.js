@@ -6,6 +6,12 @@ export const LazyInput = () => {
   const [amount, setAmount] = useState(0);
   const [option, setOption] = useState();
 
+  const [state, setState] = useState({
+    text,
+    amount,
+    option,
+  });
+
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
@@ -33,19 +39,12 @@ export const LazyInput = () => {
   };
 
   return (
-    // onclick nie onchange
     <div>
       <form onSubmit={onSubmit}>
-        <div>
-          <h5 value={Rent.option} onClick={(e) => setOption(Rent.option)}>
-            {Rent.option}
-          </h5>
-          <h3 value={Rent.text} onClick={(e) => setText(Rent.text)}>
-            {Rent.text}
-          </h3>
-          <h3 value={Rent.amount} onClick={(e) => setAmount(Rent.amount)}>
-            {Rent.amount}
-          </h3>
+        <div onClick={(e) => setState(Rent)}>
+          <h5 value={Rent.option}>{Rent.option}</h5>
+          <h3 value={Rent.text}>{Rent.text}</h3>
+          <h3 value={Rent.amount}>{Rent.amount}</h3>
           <input type="submit" value="Send" />
         </div>
       </form>
