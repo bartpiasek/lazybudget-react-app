@@ -2,15 +2,13 @@ import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 
 export const LazyInput = () => {
-  const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [option, setOption] = useState();
+  const Rent = {
+    text: "Rentr",
+    amount: 750,
+    option: "income",
+  };
 
-  const [state, setState] = useState({
-    text,
-    amount,
-    option,
-  });
+  const [state, setState] = useState();
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -19,9 +17,6 @@ export const LazyInput = () => {
 
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
-      text,
-      amount: parseInt(amount),
-      option,
     };
     addTransaction(newTransaction);
     console.log(addTransaction);
@@ -31,12 +26,6 @@ export const LazyInput = () => {
     { label: "Income", value: "income" },
     { label: "Expense", value: "expense" },
   ];
-
-  const Rent = {
-    text: "Rentr",
-    amount: 750,
-    option: "expense",
-  };
 
   return (
     <div>
