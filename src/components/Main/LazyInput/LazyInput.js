@@ -8,6 +8,11 @@ export const LazyInput = () => {
     option: "expense",
   };
 
+  const options = [
+    { label: "Income", value: "income" },
+    { label: "Expense", value: "expense" },
+  ];
+
   const [state, setState] = useState();
 
   const { addTransaction } = useContext(GlobalContext);
@@ -21,11 +26,6 @@ export const LazyInput = () => {
     addTransaction(newTransaction);
     console.log(addTransaction);
   };
-
-  const options = [
-    { label: "Income", value: "income" },
-    { label: "Expense", value: "expense" },
-  ];
 
   return (
     <div className="layout__container-cardInfo">

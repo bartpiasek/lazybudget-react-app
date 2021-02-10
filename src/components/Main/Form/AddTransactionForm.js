@@ -5,9 +5,12 @@ import { GlobalContext } from "../../../context/GlobalState";
 export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
-
-  // select validation
   const [option, setOption] = useState("income");
+
+  const options = [
+    { label: "Income", value: "income", key: "1" },
+    { label: "Expense", value: "expense", key: "2" },
+  ];
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -25,11 +28,6 @@ export const Form = () => {
     addTransaction(newTransaction);
     console.log(addTransaction);
   };
-
-  const options = [
-    { label: "Income", value: "income", key: "1" },
-    { label: "Expense", value: "expense", key: "2" },
-  ];
 
   return (
     <div>

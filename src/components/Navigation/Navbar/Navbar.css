@@ -10,10 +10,6 @@
   z-index: 999;
 }
 
-.navbar.dark-mode {
-  color: whitesmoke;
-}
-
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -31,7 +27,6 @@
 }
 
 .navbar-logo {
-  color: rgb(0, 0, 0);
   justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
@@ -60,7 +55,6 @@
 .nav-item {
   height: 40px;
   padding: 5px 10;
-  background-color: hsla(360, 100%, 100%, 0.4);
   border-radius: 8px;
   border: 1px solid transparent;
   margin: 1rem;
@@ -75,15 +69,10 @@
 }
 
 .nav-links {
-  color: black;
   display: flex;
   align-items: center;
   text-decoration: none;
   height: 100%;
-}
-
-.fa-bars {
-  color: #fff;
 }
 
 .menu-icon {
@@ -150,11 +139,6 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
   }
 
   .nav-btn {
