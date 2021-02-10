@@ -18,7 +18,7 @@ export const Expenses = () => {
   return (
     <div>
       <div>
-        <h2>Expenses</h2>
+        <h3>Expenses</h3>
         <p>{expenseSum} PLN</p>
       </div>
     </div>

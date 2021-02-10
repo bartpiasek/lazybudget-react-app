@@ -3,9 +3,9 @@ import { GlobalContext } from "../../../context/GlobalState";
 
 export const LazyInput = () => {
   const Rent = {
-    text: "Rentr",
+    text: "Rent",
     amount: 750,
-    option: "income",
+    option: "expense",
   };
 
   const [state, setState] = useState();
@@ -28,7 +28,7 @@ export const LazyInput = () => {
   ];
 
   return (
-    <div>
+    <div className="layout__container-cardInfo">
       <form onSubmit={onSubmit}>
         <div onClick={(e) => setState(Rent)}>
           <h5 value={Rent.option}>{Rent.option}</h5>

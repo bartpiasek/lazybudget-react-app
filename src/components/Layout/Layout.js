@@ -1,24 +1,16 @@
 import React from "react";
 import Summary from "../Main/Summary/Summary";
-import classes from "./Layout.css";
 import { LazyInput } from "../Main/LazyInput/LazyInput";
 
 const Layout = () => {
   return (
-    <div className={classes.LayoutSection}>
-      <div className={classes.LayoutWrapper}>
-        <h1 className={classes.LayoutHeading}>Summary</h1>
-        {/* <div className={classes.LayoutContainer}>
-          <Expenses />
-        </div>
-        <div className={classes.LayoutContainer}>
-          <Income />
-        </div> */}
-        <div className={classes.LayoutContainer}>
+    <div className="layout__section">
+      <div className="layout__wrapper">
+        <div className="layout__container">
           <Summary />
         </div>
-        <div className={classes.LayoutWrapper}>
-          <div className={classes.LayoutContainer}>
+        <div className="layout__wrapper">
+          <div className="layout__container">
             <LazyInput />
           </div>
         </div>

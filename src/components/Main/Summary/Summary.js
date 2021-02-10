@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Form } from "../Form/AddTransactionForm";
-import classes from "./Summary.css";
 
 import Income from "../Cashflow/Income";
 import Expense from "../Cashflow/Expenses";
@@ -15,8 +14,8 @@ const Summary = () => {
   // Cashflow/Income - Cashflow/Expense = totalSum
 
   return (
-    <div className={classes.LayoutContainerCard}>
-      <div className={classes.LayoutContainerCardInfo}>
+    <div className="layout__section">
+      <div className="layout__wrapper">
         <Income />
         <Expense />
         <h3>Total balance</h3>
