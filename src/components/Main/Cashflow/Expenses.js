@@ -9,12 +9,13 @@ export const Expenses = () => {
   const newExpense = amounts.filter(
     (item) => item === "expense" || item !== "income"
   );
-  console.log(newExpense);
-  const expenseSum = newExpense
-    // .filter((item) => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
 
+  const expenseSum =
+    newExpense
+      // .filter((item) => item > 0)
+      .filter((item) => item < 0)
+      .reduce((acc, item) => (acc += item), 0) * -1;
+  console.log(expenseSum);
   return (
     <div>
       <div>

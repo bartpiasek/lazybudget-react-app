@@ -9,7 +9,6 @@ export const Income = () => {
   const newIncome = amounts.filter((item) => item !== "expense");
 
   const incomeSum = newIncome
-    // .filter((item) => item > 0 && option.filter((item) => item === "income"))
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 

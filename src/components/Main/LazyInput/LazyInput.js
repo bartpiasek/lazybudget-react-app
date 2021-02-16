@@ -22,6 +22,7 @@ export const LazyInput = () => {
 
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
+      state,
     };
     addTransaction(newTransaction);
     console.log(addTransaction);

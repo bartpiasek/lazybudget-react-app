@@ -19,15 +19,15 @@ export const Form = () => {
 
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
-      // hooks [text, amount], form value
       text,
-      // amount must be a number, before - it was string
       amount: parseInt(amount),
       option,
     };
     addTransaction(newTransaction);
     console.log(addTransaction);
   };
+
+  // if expense -> amount " -Math.abs(amount)"
 
   return (
     <div>
