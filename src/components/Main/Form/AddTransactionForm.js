@@ -16,40 +16,40 @@ export const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    // if expense -> amount " -Math.abs(amount)"
-    // const amountNew = () => {
-    //   if (options === "income") {
-    //     return { amount: parseInt(amount) };
-    //   } else {
-    //     return { amount: -Math.abs(amount) };
-    //   }
+    //FIRST
+    //   const newTransaction = {
+    //     id: Math.floor(Math.random() * 10000),
+    //     text,
+    //     amount: -Math.abs(amount),
+    //     option,
+    //   };
+    //   addTransaction(newTransaction);
+    //   console.log(addTransaction);
     // };
 
-    // validation for amount
+    //THIRD
+    const newIncomeAmount = {
+      id: Math.floor(Math.random() * 10000),
+      text,
+      amount: parseInt(amount),
+      option,
+    };
 
-    // const newTransaction = {
-    //   id: Math.floor(Math.random() * 10000),
-    //   text,
-    //   amount: {
-    //     valAmount() {
-    //       if (options === "income") {
-    //         return parseInt(amount);
-    //       } else {
-    //         return -Math.abs(amount);
-    //       }
-    //     },
-    //   },
-    //   option,
-    // };
+    const newExpenseAmount = {
+      id: Math.floor(Math.random() * 10000),
+      text,
+      amount: -Math.abs(amount),
+      option,
+    };
 
-    // make 2x newTransaction - newTransacitonExp, newTransactionInc, export to components
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
       text,
       amount: -Math.abs(amount),
       option,
     };
+
+    //validation form addTransaction argument
     addTransaction(newTransaction);
     console.log(addTransaction);
   };
