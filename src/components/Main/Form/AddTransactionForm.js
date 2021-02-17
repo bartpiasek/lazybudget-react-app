@@ -19,7 +19,7 @@ export const Form = () => {
 
     // if expense -> amount " -Math.abs(amount)"
     // const amountNew = () => {
-    //   if (option === "income") {
+    //   if (options === "income") {
     //     return { amount: parseInt(amount) };
     //   } else {
     //     return { amount: -Math.abs(amount) };
@@ -28,6 +28,22 @@ export const Form = () => {
 
     // validation for amount
 
+    // const newTransaction = {
+    //   id: Math.floor(Math.random() * 10000),
+    //   text,
+    //   amount: {
+    //     valAmount() {
+    //       if (options === "income") {
+    //         return parseInt(amount);
+    //       } else {
+    //         return -Math.abs(amount);
+    //       }
+    //     },
+    //   },
+    //   option,
+    // };
+
+    // make 2x newTransaction - newTransacitonExp, newTransactionInc, export to components
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
       text,
