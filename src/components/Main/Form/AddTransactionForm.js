@@ -17,17 +17,26 @@ export const Form = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    // if expense -> amount " -Math.abs(amount)"
+    // const amountNew = () => {
+    //   if (option === "income") {
+    //     return { amount: parseInt(amount) };
+    //   } else {
+    //     return { amount: -Math.abs(amount) };
+    //   }
+    // };
+
+    // validation for amount
+
     const newTransaction = {
       id: Math.floor(Math.random() * 10000),
       text,
-      amount: parseInt(amount),
+      amount: -Math.abs(amount),
       option,
     };
     addTransaction(newTransaction);
     console.log(addTransaction);
   };
-
-  // if expense -> amount " -Math.abs(amount)"
 
   return (
     <div>
