@@ -5,10 +5,9 @@ export const Expenses = () => {
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
+  const options = transactions.map((transaction) => transaction.option);
 
-  const newExpense = amounts.filter(
-    (item) => item === "expense" || item !== "income"
-  );
+  const newExpense = amounts.filter((item) => item !== options["Income"]);
 
   const expenseSum =
     newExpense

@@ -42,17 +42,14 @@ export const Form = () => {
       option,
     };
 
-    const newTransaction = {
-      id: Math.floor(Math.random() * 10000),
-      text,
-      amount: -Math.abs(amount),
-      option,
-    };
-
     //validation form addTransaction argument
-    addTransaction(newTransaction);
-    console.log(addTransaction);
+    if (addTransaction.options === options["income"]) {
+      return addTransaction(newIncomeAmount);
+    } else {
+      return addTransaction(newExpenseAmount);
+    }
   };
+  console.log(addTransaction);
 
   return (
     <div>
