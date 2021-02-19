@@ -35,7 +35,6 @@ export const Form = () => {
       option,
     };
     // addTransaction(newIncomeAmount);
-    console.log(addTransaction);
 
     const newExpenseAmount = {
       id: Math.floor(Math.random() * 10000),
@@ -44,7 +43,6 @@ export const Form = () => {
       option,
     };
     // addTransaction(newExpenseAmount);
-    console.log(addTransaction);
 
     //   //validation form addTransaction argument - newExpenseAmount work fine
     if (addTransaction.option === options["expense"]) {
@@ -54,6 +52,7 @@ export const Form = () => {
     }
   };
   console.log({ amount: amount });
+  console.log(addTransaction);
 
   return (
     <div>
