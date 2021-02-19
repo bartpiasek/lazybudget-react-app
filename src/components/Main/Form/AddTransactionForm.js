@@ -34,6 +34,8 @@ export const Form = () => {
       amount: parseInt(amount),
       option,
     };
+    // addTransaction(newIncomeAmount);
+    console.log(addTransaction);
 
     const newExpenseAmount = {
       id: Math.floor(Math.random() * 10000),
@@ -41,10 +43,14 @@ export const Form = () => {
       amount: -Math.abs(amount),
       option,
     };
+    // addTransaction(newExpenseAmount);
+    console.log(addTransaction);
 
-    //validation form addTransaction argument
-    if (addTransaction.options === options["expense"]) {
-      return addTransaction(newExpenseAmount);
+    //   //validation form addTransaction argument - newExpenseAmount work fine
+    if (addTransaction.option === options["expense"]) {
+      return newExpenseAmount, addTransaction(newExpenseAmount);
+    } else if (addTransaction.option === options["income"]) {
+      return newIncomeAmount, addTransaction(newIncomeAmount);
     }
   };
   console.log({ amount: amount });
