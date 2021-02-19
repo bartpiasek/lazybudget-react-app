@@ -7,19 +7,15 @@ export const Expenses = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const options = transactions.map((transaction) => transaction.option);
 
-  const newExpense = amounts.filter((item) => item !== options["Income"]);
-
-  const expenseSum =
-    newExpense
-      // .filter((item) => item > 0)
-      .filter((item) => item < 0)
-      .reduce((acc, item) => (acc += item), 0) * -1;
+  const expense =
+    amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
+    -1;
 
   return (
     <div>
       <div>
         <h3>Expenses</h3>
-        <p>{expenseSum} PLN</p>
+        <p>{expense} PLN</p>
       </div>
     </div>
   );

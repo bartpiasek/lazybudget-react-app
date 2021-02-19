@@ -43,13 +43,11 @@ export const Form = () => {
     };
 
     //validation form addTransaction argument
-    if (addTransaction.options === options["income"]) {
-      return addTransaction(newIncomeAmount);
-    } else {
+    if (addTransaction.options === options["expense"]) {
       return addTransaction(newExpenseAmount);
     }
   };
-  console.log(addTransaction);
+  console.log({ amount: amount });
 
   return (
     <div>

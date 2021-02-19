@@ -7,17 +7,23 @@ export const Income = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const options = transactions.map((transaction) => transaction.option);
 
-  const newIncome = amounts.filter((item) => item !== options["Expense"]);
+  // const newIncome = amounts.filter((item) => item !== options["expense"]);
 
-  const incomeSum = newIncome
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
+  //first
+  const income = amounts
+    .filter((item) => item > 0)
+    .reduce((acc, item) => (acc += item), 0);
+
+  // my ver
+  // const incomeSum = newIncome
+  //   .reduce((acc, item) => (acc += item), 0)
+  //   .toFixed(2);
 
   return (
     <div>
       <div>
         <h3>Incomes</h3>
-        <p>{incomeSum} PLN</p>
+        <p>{income} PLN</p>
       </div>
     </div>
   );
