@@ -5,7 +5,7 @@ import { GlobalContext } from "../../../context/GlobalState";
 export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
-  const [option, setOption] = useState("income");
+  const [option, setOption] = useState("");
 
   const options = [
     { label: "Income", value: "income", key: "1" },
@@ -16,25 +16,6 @@ export const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    //FIRST
-    //   const newTransaction = {
-    //     id: Math.floor(Math.random() * 10000),
-    //     text,
-    //     amount: -Math.abs(amount),
-    //     option,
-    //   };
-    //   addTransaction(newTransaction);
-    //   console.log(addTransaction);
-    // };
-
-    //THIRD
-    const newIncomeAmount = {
-      id: Math.floor(Math.random() * 10000),
-      text,
-      amount: parseInt(amount),
-      option,
-    };
-    // addTransaction(newIncomeAmount);
 
     const newExpenseAmount = {
       id: Math.floor(Math.random() * 10000),
@@ -42,13 +23,28 @@ export const Form = () => {
       amount: -Math.abs(amount),
       option,
     };
+    console.log(newExpenseAmount.option);
     // addTransaction(newExpenseAmount);
 
-    //   //validation form addTransaction argument - newExpenseAmount work fine
-    if (addTransaction.option === options["expense"]) {
-      return newExpenseAmount, addTransaction(newExpenseAmount);
-    } else if (addTransaction.option === options["income"]) {
+    const newIncomeAmount = {
+      id: Math.floor(Math.random() * 10000),
+      text,
+      amount: parseInt(amount),
+      option,
+    };
+    console.log(newIncomeAmount.option);
+    // addTransaction(newIncomeAmount);
+
+    // if (addTransaction.option === options["income"]) {
+    //   return newIncomeAmount, addTransaction(newIncomeAmount);
+    // } else if (addTransaction.option === options["expense"]) {
+    //   return newExpenseAmount, addTransaction(newExpenseAmount);
+    // }
+
+    if (addTransaction.option === options["income"]) {
       return newIncomeAmount, addTransaction(newIncomeAmount);
+    } else if (addTransaction.option === options["expense"]) {
+      return newExpenseAmount, addTransaction(newExpenseAmount);
     }
   };
   console.log({ amount: amount });
