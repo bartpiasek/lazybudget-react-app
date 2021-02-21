@@ -5,7 +5,7 @@ import { GlobalContext } from "../../../context/GlobalState";
 export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
-  const [option, setOption] = useState("");
+  const [option, setOption] = useState("expense");
   const inputRef = useRef();
 
   const options = [
@@ -15,6 +15,7 @@ export const Form = () => {
 
   const { addTransaction } = useContext(GlobalContext);
 
+  //RE-RENDERS IN INPUT FORM
   useEffect(() => {
     setTimeout(() => {}, 400);
   });
@@ -28,8 +29,6 @@ export const Form = () => {
       amount: -Math.abs(amount),
       option,
     };
-    console.log(newExpenseTransaction.option);
-    // addTransaction(newExpenseAmount);
 
     const newIncomeTransaction = {
       id: Math.floor(Math.random() * 10000),
@@ -37,20 +36,10 @@ export const Form = () => {
       amount: parseInt(amount),
       option,
     };
-    console.log(newIncomeTransaction.option);
-    // addTransaction(newIncomeAmount);
 
-    // if (addTransaction.option === options["income"]) {
-    //   return newIncomeAmount, addTransaction(newIncomeAmount);
-    // } else if (addTransaction.option === options["expense"]) {
-    //   return newExpenseAmount, addTransaction(newExpenseAmount);
-    // }
-
-    if (option === "expense") {
-      return addTransaction(newExpenseTransaction);
-    } else if (option === "income") {
-      return addTransaction(newIncomeTransaction);
-    }
+    option === "expense"
+      ? addTransaction(newExpenseTransaction)
+      : addTransaction(newIncomeTransaction);
   };
 
   return (
