@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import classes from "./AddTransactionForm.css";
 import { GlobalContext } from "../../../context/GlobalState";
 
@@ -6,6 +6,7 @@ export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
   const [option, setOption] = useState("");
+  const inputRef = useRef();
 
   const options = [
     { label: "Income", value: "income", key: "1" },
@@ -13,6 +14,10 @@ export const Form = () => {
   ];
 
   const { addTransaction } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setTimeout(() => {}, 400);
+  });
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -47,8 +52,6 @@ export const Form = () => {
       return addTransaction(newIncomeTransaction);
     }
   };
-  console.log({ amount: amount });
-  console.log(addTransaction);
 
   return (
     <div>
@@ -61,6 +64,7 @@ export const Form = () => {
           ))}
         </select>
         <input
+          ref={inputRef}
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
