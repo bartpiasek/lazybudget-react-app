@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
-import classes from "./AddTransactionForm.css";
 import { GlobalContext } from "../../../context/GlobalState";
 
 export const Form = () => {
@@ -44,15 +43,24 @@ export const Form = () => {
 
   return (
     <div>
-      <form className={classes.form} onSubmit={onSubmit}>
-        <select value={option} onChange={(e) => setOption(e.target.value)}>
+      <form className="form" onSubmit={onSubmit}>
+        <select
+          className="layout__container-background"
+          value={option}
+          onChange={(e) => setOption(e.target.value)}
+        >
           {options.map((option) => (
-            <option key={option.key} value={option.value}>
+            <option
+              className="layout__container-background"
+              key={option.key}
+              value={option.value}
+            >
               {option.label}
             </option>
           ))}
         </select>
         <input
+          className="layout__container-background"
           ref={inputRef}
           type="text"
           value={text}
@@ -60,6 +68,7 @@ export const Form = () => {
           placeholder="Name"
         />
         <input
+          className="layout__container-background"
           type="text"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}

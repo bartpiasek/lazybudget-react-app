@@ -18,7 +18,7 @@ const Summary = () => {
         <Expense />
         <h3>Total balance</h3>
 
-        <h3>{total} PLN</h3>
+        <h3 className="layout__container-background">{total} PLN</h3>
         <div>
           <Form />
         </div>

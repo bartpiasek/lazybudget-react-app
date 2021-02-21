@@ -132,6 +132,12 @@ body.dark-mode {
   flex-direction: column;
   align-items: center;
 }
+.layout__container-background {
+  background-color: hsla(0, 0%, 70%, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1%;
+}
 
 @media screen and (max-width: 960px) {
   .layout__container {
@@ -162,4 +168,49 @@ body.dark-mode {
   .layout__container-card:hover {
     transform: none;
   }
+}
+/* FORM  */
+body {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+form {
+  display: block;
+  flex-wrap: wrap;
+}
+
+form > input {
+  flex: 1 1 10ch;
+  margin: 0.5rem;
+}
+
+input {
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  margin: 1%;
+}
+
+input[type="submit"] {
+  background: white;
+  color: #f00946;
+  border: 1px solid#f00946;
+}
+
+input[type="submit"]:hover {
+  color: white;
+  background: #f00946;
+  transform: scale(1.01);
+  transition: all 0.3s ease-out;
+  border: 1px solid#f00946;
+  cursor: pointer;
+}
+
+form > option {
+  background: hsl(0, 0%, 93%);
+  border: 1px solid#f00946;
+  cursor: pointer;
 }

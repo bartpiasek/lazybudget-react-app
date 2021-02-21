@@ -26,7 +26,10 @@ export const LazyInput = () => {
   return (
     <div className="layout__container-cardInfo">
       <form onSubmit={onSubmit}>
-        <div onClick={(e) => setState(Rent)}>
+        <div
+          className="layout__container-background"
+          onClick={(e) => setState(Rent)}
+        >
           <h5 value={Rent.option}>{Rent.option}</h5>
           <h3 value={Rent.text}>{Rent.text}</h3>
           <h3 value={Rent.amount}>{Rent.amount}</h3>
