@@ -5,11 +5,11 @@ export const Expenses = () => {
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
-  const options = transactions.map((transaction) => transaction.option);
 
-  const expense =
+  const expense = (
     amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
-    -1;
+    -1
+  ).toFixed(2);
 
   return (
     <div>

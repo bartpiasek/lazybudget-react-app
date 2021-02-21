@@ -11,8 +11,6 @@ const Summary = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
-  // Cashflow/Income - Cashflow/Expense = totalSum
-
   return (
     <div className="layout__section">
       <div className="layout__wrapper">
