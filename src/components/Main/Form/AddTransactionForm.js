@@ -46,9 +46,9 @@ export const Form = () => {
     //   return newExpenseAmount, addTransaction(newExpenseAmount);
     // }
 
-    if (addTransaction.option === options["expense"]) {
+    if (option === "expense") {
       return addTransaction(newExpenseTransaction);
-    } else if (addTransaction.option === options["income"]) {
+    } else if (option === "income") {
       return addTransaction(newIncomeTransaction);
     }
   };
