@@ -17,22 +17,22 @@ export const Form = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const newExpenseAmount = {
+    const newExpenseTransaction = {
       id: Math.floor(Math.random() * 10000),
       text,
       amount: -Math.abs(amount),
       option,
     };
-    console.log(newExpenseAmount.option);
+    console.log(newExpenseTransaction.option);
     // addTransaction(newExpenseAmount);
 
-    const newIncomeAmount = {
+    const newIncomeTransaction = {
       id: Math.floor(Math.random() * 10000),
       text,
       amount: parseInt(amount),
       option,
     };
-    console.log(newIncomeAmount.option);
+    console.log(newIncomeTransaction.option);
     // addTransaction(newIncomeAmount);
 
     // if (addTransaction.option === options["income"]) {
@@ -41,10 +41,10 @@ export const Form = () => {
     //   return newExpenseAmount, addTransaction(newExpenseAmount);
     // }
 
-    if (addTransaction.option === options["income"]) {
-      return newIncomeAmount, addTransaction(newIncomeAmount);
-    } else if (addTransaction.option === options["expense"]) {
-      return newExpenseAmount, addTransaction(newExpenseAmount);
+    if (addTransaction.option === options["expense"]) {
+      return addTransaction(newExpenseTransaction);
+    } else if (addTransaction.option === options["income"]) {
+      return addTransaction(newIncomeTransaction);
     }
   };
   console.log({ amount: amount });
