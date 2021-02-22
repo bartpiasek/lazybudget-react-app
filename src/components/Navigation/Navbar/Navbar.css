@@ -66,7 +66,6 @@
   border: 1px solid#f00946;
   transform: scale(1.1);
   transition: all 0.3s ease;
-  background-color: hsla(0, 0%, 70%, 0.3);
   border-radius: 8px;
 }
 

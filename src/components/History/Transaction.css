@@ -2,6 +2,7 @@ button {
   background: white;
   color: #f00946;
   border: 1px solid#f00946;
+  align-self: stretch;
 }
 
 button:hover {

@@ -2,9 +2,6 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Form } from "../Form/AddTransactionForm";
 
-import Income from "../Cashflow/Income";
-import Expense from "../Cashflow/Expenses";
-
 const Summary = () => {
   const { transactions } = useContext(GlobalContext);
 
@@ -14,8 +11,6 @@ const Summary = () => {
   return (
     <div className="layout__section">
       <div className="layout__wrapper">
-        <Income />
-        <Expense />
         <h3>Total balance</h3>
 
         <h3 className="layout__container-background">{total} PLN</h3>
