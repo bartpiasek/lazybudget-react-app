@@ -15,3 +15,9 @@ export const Subscriptions = {
   amount: 50,
   option: "expense",
 };
+
+export const Salary = {
+  text: "Salary",
+  amount: 6000,
+  option: "income",
+};

@@ -71,8 +71,6 @@ body.dark-mode {
 
 .layout__container-cardInfo {
   display: flex;
-  flex-direction: column;
-
   padding: 24px;
   align-items: center;
 }

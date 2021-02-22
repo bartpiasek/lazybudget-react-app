@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
-import { Rent, Tuition, Subscriptions } from "./Data";
+import { Rent, Tuition, Subscriptions, Salary } from "./Data";
 
 export const LazyInput = () => {
   const [state, setState] = useState();
@@ -18,6 +18,10 @@ export const LazyInput = () => {
     };
     addTransaction(newTransaction);
     console.log(addTransaction);
+
+    // option === "expense"
+    //   ? addTransaction(newTransaction {... -Math.abs(state.amount)})
+    //   : addTransaction(newTransaction);
   };
 
   return (
@@ -47,11 +51,11 @@ export const LazyInput = () => {
       <form onSubmit={onSubmit}>
         <div
           className="layout__container-background"
-          onClick={(e) => setState(Subscriptions)}
+          onClick={(e) => setState(Salary)}
         >
-          <h5 value={Subscriptions.option}>{Subscriptions.option}</h5>
-          <h3 value={Subscriptions.text}>{Subscriptions.text}</h3>
-          <h3 value={Subscriptions.amount}>{Subscriptions.amount}</h3>
+          <h5 value={Salary.option}>{Salary.option}</h5>
+          <h3 value={Salary.text}>{Salary.text}</h3>
+          <h3 value={Salary.amount}>{Salary.amount}</h3>
           <input type="submit" value="Send" />
         </div>
       </form>
