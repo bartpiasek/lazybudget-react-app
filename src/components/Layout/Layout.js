@@ -14,6 +14,7 @@ const Layout = () => {
           <Income />
           <Summary />
           <Expense />
+          <History />
         </div>
         <div className="layout__wrapper">
           <div className="layout__container">

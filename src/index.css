@@ -130,12 +130,27 @@ body.dark-mode {
   flex-direction: column;
   align-items: center;
 }
+
 .layout__container-background {
   background-color: hsla(0, 0%, 70%, 0.3);
   border-radius: 8px;
   padding: 1rem;
   margin: 1%;
   display: inline-flexbox;
+}
+
+.layout__container-background-lazyinput {
+  background-color: hsla(0, 0%, 70%, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1%;
+  display: inline-flexbox;
+}
+
+.layout__container-background-lazyinput:hover {
+  transition: all 0.3s ease-out;
+  border: 1px solid#f00946;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {

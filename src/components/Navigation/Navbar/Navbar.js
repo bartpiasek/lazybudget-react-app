@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { VscListSelection, VscClose } from "react-icons/vsc";
 import "./Navbar.css";
 
@@ -20,24 +20,24 @@ function Navbar() {
         </div>
         <ul className={clicked ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links">
+            <NavLink to="/" className="nav-links">
               Account
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/income" className="nav-links">
+            <NavLink to="/income" className="nav-links">
               Incomes
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/expenses" className="nav-links">
+            <NavLink to="/expenses" className="nav-links">
               Expenses
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/history" target="_blank" className="nav-links">
+            <NavLink to="/history" target="_blank" className="nav-links">
               History
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
