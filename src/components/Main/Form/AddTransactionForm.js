@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
+import axios from "../../../axios";
 
 export const Form = () => {
   const [text, setText] = useState("");
@@ -20,6 +21,15 @@ export const Form = () => {
   });
 
   const onSubmit = (e) => {
+    // const transactionFirebase = {
+    //   text: setText,
+    //   amount: setAmount,
+    //   option: setOption,
+    // };
+    axios
+      .post("/transactions.json")
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
     e.preventDefault();
 
     const newExpenseTransaction = {
