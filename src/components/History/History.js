@@ -9,7 +9,7 @@ function History() {
     <div className="layout__section">
       <div className="layout__wrapper">
         <div className="layout__container">
-          <h3>Transaction history</h3>
+          <h3>History</h3>
           <ul>
             {transactions.map((transaction) => (
               <Transaction

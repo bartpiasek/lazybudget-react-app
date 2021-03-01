@@ -28,23 +28,21 @@ export const LazyInput = () => {
     <div className="layout__container-cardInfo">
       <form onSubmit={onSubmit}>
         <div
+          value={(Rent.option, Rent.amount, Rent.text)}
           className="layout__container-background-lazyinput"
           onClick={(e) => setState(Rent)}
         >
-          <h5 value={Rent.option}>{Rent.option}</h5>
-          <h3 value={Rent.text}>{Rent.text}</h3>
-          <h3 value={Rent.amount}>{Rent.amount}</h3>
+          <h3>{Rent.text}</h3>
           <input type="submit" value="Send" />
         </div>
       </form>
       <form onSubmit={onSubmit}>
         <div
+          value={(Salary.option, Salary.amount, Salary.text)}
           className="layout__container-background-lazyinput"
           onClick={(e) => setState(Salary)}
         >
-          <h5 value={Salary.option}>{Salary.option}</h5>
-          <h3 value={Salary.text}>{Salary.text}</h3>
-          <h3 value={Salary.amount}>{Salary.amount}</h3>
+          <h3>{Salary.text}</h3>
           <input type="submit" value="Send" />
         </div>
       </form>
