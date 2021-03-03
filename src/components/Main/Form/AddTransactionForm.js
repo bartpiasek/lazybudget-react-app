@@ -34,10 +34,16 @@ export const Form = () => {
     option,
   };
 
+  // const firebaseTransaction = () =>
+  //   option === "expense"
+  //     ? Object.assign(newExpenseTransaction)
+  //     : Object.assign(newIncomeTransaction);
+  // console.log(firebaseTransaction);
+
   const onSubmit = (e) => {
-    const firebaseTransaction = Object.assign(newExpenseTransaction);
+    // const fbtransaction = { ...firebaseTransaction };
     axios
-      .post("/transactions.json", firebaseTransaction)
+      .post("/transactions.json")
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
     e.preventDefault();
