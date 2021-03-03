@@ -20,31 +20,41 @@ export const Form = () => {
     setTimeout(() => {}, 400);
   });
 
+  const newExpenseTransaction = {
+    id: Math.floor(Math.random() * 10000),
+    text,
+    amount: -Math.abs(amount),
+    option,
+  };
+
+  const newIncomeTransaction = {
+    id: Math.floor(Math.random() * 10000),
+    text,
+    amount: parseInt(amount),
+    option,
+  };
+
   const onSubmit = (e) => {
-    // const transactionFirebase = {
-    //   text: setText,
-    //   amount: setAmount,
-    //   option: setOption,
-    // };
+    const firebaseTransaction = Object.assign(newExpenseTransaction);
     axios
-      .post("/transactions.json")
+      .post("/transactions.json", firebaseTransaction)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
     e.preventDefault();
 
-    const newExpenseTransaction = {
-      id: Math.floor(Math.random() * 10000),
-      text,
-      amount: -Math.abs(amount),
-      option,
-    };
+    // const newExpenseTransaction = {
+    //   id: Math.floor(Math.random() * 10000),
+    //   text,
+    //   amount: -Math.abs(amount),
+    //   option,
+    // };
 
-    const newIncomeTransaction = {
-      id: Math.floor(Math.random() * 10000),
-      text,
-      amount: parseInt(amount),
-      option,
-    };
+    // const newIncomeTransaction = {
+    //   id: Math.floor(Math.random() * 10000),
+    //   text,
+    //   amount: parseInt(amount),
+    //   option,
+    // };
 
     option === "expense"
       ? addTransaction(newExpenseTransaction)
