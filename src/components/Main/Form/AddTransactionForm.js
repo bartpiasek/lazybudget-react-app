@@ -34,37 +34,22 @@ export const Form = () => {
     option,
   };
 
-  // const firebaseTransaction = () =>
-  //   option === "expense"
-  //     ? Object.assign(newExpenseTransaction)
-  //     : Object.assign(newIncomeTransaction);
-  // console.log(firebaseTransaction);
-
   const onSubmit = (e) => {
-    // const fbtransaction = { ...firebaseTransaction };
+    option === "expense"
+      ? addTransaction(newExpenseTransaction)
+      : addTransaction(newIncomeTransaction);
+
     axios
-      .post("/transactions.json")
+      .post("/transactions.json", Object.assign(newIncomeTransaction))
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
     e.preventDefault();
 
-    // const newExpenseTransaction = {
-    //   id: Math.floor(Math.random() * 10000),
-    //   text,
-    //   amount: -Math.abs(amount),
-    //   option,
-    // };
-
-    // const newIncomeTransaction = {
-    //   id: Math.floor(Math.random() * 10000),
-    //   text,
-    //   amount: parseInt(amount),
-    //   option,
-    // };
-
-    option === "expense"
-      ? addTransaction(newExpenseTransaction)
-      : addTransaction(newIncomeTransaction);
+    // if (option === "expense") {
+    //   addTransaction(newExpenseTransaction) &&
+    // } else {
+    //   addTransaction(newIncomeTransaction) &&
+    // }
   };
 
   return (
