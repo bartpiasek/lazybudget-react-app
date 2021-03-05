@@ -4,6 +4,7 @@ import { LazyInput } from "../Main/LazyInput/LazyInput";
 
 import Income from "../Main/Cashflow/Income";
 import Expense from "../Main/Cashflow/Expenses";
+import History from "../History/History";
 
 const Layout = () => {
   return (
@@ -13,6 +14,7 @@ const Layout = () => {
           <Income />
           <Summary />
           <Expense />
+          <History />
         </div>
         <div className="layout__wrapper">
           <div className="layout__container">
