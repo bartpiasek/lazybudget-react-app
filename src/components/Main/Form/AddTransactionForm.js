@@ -35,27 +35,20 @@ export const Form = () => {
   };
 
   const onSubmit = (e) => {
-    const incomePost = axios
-      .post("/transactions.json", Object.assign(newIncomeTransaction))
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-    e.preventDefault();
-
-    const expensePost = axios
-      .post("/transactions.json", Object.assign(newExpenseTransaction))
+    axios
+      .post(
+        "/transactions.json",
+        option === "expense"
+          ? Object.assign(newExpenseTransaction)
+          : Object.assign(newIncomeTransaction)
+      )
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
     e.preventDefault();
 
     option === "expense"
-      ? addTransaction(newExpenseTransaction) && expensePost()
-      : addTransaction(newIncomeTransaction) && incomePost();
-
-    // if (option === "expense") {
-    //   addTransaction(newExpenseTransaction) &&
-    // } else {
-    //   addTransaction(newIncomeTransaction) &&
-    // }
+      ? addTransaction(newExpenseTransaction)
+      : addTransaction(newIncomeTransaction);
   };
 
   return (
