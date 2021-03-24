@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 import { Link, NavLink } from "react-router-dom";
 import { VscListSelection, VscClose } from "react-icons/vsc";
-import "./Navbar.css";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -10,7 +9,7 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar-container container">
+      <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src={lazybudgetLogo} alt="lazybudget" height="40" width="40" />
         </Link>
