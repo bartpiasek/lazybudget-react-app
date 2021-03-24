@@ -3,6 +3,7 @@ import Summary from "../Main/Summary/Summary";
 
 import Income from "../Main/Cashflow/Income";
 import Expense from "../Main/Cashflow/Expenses";
+import History from "../History/History";
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
           <Income />
           <Summary />
           <Expense />
+          <History />
         </div>
       </div>
     </div>
