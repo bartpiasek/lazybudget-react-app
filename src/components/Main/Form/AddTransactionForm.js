@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
 
+import FormBootstrap from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
@@ -52,8 +55,28 @@ export const Form = () => {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={onSubmit}>
+    <FormBootstrap onSubmit={onSubmit}>
+      <FormBootstrap.Group>
+        <FormBootstrap.Control
+          placeholder="Name"
+          className="layout__container-background"
+          ref={inputRef}
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </FormBootstrap.Group>
+      <FormBootstrap.Group>
+        <FormBootstrap.Control
+          placeholder="Amount"
+          className="layout__container-background"
+          type="text"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="PLN"
+        />
+      </FormBootstrap.Group>
+      <FormBootstrap.Group>
         <select
           className="layout__container-background"
           value={option}
@@ -69,23 +92,10 @@ export const Form = () => {
             </option>
           ))}
         </select>
-        <input
-          className="layout__container-background"
-          ref={inputRef}
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Name"
-        />
-        <input
-          className="layout__container-background"
-          type="text"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="PLN"
-        />
-        <input type="submit" value="Send" />
-      </form>
-    </div>
+      </FormBootstrap.Group>
+      <Button variant="primary" type="submit" value="Send">
+        Add
+      </Button>
+    </FormBootstrap>
   );
 };

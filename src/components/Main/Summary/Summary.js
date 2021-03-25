@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Form } from "../Form/AddTransactionForm";
 
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 const Summary = () => {
   const { transactions } = useContext(GlobalContext);
 
@@ -9,16 +13,19 @@ const Summary = () => {
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
   return (
-    <div className="layout__section">
-      <div className="layout__wrapper">
-        <h3>Total balance</h3>
-
-        <h3 className="layout__container-background">{total} PLN</h3>
-        <div>
+    <Container>
+      <Row>
+        <Col sm={4}>
+          <div>
+            <h5>Total balance</h5>
+            <h2>{total} PLN</h2>
+          </div>
+        </Col>
+        <Col sm={8}>
           <Form />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -14,8 +14,8 @@ export const Expenses = () => {
   return (
     <div>
       <div>
-        <h3>Expenses</h3>
-        <p className="layout__container-background">{expense} PLN</p>
+        <h5>Expenses</h5>
+        <h2 className="layout__container-background">{expense} PLN</h2>
       </div>
     </div>
   );

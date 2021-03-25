@@ -1,22 +1,31 @@
 import React from "react";
-import Summary from "../Main/Summary/Summary";
 
+import Summary from "../Main/Summary/Summary";
 import Income from "../Main/Cashflow/Income";
 import Expense from "../Main/Cashflow/Expenses";
-import History from "../History/History";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const Layout = () => {
   return (
-    <div className="layout__section">
-      <div className="layout__wrapper">
-        <div className="layout__container">
-          <Income />
+    <Container>
+      <Row>
+        <Col sm={8}>
           <Summary />
+        </Col>
+        <Col sm={4}> </Col>
+      </Row>
+      <Row>
+        <Col sm>
+          <Income />
+        </Col>
+        <Col sm>
           <Expense />
-          <History />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 export default Layout;
