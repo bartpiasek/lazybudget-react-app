@@ -1,0 +1,30 @@
+button[type="submit"] {
+  background: white;
+  color: #f00946;
+  border: 1px solid#f00946;
+}
+
+button[type="submit"]:hover {
+  color: white;
+  background: #f00946;
+  transform: scale(1.01);
+  transition: all 0.3s ease-out;
+  border: 1px solid#f00946;
+  cursor: pointer;
+}
+.form {
+  display: flexbox;
+}
+
+form > select {
+  background: hsl(0, 0%, 93%);
+  border: 1px solid#f00946;
+  cursor: pointer;
+}
+
+.layout__container-background {
+  background-color: hsla(0, 0%, 70%, 0.3);
+  border-radius: 4px;
+  border: none;
+  padding: 1%;
+}
