@@ -5,14 +5,14 @@ const History = () => {
   const [data, setData] = useState({});
 
   async function fetchData() {
-    const res = await fetch(
+    const data = await fetch(
       "https://lazyinput-default-rtdb.firebaseio.com/transactions"
     );
-    res
+    data
       .json()
-      .then((res) => setData(res))
+      .then((data) => setData(data))
       .catch((err) => setErrors(err));
-    console.log(res);
+    console.log(data);
   }
 
   useEffect(() => {
@@ -20,12 +20,19 @@ const History = () => {
   });
 
   return (
-    <div className="layout__section">
-      <div className="layout__wrapper">
-        <div className="layout__container">
+    <div>
+      <div>
+        <div>
           <h3>History</h3>
-          <ul>{JSON.stringify(data)}</ul>
-          <ul>{JSON.stringify(hasError)}</ul>
+          {/* <th>
+            {dataToArray.map((transactions) => {
+              <tr key={transactions.id}>
+                <td>{transactions.option}</td>
+                <td>{transactions.text}</td>
+                <td>{transactions.amount}</td>
+              </tr>;
+            })}
+          </th> */}
         </div>
       </div>
     </div>

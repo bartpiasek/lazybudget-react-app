@@ -7,6 +7,7 @@ import Expense from "../Main/Cashflow/Expenses";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import History from "../History/History";
 
 const Layout = () => {
   return (
@@ -23,6 +24,11 @@ const Layout = () => {
         </Col>
         <Col sm>
           <Expense />
+        </Col>
+      </Row>
+      <Row>
+        <Col sm>
+          <History />
         </Col>
       </Row>
     </Container>
