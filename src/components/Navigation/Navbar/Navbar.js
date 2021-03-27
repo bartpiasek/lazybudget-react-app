@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
-import { Link, NavLink } from "react-router-dom";
-import { VscListSelection, VscClose } from "react-icons/vsc";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
