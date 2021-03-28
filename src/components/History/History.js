@@ -24,15 +24,16 @@ const History = () => {
 
   return (
     <div>
+      <hr />
       <div>
         <div>
           <h3>History</h3>
           <ul>
-            {transactions.map((transaction, key) => {
+            {Object.values(transactions).map((transaction, key) => {
               return (
                 <li key={key}>
                   <TransactionRow
-                    key={key}
+                    key={transaction.id}
                     text={transaction.text}
                     amount={transaction.amount}
                     option={transaction.option}

@@ -23,6 +23,7 @@ function Navbar() {
         <Nav.Link href="#account">Account</Nav.Link>
         <Nav.Link href="#incomes">Incomes</Nav.Link>
         <Nav.Link href="#expenses">Expenses</Nav.Link>
+        <Nav.Link href="lazyinput">Lazy</Nav.Link>
       </Nav>
     </NavbarBootstrap>
   );
