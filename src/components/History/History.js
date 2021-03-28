@@ -42,16 +42,6 @@ const History = () => {
               );
             })}
           </ul>
-          {/* V2 -search*/}
-          {/* {Object.keys(transactions).map((transaction, idx) => {
-            <TransactionRow
-              key={idx}
-              id={transaction.id}
-              text={transaction.text}
-              option={transaction.option}
-              amount={transaction.amount}
-            />;
-          })} */}
         </div>
       </div>
     </div>
