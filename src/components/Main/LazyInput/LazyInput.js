@@ -49,3 +49,5 @@ export const LazyInput = () => {
     </div>
   );
 };
+
+export default LazyInput;

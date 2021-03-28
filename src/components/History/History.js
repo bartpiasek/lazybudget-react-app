@@ -28,11 +28,11 @@ const History = () => {
         <div>
           <h3>History</h3>
           <ul>
-            {transactions.map((transaction, key) => {
+            {Object.keys(transactions).map((transaction, key) => {
               return (
                 <li key={key}>
                   <TransactionRow
-                    key={key}
+                    key={transaction.id}
                     text={transaction.text}
                     amount={transaction.amount}
                     option={transaction.option}
