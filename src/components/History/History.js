@@ -5,23 +5,8 @@ const History = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
-  // async function fetchData() {
-  //   const res = await fetch(
-  //     "https://lazyinput-default-rtdb.firebaseio.com/transactions"
-  //   );
-  //   res
-  //     .json()
-  //     .then((res) => setData(res))
-  //     .catch((err) => setErrors(err));
-  //   console.log(res);
-  // }
-
-  // useEffect(() => {
-  //   fetchData();
-  // });
-
   useEffect(() => {
-    fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions")
+    fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -34,20 +19,24 @@ const History = () => {
         }
       );
   }, []);
-
+  console.log(transactions);
   return (
     <div>
       <div>
         <div>
           <h3>History</h3>
-          {/* <ul>
-            {transactions.map((transaction) => (
-              <li key={transaction.id}>
-                <span>{transaction.text}</span>
-                <span>{transaction.amount}</span>
-              </li>
-            ))}
-          </ul> */}
+          {/* //V1 */}
+          <ul>
+            {Object.keys(transactions).map((transaction, idx) => {
+              return (
+                <li key={idx}>
+                  <span>{transaction.option}</span>
+                  <span>{transaction.text}</span>
+                  <span>{transaction.amount}</span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
