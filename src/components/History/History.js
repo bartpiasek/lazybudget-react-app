@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import TransactionRow from "./TrUI";
 
 const History = () => {
   const [error, setError] = useState(null);
@@ -20,23 +21,36 @@ const History = () => {
       );
   }, []);
   console.log(transactions);
+
   return (
     <div>
       <div>
         <div>
           <h3>History</h3>
-          {/* //V1 */}
           <ul>
-            {Object.keys(transactions).map((transaction, idx) => {
+            {transactions.map((transaction, key) => {
               return (
-                <li key={idx}>
-                  <span>{transaction.option}</span>
-                  <span>{transaction.text}</span>
-                  <span>{transaction.amount}</span>
+                <li key={key}>
+                  <TransactionRow
+                    key={key}
+                    text={transaction.text}
+                    amount={transaction.amount}
+                    option={transaction.option}
+                  />
                 </li>
               );
             })}
           </ul>
+          {/* V2 -search*/}
+          {/* {Object.keys(transactions).map((transaction, idx) => {
+            <TransactionRow
+              key={idx}
+              id={transaction.id}
+              text={transaction.text}
+              option={transaction.option}
+              amount={transaction.amount}
+            />;
+          })} */}
         </div>
       </div>
     </div>
