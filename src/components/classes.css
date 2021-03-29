@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 button[type="submit"] {
   background: white;
   color: #f00946;
@@ -24,7 +28,62 @@ form > select {
 
 .layout__container-background {
   background-color: hsla(0, 0%, 70%, 0.3);
-  border-radius: 4px;
+  border-radius: 8px;
   border: none;
-  padding: 1%;
+}
+
+/* TABLE-HISTORY */
+.transaction-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.transaction-row {
+  display: flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px whitesmoke solid;
+  width: max-content;
+}
+.transaction {
+  display: flex;
+  align-items: center;
+  padding-right: 4rem;
+  min-width: 8rem;
+}
+.transaction > h1 {
+  font-size: 16px;
+  width: 100px;
+}
+.transaction-option {
+  text-transform: uppercase;
+}
+
+.transaction-data {
+  display: flex;
+  text-align: right;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.transaction-price {
+  width: 8rem;
+}
+
+.red {
+  color: #f00606;
+}
+
+.green {
+  color: #11d811;
 }

@@ -2,9 +2,10 @@ import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
-import History from "./components/History/History";
 import LazyInput from "./components/Main/LazyInput/LazyInput";
 import Navbar from "./components/Navigation/Navbar/Navbar";
+
+import "../src/components/classes.css";
 
 import { GlobalProvider } from "./context/GlobalState";
 

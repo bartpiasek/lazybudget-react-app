@@ -27,21 +27,21 @@ const History = () => {
       <hr />
       <div>
         <div>
-          <h3>History</h3>
-          <ul>
+          <h5>Last transactions</h5>
+          <div>
             {Object.values(transactions).map((transaction, key) => {
               return (
-                <li key={key}>
+                <tr key={key}>
                   <TransactionRow
                     key={transaction.id}
                     text={transaction.text}
                     amount={transaction.amount}
                     option={transaction.option}
                   />
-                </li>
+                </tr>
               );
             })}
-          </ul>
+          </div>
         </div>
       </div>
     </div>
