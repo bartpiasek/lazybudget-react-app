@@ -1,7 +1,11 @@
 * {
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 /* FORM BUTTON */
+=======
+
+>>>>>>> bba0045e894e013ce7fcae50f83f710d1508f60b
 button[type="submit"] {
   background: white;
   color: #f00946;
@@ -44,7 +48,6 @@ form > select {
   border: 1px solid#f00946;
   cursor: pointer;
 }
-
 /* NAVBAR */
 .navbar-main {
   background-color: transparent;
