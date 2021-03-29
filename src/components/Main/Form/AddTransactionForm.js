@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
-import classes from "../../classes.css";
+import "../../classes.css";
 
 import FormBootstrap from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

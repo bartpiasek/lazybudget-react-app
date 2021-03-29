@@ -3,13 +3,23 @@ import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/esm/Button";
+import { IoAnalytics } from "react-icons/io5";
+import { VscAccount } from "react-icons/vsc";
+
+import "../../classes.css";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const handleClicked = () => setClicked(!clicked);
 
   return (
-    <NavbarBootstrap bg="light" variant="light" sticky="top">
+    <NavbarBootstrap
+      className="navbar-main"
+      bg="light"
+      variant="light"
+      sticky="top"
+    >
       <NavbarBootstrap.Brand href="#home">
         <img
           alt=""
@@ -20,10 +30,15 @@ function Navbar() {
         />
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#account">Account</Nav.Link>
-        <Nav.Link href="#incomes">Incomes</Nav.Link>
-        <Nav.Link href="#expenses">Expenses</Nav.Link>
-        <Nav.Link href="lazyinput">Lazy</Nav.Link>
+        <button className="button" href="#account">
+          <IoAnalytics /> Analytics
+        </button>
+        <button className="button" href="lazyinput">
+          Lazy
+        </button>
+        <button className="button" href="#account">
+          <VscAccount /> My Account
+        </button>
       </Nav>
     </NavbarBootstrap>
   );
