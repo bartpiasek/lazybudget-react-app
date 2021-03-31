@@ -1,8 +1,6 @@
 import React from "react";
 
 import Summary from "../Main/Summary/Summary";
-import Income from "../Main/Cashflow/Income";
-import Expense from "../Main/Cashflow/Expenses";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -17,14 +15,6 @@ const Layout = () => {
           <Summary />
         </Col>
         <Col sm={4}> </Col>
-      </Row>
-      <Row>
-        <Col sm>
-          <Income />
-        </Col>
-        <Col sm>
-          <Expense />
-        </Col>
       </Row>
       <Row>
         <Col sm>

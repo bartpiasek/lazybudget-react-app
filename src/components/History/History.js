@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Cashflow from "../Main/Cashflow/Cashflow";
 import TransactionRow from "./TrUI";
 
 const History = () => {
@@ -24,6 +25,9 @@ const History = () => {
 
   return (
     <div>
+      <div>
+        <Cashflow />
+      </div>
       <hr />
       <div>
         <div>
