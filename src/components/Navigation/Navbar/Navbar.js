@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
@@ -30,15 +31,15 @@ function Navbar() {
         />
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
-        <button className="button" href="#account">
+        <Link className="button" href="#account">
           <IoAnalytics /> Analytics
-        </button>
-        <button className="button" href="lazyinput">
+        </Link>
+        <Link className="button" href="/lazy">
           Lazy
-        </button>
-        <button className="button" href="#account">
+        </Link>
+        <Link className="button" href="#account">
           <VscAccount /> My Account
-        </button>
+        </Link>
       </Nav>
     </NavbarBootstrap>
   );

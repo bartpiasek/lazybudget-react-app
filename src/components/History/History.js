@@ -29,18 +29,20 @@ const History = () => {
         <div>
           <h5>Last transactions</h5>
           <div>
-            {Object.values(transactions).map((transaction, key) => {
-              return (
-                <tr key={key}>
-                  <TransactionRow
-                    key={transaction.id}
-                    text={transaction.text}
-                    amount={transaction.amount}
-                    option={transaction.option}
-                  />
-                </tr>
-              );
-            })}
+            {Object.values(transactions)
+              .reverse()
+              .map((transaction, key) => {
+                return (
+                  <tr key={key}>
+                    <TransactionRow
+                      key={transaction.id}
+                      text={transaction.text}
+                      amount={transaction.amount}
+                      option={transaction.option}
+                    />
+                  </tr>
+                );
+              })}
           </div>
         </div>
       </div>
