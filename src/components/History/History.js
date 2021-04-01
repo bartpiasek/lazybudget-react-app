@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import Cashflow from "../Main/Cashflow/Cashflow";
 import TransactionRow from "./TrUI";
 
@@ -20,6 +21,9 @@ const History = () => {
           setError(error);
         }
       );
+
+    //SUM FIREBASE EXPENSES/INCOMES
+    // transaction.option === "expense";
   }, []);
   console.log(transactions);
 
