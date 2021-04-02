@@ -21,11 +21,20 @@ const History = () => {
           setError(error);
         }
       );
-
-    //SUM FIREBASE EXPENSES/INCOMES
-    // transaction.option === "expense";
   }, []);
-  console.log(transactions);
+
+  const transactionsObj = Object.values(transactions);
+
+  //FILTER TRANSACTION OBJ - EXPENSES/INCOMES
+  const firebaseExpenses = transactionsObj.filter((transaction) => {
+    return transaction.amount < 0;
+  });
+
+  const firebaseInomes = transactionsObj.filter((transaction) => {
+    return transaction.amount > 0;
+  });
+  console.log(firebaseExpenses);
+  console.log(firebaseInomes);
 
   return (
     <div>
@@ -37,20 +46,18 @@ const History = () => {
         <div>
           <h5>Last transactions</h5>
           <div>
-            {Object.values(transactions)
-              .reverse()
-              .map((transaction, key) => {
-                return (
-                  <tr key={key}>
-                    <TransactionRow
-                      key={transaction.id}
-                      text={transaction.text}
-                      amount={transaction.amount}
-                      option={transaction.option}
-                    />
-                  </tr>
-                );
-              })}
+            {transactionsObj.reverse().map((transaction, key) => {
+              return (
+                <div key={key}>
+                  <TransactionRow
+                    key={transaction.id}
+                    text={transaction.text}
+                    amount={transaction.amount}
+                    option={transaction.option}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

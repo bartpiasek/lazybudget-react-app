@@ -15,12 +15,7 @@ function Navbar() {
   const handleClicked = () => setClicked(!clicked);
 
   return (
-    <NavbarBootstrap
-      className="navbar-main"
-      bg="light"
-      variant="light"
-      sticky="top"
-    >
+    <NavbarBootstrap className="navbar-main" sticky="top">
       <NavbarBootstrap.Brand href="#home">
         <img
           alt=""
@@ -31,13 +26,13 @@ function Navbar() {
         />
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
-        <Link className="button" href="#account">
+        <Link className="button" to="#account">
           <IoAnalytics /> Analytics
         </Link>
-        <Link className="button" href="/lazy">
+        <Link className="button" to="/lazy">
           Lazy
         </Link>
-        <Link className="button" href="#account">
+        <Link className="button" to="#account">
           <VscAccount /> My Account
         </Link>
       </Nav>
