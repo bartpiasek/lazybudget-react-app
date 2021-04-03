@@ -56,9 +56,6 @@ form > select {
 }
 /* NAVBAR */
 .navbar-main {
-  /* background: none;
-  background-color: transparent; */
-  height: 5rem;
   align-content: space-around;
 }
 
@@ -75,17 +72,20 @@ form > select {
   text-align: center;
   padding: 5%;
 }
-.lazy__container-background:hover {
-  transition: all 0.3s ease-out;
-  border: 1px solid#f00946;
-  cursor: pointer;
-}
 .button-secondary {
+  color: #f00606;
   background-color: hsla(0, 0%, 70%, 0.3);
   border-radius: 8px;
   border: none;
   text-align: center;
   padding: 5%;
+  margin: 2%;
+}
+.button-secondary:hover {
+  color: #f00606;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* TABLE-HISTORY */

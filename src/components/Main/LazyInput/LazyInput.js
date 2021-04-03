@@ -25,17 +25,12 @@ export const LazyInput = () => {
     };
     addTransaction(newTransaction);
     console.log(addTransaction);
-
-    // option === "expense"
-    //   ? addTransaction(newTransaction {... -Math.abs(state.amount)})
-    //   : addTransaction(newTransaction);
   };
 
   return (
     <Container>
       <Row md={4}>
         <Col>
-          {" "}
           <FormBootstrap
             className="lazy__container-background"
             onSubmit={onSubmit}
@@ -52,7 +47,6 @@ export const LazyInput = () => {
           </FormBootstrap>
         </Col>
         <Col xs={6}>
-          {" "}
           <FormBootstrap
             className="lazy__container-background"
             onSubmit={onSubmit}

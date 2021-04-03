@@ -15,12 +15,7 @@ const Summary = () => {
   return (
     <Container>
       <Row>
-        <Col sm={4}>
-          <div>
-            <h5>Total balance</h5>
-            <h2>{total} PLN</h2>
-          </div>
-        </Col>
+        <Col sm={4}></Col>
         <Col sm={8}>
           <Form />
         </Col>

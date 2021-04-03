@@ -24,37 +24,16 @@ const History = () => {
   }, []);
 
   const transactionsObj = Object.values(transactions);
-  console.log(transactionsObj);
-  const transactionsKeys = Object.keys(transactions);
 
-  //V1
-  // transactionsObj only with amount
-  // const transactionsAmount = Object.keys(transactions).reduce((acc, key) => {
-  //   if (key !== "amount") {
-  //     acc[key] = transactions[key];
-  //   }
-  //   return acc;
-  // }, {});
-  // console.log(transactionsAmount);
+  const transactionsAmount = transactionsObj
+    .reverse()
+    .map((transaction) => transaction.amount);
 
-  //V2
-  // const transactionsAmount = Object.keys(transactions)
-  //   .filter((key) => key !== "amount")
-  //   .reduce((obj, key) => {
-  //     obj[key] = transactions[key];
-  //     return obj;
-  //   }, {});
-  // console.log(transactionsAmount);
+  const total = transactionsAmount.reduce(function (a, b) {
+    return a + b;
+  });
 
-  //V3
-  // let transactionsAmount = Object.values(transactions);
-  // const { text, ...trAmount } = transactionsAmount;
-  // console.log(trAmount);
-  // console.log(transactionsAmount);
-
-  //V4 DECONSTRUCTING PRZEZ ID
-
-  //FILTER TRANSACTION OBJ - EXPENSES/INCOMES
+  //FILTER TRANSACTION OBJ - EXPENSES/INCOMES - sorting
   const firebaseExpenses = transactionsObj.filter((transaction) => {
     return transaction.amount < 0;
   });
@@ -67,6 +46,12 @@ const History = () => {
     <div>
       <div>
         <Cashflow />
+        <h5>Total balance</h5>
+        <h2>{total.toFixed(2)} PLN</h2>
+        <h5>Expenses</h5>
+        <h2> PLN</h2>
+        <h5>Incomes</h5>
+        <h2> PLN</h2>
       </div>
       <hr />
       <div>
