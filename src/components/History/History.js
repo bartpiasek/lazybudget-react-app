@@ -24,17 +24,44 @@ const History = () => {
   }, []);
 
   const transactionsObj = Object.values(transactions);
+  console.log(transactionsObj);
+  const transactionsKeys = Object.keys(transactions);
+
+  //V1
+  // transactionsObj only with amount
+  // const transactionsAmount = Object.keys(transactions).reduce((acc, key) => {
+  //   if (key !== "amount") {
+  //     acc[key] = transactions[key];
+  //   }
+  //   return acc;
+  // }, {});
+  // console.log(transactionsAmount);
+
+  //V2
+  // const transactionsAmount = Object.keys(transactions)
+  //   .filter((key) => key !== "amount")
+  //   .reduce((obj, key) => {
+  //     obj[key] = transactions[key];
+  //     return obj;
+  //   }, {});
+  // console.log(transactionsAmount);
+
+  //V3
+  // let transactionsAmount = Object.values(transactions);
+  // const { text, ...trAmount } = transactionsAmount;
+  // console.log(trAmount);
+  // console.log(transactionsAmount);
+
+  //V4 DECONSTRUCTING PRZEZ ID
 
   //FILTER TRANSACTION OBJ - EXPENSES/INCOMES
   const firebaseExpenses = transactionsObj.filter((transaction) => {
     return transaction.amount < 0;
   });
 
-  const firebaseInomes = transactionsObj.filter((transaction) => {
+  const firebaseIncomes = transactionsObj.filter((transaction) => {
     return transaction.amount > 0;
   });
-  console.log(firebaseExpenses);
-  console.log(firebaseInomes);
 
   return (
     <div>
