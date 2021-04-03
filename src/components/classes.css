@@ -68,6 +68,26 @@ form > select {
   border: none;
 }
 
+.lazy__container-background {
+  background-color: hsla(0, 0%, 70%, 0.3);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 5%;
+}
+.lazy__container-background:hover {
+  transition: all 0.3s ease-out;
+  border: 1px solid#f00946;
+  cursor: pointer;
+}
+.button-secondary {
+  background-color: hsla(0, 0%, 70%, 0.3);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 5%;
+}
+
 /* TABLE-HISTORY */
 .transaction-container {
   display: flex;
@@ -85,10 +105,8 @@ form > select {
 .transaction-row {
   display: flex;
   flex-direction: row;
-  justify-items: start;
-  align-items: center;
-  height: 4rem;
-  border-bottom: 1px whitesmoke solid;
+  text-align: justify;
+  height: 2rem;
   width: max-content;
 }
 .transaction {

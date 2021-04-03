@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <NavbarBootstrap className="navbar-main" sticky="top">
-      <NavbarBootstrap.Brand href="#home">
+      <NavbarBootstrap.Brand href="/">
         <img
           alt=""
           src={lazybudgetLogo}
@@ -26,13 +26,13 @@ function Navbar() {
         />
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
-        <Link className="button" to="#account">
+        <Link className="button-secondary" to="/analytics">
           <IoAnalytics /> Analytics
         </Link>
-        <Link className="button" to="/lazy">
+        <Link className="button-secondary" to="/lazy">
           Lazy
         </Link>
-        <Link className="button" to="#account">
+        <Link className="button-secondary" to="/account">
           <VscAccount /> My Account
         </Link>
       </Nav>
