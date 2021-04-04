@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import CardDeck from "react-bootstrap/CardDeck";
 
 export const LazyInput = () => {
   const [state, setState] = useState();
@@ -30,22 +32,7 @@ export const LazyInput = () => {
   return (
     <Container>
       <Row md={4}>
-        <Col>
-          <FormBootstrap
-            className="lazy__container-background"
-            onSubmit={onSubmit}
-          >
-            <div
-              value={(Rent.option, Rent.amount, Rent.text)}
-              onClick={(e) => setState(Rent)}
-            >
-              <h5>{Rent.text}</h5>
-              <Button type="submit" value="Send">
-                Add
-              </Button>
-            </div>
-          </FormBootstrap>
-        </Col>
+        <Col></Col>
         <Col xs={6}>
           <FormBootstrap
             className="lazy__container-background"
@@ -71,7 +58,7 @@ export const LazyInput = () => {
               value={
                 (Subscriptions.option, Subscriptions.amount, Subscriptions.text)
               }
-              onClick={(e) => setState(Salary)}
+              onClick={(e) => setState(Subscriptions)}
             >
               <h5>{Subscriptions.text}</h5>
               <Button type="submit" value="Send">
@@ -81,6 +68,44 @@ export const LazyInput = () => {
           </FormBootstrap>
         </Col>
       </Row>
+
+      <CardDeck>
+        <Card className="lazy__container-background" onSubmit={onSubmit}>
+          <div
+            value={(Salary.option, Salary.amount, Salary.text)}
+            onClick={(e) => setState(Salary)}
+          >
+            <Card.Body>
+              <Card.Title>{Rent.text}</Card.Title>
+              <Card.Text>{Rent.amount} PLN</Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Transactions this month: </small>
+            </Card.Footer>
+            <Button type="submit" value="Send">
+              Add
+            </Button>
+          </div>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Card.Title>{Salary.text}</Card.Title>
+            <Card.Text>{Salary.amount} PLN</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Transactions this month:</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Card.Title>{Subscriptions.text}</Card.Title>
+            <Card.Text>{Subscriptions.amount} PLN</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Transactions this month:</small>
+          </Card.Footer>
+        </Card>
+      </CardDeck>
     </Container>
   );
 };
