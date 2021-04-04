@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import TransactionRow from "./TrUI";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const History = () => {
   const [error, setError] = useState(null);
@@ -48,36 +51,52 @@ const History = () => {
   });
 
   return (
-    <div>
-      <div>
-        <h5>Total balance</h5>
-        <h2>{total.toFixed(2)} PLN</h2>
-        <h5>Expenses</h5>
-        <h2>{Math.abs(expenses).toFixed(2)} PLN</h2>
-        <h5>Incomes</h5>
-        <h2>{incomes.toFixed(2)} PLN</h2>
-      </div>
-      <hr />
-      <div>
-        <div>
-          <h5>Last transactions</h5>
+    <Container>
+      <Row>
+        <Col>
+          <h5>Total balance</h5>
+          <h2>{total.toFixed(2)} PLN</h2>
+        </Col>
+        <Col>
+          <h5>Expenses</h5>
+          <h2>{Math.abs(expenses).toFixed(2)} PLN</h2>
+        </Col>
+        <Col>
+          <h5>Incomes</h5>
+          <h2>{incomes.toFixed(2)} PLN</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col></Col>
+        <Col></Col>
+      </Row>
+      <Row>
+        <Col>
           <div>
-            {transactionsObj.map((transaction, key) => {
-              return (
-                <div key={key}>
-                  <TransactionRow
-                    key={transaction.id}
-                    text={transaction.text}
-                    amount={transaction.amount}
-                    option={transaction.option}
-                  />
+            <hr />
+            <div>
+              <div>
+                <h5>Last transactions</h5>
+                <div>
+                  {transactionsObj.map((transaction, key) => {
+                    return (
+                      <div key={key}>
+                        <TransactionRow
+                          key={transaction.id}
+                          text={transaction.text}
+                          amount={transaction.amount}
+                          option={transaction.option}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

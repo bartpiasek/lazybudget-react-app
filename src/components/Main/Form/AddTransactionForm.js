@@ -59,6 +59,7 @@ export const Form = () => {
     <FormBootstrap className="form" onSubmit={onSubmit}>
       <FormBootstrap.Group>
         <FormBootstrap.Control
+          size="lg"
           placeholder="Name"
           className="layout__container-background"
           ref={inputRef}
@@ -69,23 +70,25 @@ export const Form = () => {
       </FormBootstrap.Group>
       <FormBootstrap.Group>
         <FormBootstrap.Control
-          placeholder="Amount"
+          size="lg"
+          placeholder="PLN"
           className="layout__container-background"
           type="text"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          placeholder="PLN"
         />
       </FormBootstrap.Group>
       <FormBootstrap.Group>
         <select
-          className="layout__container-background"
+          as="select"
+          size="lg"
+          className="layout__select"
           value={option}
           onChange={(e) => setOption(e.target.value)}
         >
           {options.map((option) => (
             <option
-              className="layout__container-background"
+              className="layout__select"
               key={option.key}
               value={option.value}
             >
@@ -94,9 +97,10 @@ export const Form = () => {
           ))}
         </select>
       </FormBootstrap.Group>
-      <Button variant="primary" type="submit" value="Send">
+      <Button className="button" variant="primary" type="submit" value="Send">
         Add
       </Button>
+      <hr />
     </FormBootstrap>
   );
 };

@@ -5,8 +5,6 @@ import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/esm/Button";
-import { IoAnalytics } from "react-icons/io5";
-import { VscAccount } from "react-icons/vsc";
 
 import "../../classes.css";
 
@@ -26,14 +24,14 @@ function Navbar() {
         />
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
-        <Link className="button-secondary" to="/analytics">
-          <IoAnalytics /> Analytics
+        <Link className="button-navbar" to="/analytics">
+          Analytics
         </Link>
-        <Link className="button-secondary" to="/lazy">
+        <Link className="button-navbar" to="/lazy">
           Lazy
         </Link>
-        <Link className="button-secondary" to="/account">
-          <VscAccount /> My Account
+        <Link className="button-navbar" to="/account">
+          My Account
         </Link>
       </Nav>
     </NavbarBootstrap>
