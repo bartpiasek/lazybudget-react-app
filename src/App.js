@@ -10,6 +10,7 @@ import DarkModeToggle from "../src/components/DarkMode/DarkModeToggle";
 import "../src/components/classes.css";
 
 import { GlobalProvider } from "./context/GlobalState";
+import Signup from "./auth/signup";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Layout} />
           <Route path="/lazy" component={LazyInput} />
+          <Route path="/signup" component={Signup} />
         </Switch>
       </Router>
     </GlobalProvider>
