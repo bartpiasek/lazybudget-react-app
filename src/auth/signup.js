@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../components/classes.css";
+import { useAuth } from "../context/Auth";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,6 +13,14 @@ const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    signup(emailRef.current.value, passwordRef.current.value);
+  }
+
   return (
     <Container>
       <Row>

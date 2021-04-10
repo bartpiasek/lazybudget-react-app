@@ -10,21 +10,24 @@ import DarkModeToggle from "../src/components/DarkMode/DarkModeToggle";
 import "../src/components/classes.css";
 
 import { GlobalProvider } from "./context/GlobalState";
+import { AuthProvider } from "../src/context/Auth";
 import Signup from "./auth/signup";
 
 function App() {
   return (
-    <GlobalProvider>
-      <Router>
-        <Navbar />
-        <DarkModeToggle />
-        <Switch>
-          <Route exact path="/" component={Layout} />
-          <Route path="/lazy" component={LazyInput} />
-          <Route path="/signup" component={Signup} />
-        </Switch>
-      </Router>
-    </GlobalProvider>
+    <AuthProvider>
+      <GlobalProvider>
+        <Router>
+          <Navbar />
+          <DarkModeToggle />
+          <Switch>
+            <Route exact path="/" component={Layout} />
+            <Route path="/lazy" component={LazyInput} />
+            <Route path="/signup" component={Signup} />
+          </Switch>
+        </Router>
+      </GlobalProvider>
+    </AuthProvider>
   );
 }
 
