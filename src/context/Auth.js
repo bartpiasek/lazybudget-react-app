@@ -35,6 +35,10 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password);
   }
 
+  function signinAnonymous() {
+    return auth.signInAnonymously();
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -52,6 +56,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
+    signinAnonymous,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -8,17 +8,31 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    signup(emailRef.current.value, passwordRef.current.value);
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords don't match");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      await signup(emailRef.current.value, passwordRef.current.value);
+    } catch {
+      setError("Failed to create an account");
+    }
+    setLoading(false);
   }
 
   return (
@@ -28,7 +42,8 @@ const Signup = () => {
         <Col md={6}>
           <Card>
             <h2>Sign Up</h2>
-            <Form className="form">
+            <Form onSubmit={handleSubmit} className="form">
+              {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
                 <Form.Control
                   size="lg"
@@ -59,7 +74,7 @@ const Signup = () => {
                   ref={passwordConfirmRef}
                 />
               </Form.Group>
-              <Button className="button" type="submit">
+              <Button disabled={loading} className="button" type="submit">
                 Sign Up
               </Button>
             </Form>
