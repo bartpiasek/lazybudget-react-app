@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
+import { useAuth } from "../../../context/Auth";
 import axios from "../../../axios";
 import "../../classes.css";
 

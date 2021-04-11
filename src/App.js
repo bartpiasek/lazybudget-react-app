@@ -12,6 +12,7 @@ import "../src/components/classes.css";
 import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "../src/context/Auth";
 import Signup from "./auth/signup";
+import Login from "./auth/login";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/" component={Layout} />
             <Route path="/lazy" component={LazyInput} />
             <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
           </Switch>
         </Router>
       </GlobalProvider>

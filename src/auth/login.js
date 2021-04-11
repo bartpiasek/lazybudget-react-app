@@ -11,20 +11,15 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
   const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords don't match");
-    }
 
     try {
       setError("");
@@ -42,7 +37,7 @@ const Signup = () => {
         <Col></Col>
         <Col md={6}>
           <Card>
-            <h2>Sign Up</h2>
+            <h2>Log In</h2>
             <h5>
               Logged in as, <strong>{currentUser && currentUser.email}</strong>
             </h5>
@@ -68,26 +63,14 @@ const Signup = () => {
                   ref={passwordRef}
                 />
               </Form.Group>
-              <Form.Group id="password-confirm">
-                <Form.Control
-                  size="lg"
-                  placeholder="Confirm password"
-                  className="layout__container-background"
-                  type="password"
-                  required
-                  ref={passwordConfirmRef}
-                />
-              </Form.Group>
               <Button disabled={loading} className="button" type="submit">
-                Sign Up
+                Log In
               </Button>
             </Form>
             <hr />
             <div>
-              Already have an account? <Link to="/login">Log In</Link>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </div>
-            <h5>or</h5>
-            <div>Use as anonymous</div>
           </Card>
         </Col>
         <Col></Col>
@@ -96,4 +79,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

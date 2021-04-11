@@ -59,10 +59,8 @@ form > select {
 }
 /* NAVBAR */
 .navbar-main {
-  align-content: space-around;
+  align-content: space-between;
   color: #f00606;
-  background-color: hsla(0, 0%, 70%, 0.25);
-  border-radius: 8px;
   border: none;
   text-align: center;
   padding: 5%;
@@ -73,9 +71,8 @@ form > select {
   border-radius: 8px;
   border: none;
   text-align: center;
-  vertical-align: middle;
   padding: 5%;
-  margin: 2%;
+  margin: 5%;
 }
 .button-navbar:hover {
   color: #f00606;

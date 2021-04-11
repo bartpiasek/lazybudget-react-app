@@ -4,7 +4,6 @@ import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/esm/Button";
 
 import "../../classes.css";
 
@@ -32,6 +31,9 @@ function Navbar() {
         </Link>
         <Link className="button-navbar" to="/account">
           My Account
+        </Link>
+        <Link className="button-navbar" to="/signup">
+          Sign Up
         </Link>
       </Nav>
     </NavbarBootstrap>
