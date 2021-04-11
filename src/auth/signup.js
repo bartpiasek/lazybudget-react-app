@@ -14,7 +14,7 @@ const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -42,6 +42,7 @@ const Signup = () => {
         <Col md={6}>
           <Card>
             <h2>Sign Up</h2>
+            {currentUser && currentUser.email}
             <Form onSubmit={handleSubmit} className="form">
               {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
