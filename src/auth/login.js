@@ -9,14 +9,15 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { signup, currentUser } = useAuth();
+  const { currentUser, login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,9 +25,10 @@ const Login = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
     } catch {
-      setError("Failed to create an account");
+      setError("Failed to log in");
     }
     setLoading(false);
   }
@@ -38,9 +40,9 @@ const Login = () => {
         <Col md={6}>
           <Card>
             <h2>Log In</h2>
-            <h5>
+            <p>
               Logged in as, <strong>{currentUser && currentUser.email}</strong>
-            </h5>
+            </p>
             <Form onSubmit={handleSubmit} className="form">
               {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
