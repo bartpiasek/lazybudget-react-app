@@ -1,15 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
+import { useAuth } from "../../../context/Auth";
+import "../../classes.css";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
-import "../../classes.css";
+import Button from "react-bootstrap/Button";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const handleClicked = () => setClicked(!clicked);
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+
+  async function handleLogout() {
+    setError("");
+    try {
+      await logout();
+      history.push("/login");
+    } catch {
+      setError("Failed to logout");
+    }
+  }
 
   return (
     <NavbarBootstrap className="navbar-main" sticky="top">
@@ -35,6 +49,7 @@ function Navbar() {
         <Link className="button-navbar" to="/signup">
           Sign Up
         </Link>
+        <Button onClick={handleLogout}>Log out</Button>
       </Nav>
     </NavbarBootstrap>
   );
