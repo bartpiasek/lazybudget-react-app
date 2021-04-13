@@ -13,6 +13,7 @@ import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "../src/context/Auth";
 import Signup from "./auth/signup";
 import Login from "./auth/login";
+import PrivateRoute from "../src/auth/privateRoute";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Navbar />
           <DarkModeToggle />
           <Switch>
-            <Route exact path="/" component={Layout} />
+            <PrivateRoute exact path="/" component={Layout} />
             <Route path="/lazy" component={LazyInput} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
