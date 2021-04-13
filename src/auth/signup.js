@@ -45,9 +45,12 @@ const Signup = () => {
         <Col md={6}>
           <Card>
             <h2>Sign Up</h2>
-            <p>
-              Logged in as, <strong>{currentUser && currentUser.email}</strong>
-            </p>
+            {currentUser ? (
+              <p>
+                Logged in as
+                <strong>{currentUser && currentUser.email}</strong>
+              </p>
+            ) : null}
             <Form onSubmit={handleSubmit} className="form">
               {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
