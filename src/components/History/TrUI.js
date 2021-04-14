@@ -1,5 +1,6 @@
 import React from "react";
 import "../classes.css";
+import { VscChromeClose } from "react-icons/vsc";
 
 const TransactionRow = ({ text, amount, option }) => {
   return (
@@ -16,6 +17,9 @@ const TransactionRow = ({ text, amount, option }) => {
           )}
 
           <p className="transaction-price">{amount.toFixed(2)} PLN</p>
+        </div>
+        <div>
+          <VscChromeClose />
         </div>
       </div>
     </div>

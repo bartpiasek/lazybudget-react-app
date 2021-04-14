@@ -38,7 +38,7 @@ function Navbar() {
       </NavbarBootstrap.Brand>
       <Nav className="mr-auto">
         {currentUser ? (
-          <Nav className="mr-auto">
+          <>
             <Link className="button-navbar" to="/analytics">
               Analytics
             </Link>
@@ -46,18 +46,25 @@ function Navbar() {
               Lazy
             </Link>
             <Link className="button-navbar" to="/account">
-              My Account
+              Wallet
             </Link>
-            <Button onClick={handleLogout}>Log out</Button>
-          </Nav>
-        ) : null}
-
-        <Link className="button-navbar" to="/signup">
-          Sign Up
-        </Link>
-        <Link className="button-navbar" to="/login">
-          Log In
-        </Link>
+            <Button className="button-navbar" onClick={handleLogout}>
+              Logout
+            </Button>
+            <p className="button-navbar">
+              <strong>{currentUser && currentUser.email}</strong>
+            </p>
+          </>
+        ) : (
+          <>
+            <Link className="button-navbar" to="/signup">
+              Sign Up
+            </Link>
+            <Link className="button-navbar" to="/login">
+              Log In
+            </Link>
+          </>
+        )}
       </Nav>
     </NavbarBootstrap>
   );

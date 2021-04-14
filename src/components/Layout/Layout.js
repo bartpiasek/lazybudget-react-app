@@ -12,9 +12,6 @@ const Layout = () => {
   const { currentUser } = useAuth();
   return (
     <Container>
-      <p>
-        Hello, <strong>{currentUser && currentUser.email}</strong>
-      </p>
       <Row xs={1} md={1} lg={1}>
         <Col>
           <Summary />
