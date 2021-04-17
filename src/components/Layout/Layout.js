@@ -1,5 +1,4 @@
 import React from "react";
-import { useAuth } from "../../context/Auth";
 
 import Summary from "../Main/Summary/Summary";
 
@@ -9,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import History from "../History/History";
 
 const Layout = () => {
-  const { currentUser } = useAuth();
   return (
     <Container>
       <Row xs={1} md={1} lg={1}>
