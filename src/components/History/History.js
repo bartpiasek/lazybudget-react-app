@@ -23,7 +23,7 @@ const History = () => {
           setError(error);
         }
       );
-  }, []);
+  }, [transactions]);
 
   const transactionsObj = Object.values(transactions);
 

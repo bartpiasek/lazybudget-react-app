@@ -98,7 +98,7 @@ export const Form = () => {
           ))}
         </select>
       </FormBootstrap.Group>
-      <Button className="button" variant="primary" type="submit" value="Send">
+      <Button className="button" type="submit" value="Send">
         Add
       </Button>
       <hr />
