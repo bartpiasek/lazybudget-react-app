@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import "../classes.css";
 
 import TransactionRow from "./TrUI";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { VscChromeClose } from "react-icons/vsc";
 
 const History = () => {
   const [error, setError] = useState(null);
@@ -50,6 +53,16 @@ const History = () => {
     return transaction.amount > 0;
   });
 
+  // DELETE TRANSACTION
+  // function deleteTransactionHandler(transaction, id) {
+  //   return fetch(
+  //     "https://lazyinput-default-rtdb.firebaseio.com/transactions" +
+  //       "/" +
+  //       this.props.id,
+  //     { method: "delete" }
+  //   ).then((response) => response.json());
+  // }
+
   return (
     <Container>
       <Row>
@@ -77,7 +90,7 @@ const History = () => {
             <div>
               <div>
                 <h5>Last transactions</h5>
-                <div>
+                <div className="table">
                   {transactionsObj.map((transaction, key) => {
                     return (
                       <div key={key}>
