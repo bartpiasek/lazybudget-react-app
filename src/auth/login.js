@@ -50,6 +50,7 @@ const Login = () => {
               {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
                 <Form.Control
+                  required
                   size="lg"
                   placeholder="Email"
                   className="layout__container-background"
@@ -60,6 +61,7 @@ const Login = () => {
               </Form.Group>
               <Form.Group id="password">
                 <Form.Control
+                  required
                   size="lg"
                   placeholder="Password"
                   className="layout__container-background"

@@ -9,8 +9,7 @@ const Summary = () => {
   return (
     <Container>
       <Row>
-        <Col sm={4}></Col>
-        <Col sm={8}>
+        <Col>
           <Form />
         </Col>
       </Row>

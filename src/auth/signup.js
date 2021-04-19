@@ -55,31 +55,31 @@ const Signup = () => {
               {error && <Alert variant="danger">{error}</Alert>}
               <Form.Group id="email">
                 <Form.Control
+                  required
                   size="lg"
                   placeholder="Email"
                   className="layout__container-background"
                   type="email"
-                  required
                   ref={emailRef}
                 />
               </Form.Group>
               <Form.Group id="password">
                 <Form.Control
+                  required
                   size="lg"
                   placeholder="Password"
                   className="layout__container-background"
                   type="password"
-                  required
                   ref={passwordRef}
                 />
               </Form.Group>
               <Form.Group id="password-confirm">
                 <Form.Control
+                  required
                   size="lg"
                   placeholder="Confirm password"
                   className="layout__container-background"
                   type="password"
-                  required
                   ref={passwordConfirmRef}
                 />
               </Form.Group>

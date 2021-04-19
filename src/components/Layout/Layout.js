@@ -10,8 +10,8 @@ import History from "../History/History";
 const Layout = () => {
   return (
     <Container>
-      <Row xs={1} md={1} lg={1}>
-        <Col>
+      <Row class="row">
+        <Col class="col-12 col-sm-6 col-md-8">
           <Summary />
         </Col>
       </Row>

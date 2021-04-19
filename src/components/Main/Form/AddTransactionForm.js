@@ -59,6 +59,7 @@ export const Form = () => {
     <FormBootstrap className="form" onSubmit={onSubmit}>
       <FormBootstrap.Group>
         <FormBootstrap.Control
+          required
           size="lg"
           placeholder="Name"
           className="layout__container-background"
@@ -70,6 +71,7 @@ export const Form = () => {
       </FormBootstrap.Group>
       <FormBootstrap.Group>
         <FormBootstrap.Control
+          required
           size="lg"
           placeholder="PLN"
           className="layout__container-background"
