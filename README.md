@@ -1,6 +1,35 @@
-# Getting Started with Create React App
+# LazyBudget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Budget app.
+
+# Features
+
+  - Dark Mode
+  - Lazy
+  - Transaction history
+  - Authentication with login/signup (Firebase)
+
+# Tech
+
+* [React] - Build with create-react-app, hooks
+* [Firebase] - Two databases: for transactions and users
+* [Bootstrap for React] - Frontend UI
+* [JEST] - Test app
+
+# Todos
+
+ - Write tests in JEST
+ - Finish quick transactions
+ - Connect transactions database with users database (like Primary Key=Foreign Key) or rebuild the database -
+    
+    1. Users 
+        -username 
+            -transaction id 
+                -text, 
+                -amount, 
+                -option 
+
+
 
 ## Available Scripts
 
