@@ -18,6 +18,7 @@ Budget app.
 
 # Todos
 
+ - Table filters
  - Improve UI
  - Write tests in JEST
  - Finish quick transactions
