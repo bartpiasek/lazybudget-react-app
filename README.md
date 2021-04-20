@@ -18,6 +18,7 @@ Budget app.
 
 # Todos
 
+ - Improve UI
  - Write tests in JEST
  - Finish quick transactions
  - Connect transactions database with users database (like Primary Key=Foreign Key) or rebuild the database -
