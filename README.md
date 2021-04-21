@@ -19,17 +19,13 @@ Budget app.
 # Todos
 
  - Table filters
+ - Delete transactions button
  - Improve UI
  - Write tests in JEST
- - Finish quick transactions
- - Connect transactions database with users database (like Primary Key=Foreign Key) or rebuild the database -
-    
-    1. Users 
-        -username 
-            -transaction id 
-                -text, 
-                -amount, 
-                -option 
+ - Finish quick transactions component
+ - Link transactions database to users database (like Primary Key=Foreign Key) or rebuild the database
+ - Add timestamp to transactions
+
 
 
 
