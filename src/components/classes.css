@@ -57,6 +57,23 @@ form > select {
   border: 1px solid#f00946;
   cursor: pointer;
 }
+
+.button-sort[variant="sort"] {
+  background: white;
+  color: #f00946;
+  border: 1px solid#f00946;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.button-sort[variant="sort"]:hover {
+  color: white;
+  background: #f00946;
+  transform: scale(1.01);
+  transition: all 0.3s ease-out;
+  border: 1px solid#f00946;
+  cursor: pointer;
+}
 /* NAVBAR */
 .navbar-main {
   align-content: space-between;

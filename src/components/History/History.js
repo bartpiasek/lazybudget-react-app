@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import "../classes.css";
 
 import TransactionRow from "./TrUI";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { VscChromeClose } from "react-icons/vsc";
+import Button from "react-bootstrap/Button";
 
 const History = () => {
   const [error, setError] = useState(null);
@@ -90,6 +89,23 @@ const History = () => {
             <div>
               <div>
                 <h5>Last transactions</h5>
+                <div>
+                  <Button className="button-sort" variant="sort">
+                    This month
+                  </Button>
+                  <Button className="button-sort" variant="sort">
+                    Expense
+                  </Button>
+                  <Button className="button-sort" variant="sort">
+                    Income
+                  </Button>
+                  <Button className="button-sort" variant="sort">
+                    Asc
+                  </Button>
+                  <Button className="button-sort" variant="sort">
+                    Desc
+                  </Button>
+                </div>
                 <div className="table">
                   {transactionsObj.map((transaction, key) => {
                     return (
