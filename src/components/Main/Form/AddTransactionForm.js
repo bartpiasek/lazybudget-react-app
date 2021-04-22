@@ -30,7 +30,7 @@ export const Form = () => {
     text,
     amount: -Math.abs(amount),
     option,
-    date: Date.now(),
+    date: new Date().toISOString(),
   };
 
   const newIncomeTransaction = {
@@ -38,7 +38,7 @@ export const Form = () => {
     text,
     amount: parseInt(amount),
     option,
-    date: Date.now(),
+    date: new Date().toISOString(),
   };
 
   const onSubmit = (e) => {
