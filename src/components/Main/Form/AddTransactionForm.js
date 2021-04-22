@@ -10,6 +10,7 @@ export const Form = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
   const [option, setOption] = useState("expense");
+  const [date, setDate] = useState("");
   const inputRef = useRef();
 
   const options = [
@@ -29,6 +30,7 @@ export const Form = () => {
     text,
     amount: -Math.abs(amount),
     option,
+    date: Date.now(),
   };
 
   const newIncomeTransaction = {
@@ -36,6 +38,7 @@ export const Form = () => {
     text,
     amount: parseInt(amount),
     option,
+    date: Date.now(),
   };
 
   const onSubmit = (e) => {
@@ -99,7 +102,14 @@ export const Form = () => {
           ))}
         </select>
       </FormBootstrap.Group>
-      <Button className="button" type="submit" value="Send">
+      <Button
+        className="button"
+        type="submit"
+        value="Send"
+        value={date.value}
+        key={date.key}
+        onClick={(e) => setDate(e.target.value)}
+      >
         Add
       </Button>
       <hr />

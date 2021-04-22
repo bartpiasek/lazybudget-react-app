@@ -115,6 +115,7 @@ const History = () => {
                           text={transaction.text}
                           amount={transaction.amount}
                           option={transaction.option}
+                          date={transaction.date}
                         />
                       </div>
                     );
