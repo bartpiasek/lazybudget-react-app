@@ -20,11 +20,6 @@ export const Form = () => {
 
   const { addTransaction } = useContext(GlobalContext);
 
-  //RE-RENDERS IN INPUT FORM
-  // useEffect(() => {
-  //   setTimeout(() => {}, 400);
-  // });
-
   const newExpenseTransaction = {
     id: Math.floor(Math.random() * 10000),
     text,

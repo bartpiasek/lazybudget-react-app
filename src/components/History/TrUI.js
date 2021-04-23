@@ -10,7 +10,7 @@ const TransactionRow = ({ text, amount, option, date }) => {
         </div>
         <div className="transaction-data">
           <div>
-            <p>{date}</p>
+            <p>{date.split("T")[0]}</p>
           </div>
           {option === "expense" ? (
             <p className="transaction-price red">{option}</p>
