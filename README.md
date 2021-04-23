@@ -12,7 +12,7 @@ Budget app.
 # Tech
 
 * [React] - Build with create-react-app, hooks
-* [Firebase] - Two databases: for transactions and users
+* [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
 * [JEST] - Test app
 
@@ -24,10 +24,6 @@ Budget app.
  - Write tests in JEST
  - Finish quick transactions component
  - Link transactions database to users database (like Primary Key=Foreign Key) or rebuild the database
- - Add timestamp to transactions
-
-
-
 
 ## Available Scripts
 
