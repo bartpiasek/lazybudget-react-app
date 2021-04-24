@@ -1,7 +1,7 @@
 import React from "react";
 import "../classes.css";
 
-const TransactionRow = ({ text, amount, option, date }) => {
+const TransactionRow = ({ text, amount, option, date, category }) => {
   return (
     <div className="transaction-container layout__container-background">
       <div className="transaction-row">
@@ -9,6 +9,9 @@ const TransactionRow = ({ text, amount, option, date }) => {
           <h5>{text}</h5>
         </div>
         <div className="transaction-data">
+          <div>
+            <p>{category}</p>
+          </div>
           <div>
             <p>{date.split("T")[0]}</p>
           </div>

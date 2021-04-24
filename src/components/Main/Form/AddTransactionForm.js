@@ -11,11 +11,21 @@ export const Form = () => {
   const [amount, setAmount] = useState(0);
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
+  const [category, setCategory] = useState();
   const inputRef = useRef();
 
   const options = [
     { label: "Income", value: "income", key: "1" },
     { label: "Expense", value: "expense", key: "2" },
+  ];
+
+  const categories = [
+    { label: "Food", value: "food", key: "1" },
+    { label: "Housing", value: "housing", key: "2" },
+    { label: "Bills", value: "bills", key: "3" },
+    { label: "Entertainment", value: "entertainment", key: "4" },
+    { label: "Misc", value: "misc", key: "5" },
+    { label: "Saving", value: "saving", key: "6" },
   ];
 
   const { addTransaction } = useContext(GlobalContext);
@@ -26,6 +36,7 @@ export const Form = () => {
     amount: -Math.abs(amount),
     option,
     date: new Date().toISOString(),
+    category,
   };
 
   const newIncomeTransaction = {
@@ -34,6 +45,7 @@ export const Form = () => {
     amount: parseInt(amount),
     option,
     date: new Date().toISOString(),
+    category,
   };
 
   const onSubmit = (e) => {
@@ -97,6 +109,37 @@ export const Form = () => {
           ))}
         </select>
       </FormBootstrap.Group>
+      <FormBootstrap.Group>
+        <div value={category} onChange={(e) => setCategory(e.target.value)}>
+          {categories.map((category) => (
+            <div>
+              <input type="radio" key={category.key} value={category.value} />
+              <label>{category.label}</label>
+            </div>
+          ))}
+        </div>
+      </FormBootstrap.Group>
+      <FormBootstrap.Group>
+        <Button className="button-sort" variant="sort">
+          Food
+        </Button>
+        <Button className="button-sort" variant="sort">
+          Housing
+        </Button>
+        <Button className="button-sort" variant="sort">
+          Bills
+        </Button>
+        <Button className="button-sort" variant="sort">
+          Entertainment
+        </Button>
+        <Button className="button-sort" variant="sort">
+          Misc
+        </Button>
+        <Button className="button-sort" variant="sort">
+          Saving
+        </Button>
+      </FormBootstrap.Group>
+      <FormBootstrap.Group></FormBootstrap.Group>
       <Button
         className="button"
         type="submit"
