@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import Layout from "./components/Layout/Layout";
 
-test('renders learn react link', () => {
+test("initial conditions", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // check the initial state of options
+  const incomeExpenseSelect = screen.getByRole("select", { name: "expense" });
+  expect(incomeExpenseSelect).toHaveValue();
 });

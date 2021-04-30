@@ -5,6 +5,7 @@ import "../../classes.css";
 
 import FormBootstrap from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import FormCheck from "react-bootstrap/esm/FormCheck";
 
 export const Form = () => {
   const [text, setText] = useState("");
@@ -110,14 +111,23 @@ export const Form = () => {
         </select>
       </FormBootstrap.Group>
       <FormBootstrap.Group>
-        <div value={category} onChange={(e) => setCategory(e.target.value)}>
+        <FormCheck
+          inline
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
           {categories.map((category) => (
             <div>
-              <input type="radio" key={category.key} value={category.value} />
+              <input
+                name="selection"
+                type="radio"
+                key={category.key}
+                value={category.value}
+              />
               <label>{category.label}</label>
             </div>
           ))}
-        </div>
+        </FormCheck>
       </FormBootstrap.Group>
       <FormBootstrap.Group>
         <Button className="button-sort" variant="sort">
