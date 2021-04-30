@@ -4,8 +4,9 @@ Budget app.
 
 # Features
 
+  - Firebase realtime database
   - Dark Mode
-  - Lazy
+  - Quick transactions adding (Lazy)
   - Transaction history
   - Authentication with login/signup (Firebase)
 
@@ -14,7 +15,7 @@ Budget app.
 * [React] - Build with create-react-app, hooks
 * [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
-* [JEST] - Test app
+* [JEST] - Testing app
 
 # Todos
 
@@ -24,6 +25,7 @@ Budget app.
  - Write tests in JEST
  - Finish quick transactions component
  - Link transactions database to users database (like Primary Key=Foreign Key) or rebuild the database
+ - Change select options (expense/income) to a two separate buttons - to reduce the number of clicks
 
 ## Available Scripts
 
