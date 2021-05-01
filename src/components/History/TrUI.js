@@ -5,12 +5,12 @@ const TransactionRow = ({ text, amount, option, date, category }) => {
   return (
     <div className="transaction-container layout__container-background">
       <div className="transaction-row">
-        <div className="transaction">
+        <div className="transaction-text">
           <h5>{text}</h5>
         </div>
         <div className="transaction-data">
           <div>
-            <p>{category}</p>
+            <p className="transaction-category">{category}</p>
           </div>
           <div>
             <p>{date.split("T")[0]}</p>

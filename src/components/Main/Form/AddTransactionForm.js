@@ -13,7 +13,6 @@ export const Form = () => {
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();
-  const [checked, setChecked] = useState();
 
   const [clicked, setClicked] = useState(false);
   const handleClicked = () => setClicked(!clicked);
@@ -118,14 +117,16 @@ export const Form = () => {
       <FormBootstrap.Group>
         <radio value={category} onChange={(e) => setCategory(e.target.value)}>
           {categories.map((category) => (
-            <FormBootstrap.Check inline>
+            <FormBootstrap.Check inline className="button-radio-container">
               <input
                 name="selection"
                 type="radio"
                 key={category.key}
                 value={category.value}
               />
-              <label className="button-sort">{category.label}</label>
+              <label className="button-sort" checked={handleClicked}>
+                {category.label}
+              </label>
             </FormBootstrap.Check>
           ))}
         </radio>

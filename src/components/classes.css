@@ -59,6 +59,7 @@ form > select {
 
 .button-sort {
   padding: 5px;
+  display: inline-block;
 }
 .button-sort:hover {
   cursor: pointer;
@@ -169,33 +170,38 @@ form > select {
 .transaction-row {
   display: flex;
   flex-direction: row;
-  text-align: justify;
+  text-align: right;
   height: 2rem;
   width: max-content;
 }
-.transaction {
-  display: flex;
-  align-items: center;
-  padding-right: 4rem;
-  min-width: 8rem;
-}
-.transaction > h1 {
-  font-size: 16px;
-  width: 100px;
-}
-.transaction-option {
-  text-transform: uppercase;
-}
-
 .transaction-data {
   display: flex;
   text-align: right;
   justify-content: space-between;
   width: 100%;
 }
-
+.transaction-text {
+  display: inline-block;
+  align-items: center;
+  padding-right: 4rem;
+  min-width: 8rem;
+}
+.transaction-text > h1 {
+  font-size: 16px;
+  width: 100px;
+}
+.transaction-option {
+  display: inline-block;
+  text-transform: uppercase;
+}
 .transaction-price {
+  display: inline-block;
   width: 8rem;
+}
+.transaction-category {
+  display: inline-block;
+  width: 6rem;
+  padding-right: 1rem;
 }
 
 .red {
