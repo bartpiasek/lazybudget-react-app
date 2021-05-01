@@ -13,6 +13,11 @@ export const Form = () => {
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();
+  const [checked, setChecked] = useState();
+
+  const [clicked, setClicked] = useState(false);
+  const handleClicked = () => setClicked(!clicked);
+
   const inputRef = useRef();
 
   const options = [
@@ -111,43 +116,19 @@ export const Form = () => {
         </select>
       </FormBootstrap.Group>
       <FormBootstrap.Group>
-        <FormCheck
-          inline
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+        <radio value={category} onChange={(e) => setCategory(e.target.value)}>
           {categories.map((category) => (
-            <div>
+            <FormBootstrap.Check inline>
               <input
                 name="selection"
                 type="radio"
                 key={category.key}
                 value={category.value}
               />
-              <label>{category.label}</label>
-            </div>
+              <label className="button-sort">{category.label}</label>
+            </FormBootstrap.Check>
           ))}
-        </FormCheck>
-      </FormBootstrap.Group>
-      <FormBootstrap.Group>
-        <Button className="button-sort" variant="sort">
-          Food
-        </Button>
-        <Button className="button-sort" variant="sort">
-          Housing
-        </Button>
-        <Button className="button-sort" variant="sort">
-          Bills
-        </Button>
-        <Button className="button-sort" variant="sort">
-          Entertainment
-        </Button>
-        <Button className="button-sort" variant="sort">
-          Misc
-        </Button>
-        <Button className="button-sort" variant="sort">
-          Saving
-        </Button>
+        </radio>
       </FormBootstrap.Group>
       <FormBootstrap.Group></FormBootstrap.Group>
       <Button
