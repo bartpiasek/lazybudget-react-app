@@ -12,6 +12,8 @@ const History = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
+  const [currentTransactions, setCurrentTransactions] = useState(transactions);
+
   useEffect(() => {
     fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
       .then((res) => res.json())
@@ -52,15 +54,15 @@ const History = () => {
     return transaction.amount > 0;
   });
 
-  // DELETE TRANSACTION
-  // function deleteTransactionHandler(transaction, id) {
-  //   return fetch(
-  //     "https://lazyinput-default-rtdb.firebaseio.com/transactions" +
-  //       "/" +
-  //       this.props.id,
-  //     { method: "delete" }
-  //   ).then((response) => response.json());
-  // }
+  // useEffect(() => {
+  //   async function deleteTransaction() {
+  //     await fetch(
+  //       "https://lazyinput-default-rtdb.firebaseio.com/transactions/id"
+  //     ),
+  //       { method: "DELETE" };
+  //   }
+  //   deleteTransaction();
+  // }, []);
 
   return (
     <Container>

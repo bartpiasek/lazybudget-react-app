@@ -1,7 +1,7 @@
 import React from "react";
 import "../classes.css";
 
-const TransactionRow = ({ text, amount, option, date, category }) => {
+const TransactionRow = ({ text, amount, option, date, category, id }) => {
   return (
     <div className="transaction-container layout__container-background">
       <div className="transaction-row">

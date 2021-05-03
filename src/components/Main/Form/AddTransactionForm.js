@@ -117,16 +117,15 @@ export const Form = () => {
       <FormBootstrap.Group>
         <radio value={category} onChange={(e) => setCategory(e.target.value)}>
           {categories.map((category) => (
-            <FormBootstrap.Check inline className="button-radio-container">
+            <FormBootstrap.Check inline>
               <input
                 name="selection"
                 type="radio"
                 key={category.key}
                 value={category.value}
+                // checked={clicked}
               />
-              <label className="button-sort" checked={handleClicked}>
-                {category.label}
-              </label>
+              <label className="button-sort">{category.label}</label>
             </FormBootstrap.Check>
           ))}
         </radio>
