@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../classes.css";
 
-import TransactionRow from "./TrUI";
+import TransactionRow from "./TransactionUI";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,7 +12,7 @@ const History = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
-  const [currentTransactions, setCurrentTransactions] = useState(transactions);
+  // const [currentTransactions, setCurrentTransactions] = useState(transactions);
 
   useEffect(() => {
     fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
@@ -46,23 +46,13 @@ const History = () => {
     .reduce((a, b) => a + b, 0);
 
   //FILTER TRANSACTION OBJ - EXPENSES/INCOMES - sorting
-  const firebaseExpenses = transactionsObj.filter((transaction) => {
-    return transaction.amount < 0;
-  });
+  // const firebaseExpenses = transactionsObj.filter((transaction) => {
+  //   return transaction.amount < 0;
+  // });
 
-  const firebaseIncomes = transactionsObj.filter((transaction) => {
-    return transaction.amount > 0;
-  });
-
-  // useEffect(() => {
-  //   async function deleteTransaction() {
-  //     await fetch(
-  //       "https://lazyinput-default-rtdb.firebaseio.com/transactions/id"
-  //     ),
-  //       { method: "DELETE" };
-  //   }
-  //   deleteTransaction();
-  // }, []);
+  // const firebaseIncomes = transactionsObj.filter((transaction) => {
+  //   return transaction.amount > 0;
+  // });
 
   return (
     <Container>

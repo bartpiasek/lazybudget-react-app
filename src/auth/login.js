@@ -55,7 +55,6 @@ const Login = () => {
                   placeholder="Email"
                   className="layout__container-background"
                   type="email"
-                  required
                   ref={emailRef}
                 />
               </Form.Group>
@@ -66,7 +65,6 @@ const Login = () => {
                   placeholder="Password"
                   className="layout__container-background"
                   type="password"
-                  required
                   ref={passwordRef}
                 />
               </Form.Group>

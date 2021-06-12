@@ -9,8 +9,6 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 
 function Navbar() {
-  const [clicked, setClicked] = useState(false);
-  const handleClicked = () => setClicked(!clicked);
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();

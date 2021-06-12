@@ -5,7 +5,6 @@ import "../../classes.css";
 
 import FormBootstrap from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import FormCheck from "react-bootstrap/esm/FormCheck";
 
 export const Form = () => {
   const [text, setText] = useState("");
@@ -13,9 +12,6 @@ export const Form = () => {
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();
-
-  const [clicked, setClicked] = useState(false);
-  const handleClicked = () => setClicked(!clicked);
 
   const inputRef = useRef();
 
@@ -123,7 +119,6 @@ export const Form = () => {
                 type="radio"
                 key={category.key}
                 value={category.value}
-                // checked={clicked}
               />
               <label className="button-sort">{category.label}</label>
             </FormBootstrap.Check>
@@ -132,9 +127,9 @@ export const Form = () => {
       </FormBootstrap.Group>
       <FormBootstrap.Group></FormBootstrap.Group>
       <Button
+        variant="flat"
         className="button"
         type="submit"
-        value="Send"
         value={date.value}
         key={date.key}
         onClick={(e) => setDate(e.target.value)}
