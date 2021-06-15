@@ -77,6 +77,7 @@ export const Form = () => {
           ref={inputRef}
           type="text"
           value={text}
+          role="text-input"
           onChange={(e) => setText(e.target.value)}
         />
       </FormBootstrap.Group>
@@ -88,6 +89,7 @@ export const Form = () => {
           className="layout__container-background"
           type="text"
           value={amount}
+          role="amount-input"
           onChange={(e) => setAmount(e.target.value)}
         />
       </FormBootstrap.Group>
@@ -97,6 +99,7 @@ export const Form = () => {
           size="lg"
           className="layout__select"
           value={option}
+          role="cashflow-select"
           onChange={(e) => setOption(e.target.value)}
         >
           {options.map((option) => (
@@ -119,6 +122,7 @@ export const Form = () => {
                 type="radio"
                 key={category.key}
                 value={category.value}
+                role="radio"
               />
               <label className="button-sort">{category.label}</label>
             </FormBootstrap.Check>

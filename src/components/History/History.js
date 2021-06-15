@@ -58,7 +58,7 @@ const History = () => {
     <Container>
       <Row>
         <Col>
-          <h5>Total balance</h5>
+          <h5>Total</h5>
           <h2>{total.toFixed(2)} PLN</h2>
         </Col>
         <Col>
