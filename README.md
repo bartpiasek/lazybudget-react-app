@@ -1,12 +1,14 @@
 # LazyBudget
 
+![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/lazybudget-main.png?raw=true)
+
 Budget app.
 
 # Features
 
-  - Firebase realtime database
+  - Firebase database
   - Dark Mode
-  - Quick transactions adding (Lazy)
+  - Quick transactions (Lazy)
   - Transaction history
   - Authentication with login/signup (Firebase)
 
@@ -15,7 +17,7 @@ Budget app.
 * [React] - Build with create-react-app, hooks
 * [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
-* [JEST] - Testing app
+* [React-testing] - Testing app
 
 # Todos
 
@@ -24,7 +26,7 @@ Budget app.
  - Improve UI
  - Write tests in JEST
  - Finish quick transactions component
- - Link transactions database to users database (like Primary Key=Foreign Key) or rebuild the database
+ - Link transactions database to users database (like Primary Key=Foreign Key)/rebuild the database
  - Change select options (expense/income) to a two separate buttons - to reduce the number of clicks
 
 ## Available Scripts
