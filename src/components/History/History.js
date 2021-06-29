@@ -43,15 +43,6 @@ const History = () => {
     .filter((amount) => amount > 0)
     .reduce((a, b) => a + b, 0);
 
-  //FILTER TRANSACTION OBJ - EXPENSES/INCOMES - sorting
-  // const firebaseExpenses = transactionsObj.filter((transaction) => {
-  //   return transaction.amount < 0;
-  // });
-
-  // const firebaseIncomes = transactionsObj.filter((transaction) => {
-  //   return transaction.amount > 0;
-  // });
-
   return (
     <Container>
       <Row>
