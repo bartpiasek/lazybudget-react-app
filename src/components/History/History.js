@@ -12,8 +12,6 @@ const History = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
-  // const [currentTransactions, setCurrentTransactions] = useState(transactions);
-
   useEffect(() => {
     fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
       .then((res) => res.json())
