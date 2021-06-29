@@ -28,6 +28,7 @@ Budget app.
  - Finish quick transactions component
  - Link transactions database to users database (like Primary Key=Foreign Key)/rebuild the database
  - Change select options (expense/income) to a two separate buttons - to reduce the number of clicks
+ - DarkMode by context API
 
 ## Available Scripts
 
