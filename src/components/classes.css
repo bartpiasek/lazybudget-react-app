@@ -211,3 +211,24 @@ form > select {
 .green {
   color: #11d811;
 }
+/* @media screen and (min-width: 768px) {
+  .navbar-main {
+    color: #f00606;
+    border: none;
+    text-align: center;
+    padding: 5%;
+  }
+  .button-navbar {
+    color: #f00606;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    padding: 5%;
+  }
+  .button-navbar:hover {
+    color: #f00606;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
+} */

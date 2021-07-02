@@ -6,7 +6,8 @@ import "../../classes.css";
 
 import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function Navbar() {
   const [error, setError] = useState("");
@@ -24,46 +25,57 @@ function Navbar() {
   }
 
   return (
-    <NavbarBootstrap className="navbar-main" sticky="top">
-      <NavbarBootstrap.Brand href="/">
-        <img
-          alt=""
-          src={lazybudgetLogo}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />
-      </NavbarBootstrap.Brand>
-      <Nav className="mr-auto">
-        {currentUser ? (
-          <>
-            <Link className="button-navbar" to="/analytics">
-              Analytics
-            </Link>
-            <Link className="button-navbar" to="/lazy">
-              Lazy
-            </Link>
-            <Link className="button-navbar" to="/account">
-              Wallet
-            </Link>
-            <Button className="button-navbar" onClick={handleLogout}>
-              Logout
-            </Button>
-            <p className="button-navbar">
-              <strong>{currentUser && currentUser.email}</strong>
-            </p>
-          </>
-        ) : (
-          <>
-            <Link className="button-navbar" to="/signup">
-              Sign Up
-            </Link>
-            <Link className="button-navbar" to="/login">
-              Log In
-            </Link>
-          </>
-        )}
-      </Nav>
+    <NavbarBootstrap
+      collapseOnSelect
+      className="navbar-main"
+      expand="sm"
+      sticky="top"
+    >
+      <Container>
+        <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
+        <NavbarBootstrap.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            {currentUser ? (
+              <>
+                <Link className="button-navbar" to="/">
+                  <img alt="" src={lazybudgetLogo} width="30" height="30" />
+                </Link>
+                <Link className="button-navbar" to="/analytics">
+                  Analytics
+                </Link>
+                <Link className="button-navbar" to="/lazy">
+                  Lazy
+                </Link>
+
+                <Dropdown>
+                  <Dropdown.Toggle
+                    variant="flat"
+                    className="button-navbar"
+                    id="dropdown-basic"
+                  >
+                    <p>
+                      <strong>{currentUser && currentUser.email}</strong>
+                    </p>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Settings</Dropdown.Item>
+                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
+            ) : (
+              <>
+                <Link className="button-navbar" to="/signup">
+                  Sign Up
+                </Link>
+                <Link className="button-navbar" to="/login">
+                  Log In
+                </Link>
+              </>
+            )}
+          </Nav>
+        </NavbarBootstrap.Collapse>
+      </Container>
     </NavbarBootstrap>
   );
 }
