@@ -8,6 +8,7 @@ import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
+import SplitButton from "react-bootstrap/SplitButton";
 
 function Navbar() {
   const [error, setError] = useState("");
@@ -46,21 +47,24 @@ function Navbar() {
                 <Link className="button-navbar" to="/lazy">
                   Lazy
                 </Link>
-
                 <Dropdown>
-                  <Dropdown.Toggle
-                    variant="flat"
-                    className="button-navbar"
-                    id="dropdown-basic"
-                  >
-                    <p>
-                      <strong>{currentUser && currentUser.email}</strong>
-                    </p>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>Settings</Dropdown.Item>
-                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-                  </Dropdown.Menu>
+                  <div className="mt-2">
+                    <Dropdown.Toggle
+                      variant="flat"
+                      className="button-navbar"
+                      id="dropdown-basic"
+                    >
+                      <p>
+                        <strong>{currentUser && currentUser.email}</strong>
+                      </p>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item>Settings</Dropdown.Item>
+                      <Dropdown.Item onClick={handleLogout}>
+                        Logout
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </div>
                 </Dropdown>
               </>
             ) : (
