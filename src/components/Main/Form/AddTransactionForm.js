@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useReducer } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
 import "../../classes.css";
@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 
 export const Form = () => {
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();

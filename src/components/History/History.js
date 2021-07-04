@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { TransactionsContext } from "../../context/TransactionListContext";
 import "../classes.css";
 
 import TransactionRow from "./TransactionUI";
@@ -9,24 +10,28 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 const History = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [transactions, setTransactions] = useState({});
+  // const [error, setError] = useState(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const [transactions, setTransactions] = useState({});
 
-  useEffect(() => {
-    fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setTransactions(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, [transactions]);
+  // useEffect(() => {
+  //   fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         setIsLoaded(true);
+  //         setTransactions(result);
+  //       },
+  //       (error) => {
+  //         setIsLoaded(true);
+  //         setError(error);
+  //       }
+  //     );
+  // }, [transactions]);
+
+  // tranasctions from context
+  // const transactions = useContext(TransactionsContext);
+  const [transactions] = useContext(TransactionsContext);
 
   const transactionsObj = Object.values(transactions);
 

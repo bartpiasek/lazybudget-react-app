@@ -14,21 +14,26 @@ import { AuthProvider } from "../src/context/Auth";
 import Signup from "./auth/signup";
 import Login from "./auth/login";
 import PrivateRoute from "../src/auth/privateRoute";
+import Dashboard from "./components/Analytics/Dashboard";
+import { TransactionsProvider } from "./context/TransactionListContext";
 
 function App() {
   return (
     <AuthProvider>
       <GlobalProvider>
-        <Router>
-          <Navbar />
-          <DarkModeToggle />
-          <Switch>
-            <PrivateRoute exact path="/" component={Layout} />
-            <Route path="/lazy" component={LazyInput} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-          </Switch>
-        </Router>
+        <TransactionsProvider>
+          <Router>
+            <Navbar />
+            <DarkModeToggle />
+            <Switch>
+              <PrivateRoute exact path="/" component={Layout} />
+              <Route path="/lazy" component={LazyInput} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/analytics" component={Dashboard} />
+            </Switch>
+          </Router>
+        </TransactionsProvider>
       </GlobalProvider>
     </AuthProvider>
   );
