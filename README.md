@@ -11,10 +11,11 @@ Budget app.
   - Quick transactions (Lazy)
   - Transaction history
   - Authentication with login/signup (Firebase)
+  - Dashboard with charts
 
 # Tech
 
-* [React] - Build with create-react-app, hooks
+* [React] - Build with create-react-app, hooks, contextAPI
 * [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
 * [React-testing] - Testing app
