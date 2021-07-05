@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
+import Total from "../Analytics/Total";
+import Expenses from "../Analytics/Expenses";
+import Incomes from "../Analytics/Incomes";
 import "../classes.css";
 
 import TransactionRow from "./TransactionUI";
@@ -10,77 +13,23 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 const History = () => {
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [transactions, setTransactions] = useState({});
-
-  // useEffect(() => {
-  //   fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         setIsLoaded(true);
-  //         setTransactions(result);
-  //       },
-  //       (error) => {
-  //         setIsLoaded(true);
-  //         setError(error);
-  //       }
-  //     );
-  // }, [transactions]);
-
-  // tranasctions from context
-  // const transactions = useContext(TransactionsContext);
   const [transactions] = useContext(TransactionsContext);
-
-  const transactionsObj = Object.values(transactions);
-
-  const transactionsAmount = transactionsObj
+  const transactionsValues = Object.values(transactions);
+  const sumTransactionValues = transactionsValues
     .reverse()
     .map((transaction) => transaction.amount);
-
-  const total = transactionsAmount.reduce((a, b) => a + b, 0);
-
-  const expenses = transactionsAmount
-    .filter((amount) => amount < 0)
-    .reduce((a, b) => a + b, 0);
-
-  const incomes = transactionsAmount
-    .filter((amount) => amount > 0)
-    .reduce((a, b) => a + b, 0);
 
   return (
     <Container>
       <Row>
         <Col>
-          <h5>Total</h5>
-          <h2>{total.toFixed(2)} PLN</h2>
+          <Total />
         </Col>
         <Col>
-          <h5>Expenses</h5>
-          <h2>{Math.abs(expenses).toFixed(2)} PLN</h2>
-          <ProgressBar
-            striped
-            variant="danger"
-            min={0}
-            now={Math.abs(expenses).toFixed(2)}
-            max={3000}
-            label={`${((Math.abs(expenses).toFixed(2) / 3000) * 100).toFixed(
-              2
-            )}%`}
-          />
+          <Expenses />
         </Col>
         <Col>
-          <h5>Incomes</h5>
-          <h2>{incomes.toFixed(2)} PLN</h2>
-          <ProgressBar
-            striped
-            variant="success"
-            min={0}
-            now={incomes.toFixed(2)}
-            max={10000}
-            label={`${((incomes.toFixed(2) / 10000) * 100).toFixed(2)}%`}
-          />
+          <Incomes />
         </Col>
       </Row>
       <Row>
@@ -112,7 +61,7 @@ const History = () => {
                   </Button>
                 </div>
                 <div className="table">
-                  {transactionsObj.map((transaction, key) => {
+                  {transactionsValues.map((transaction, key) => {
                     return (
                       <div key={key}>
                         <TransactionRow
