@@ -8,7 +8,6 @@ import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
-import SplitButton from "react-bootstrap/SplitButton";
 
 function Navbar() {
   const [error, setError] = useState("");

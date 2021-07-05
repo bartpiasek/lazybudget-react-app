@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
 import Total from "../Analytics/Total";
 import Expenses from "../Analytics/Expenses";
@@ -10,7 +10,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import ProgressBar from "react-bootstrap/ProgressBar";
 
 const History = () => {
   const [transactions] = useContext(TransactionsContext);
@@ -18,6 +17,14 @@ const History = () => {
   const sumTransactionValues = transactionsValues
     .reverse()
     .map((transaction) => transaction.amount);
+
+  //TABLE FILTERS
+  // const filtered = Object.keys(raw)
+  // .filter(key => allowed.includes(key))
+  // .reduce((obj, key) => {
+  //   obj[key] = raw[key];
+  //   return obj;
+  // }, {});
 
   return (
     <Container>

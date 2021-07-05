@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
   return (
     <div className="dark-mode-toggle">
       <WiMoonAltFull type="buton" onClick={darkMode.disable}></WiMoonAltFull>
-      <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
+      <Toggle defaultChecked onChange={darkMode.toggle} />
       <WiMoonAltNew type="button" onClick={darkMode.enable}></WiMoonAltNew>
     </div>
   );

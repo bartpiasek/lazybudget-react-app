@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
@@ -27,7 +25,7 @@ const Expenses = () => {
         min={0}
         now={Math.abs(expenses).toFixed(2)}
         max={3000}
-        label={`${((Math.abs(expenses).toFixed(2) / 3000) * 100).toFixed(2)}%`}
+        label={`${((Math.abs(expenses).toFixed(2) / 7000) * 100).toFixed(2)}%`}
       />
     </Col>
   );
