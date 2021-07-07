@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
 import Expenses from "./Expenses";
 import Incomes from "./Incomes";
@@ -15,6 +15,11 @@ import FormBootstrap from "react-bootstrap/Form";
 
 const Dashboard = () => {
   const [transactions] = useContext(TransactionsContext);
+
+  const [incomeGoal, setIncomeGoal] = useState({});
+  const [expenseGoal, setExpenseGoal] = useState({});
+  const [savingGoal, setSavingGoal] = useState({});
+
   return (
     <Container>
       <Row>
@@ -36,33 +41,61 @@ const Dashboard = () => {
         <Col>
           <h5>Goals</h5>
           <FormBootstrap.Group>
+            <p>Your current goal:</p>
             <FormBootstrap.Control
               required
               size="sm"
-              placeholder="Expenses goal"
+              placeholder="Set new goal"
               className="layout__container-background"
               type="text"
-              // value={}
+              value={expenseGoal.value}
               role="setexpenses-input"
             />
+            <Button
+              onClick={(e) => setExpenseGoal(e.target.value)}
+              variant="flat"
+              className="button"
+            >
+              Save
+            </Button>
+          </FormBootstrap.Group>
+          <FormBootstrap.Group>
+            <p>Your current goal:</p>
             <FormBootstrap.Control
               required
               size="sm"
-              placeholder="Incomes goal"
+              placeholder="Set new goal"
               className="layout__container-background"
               type="text"
-              // value={}
+              value={incomeGoal.value}
               role="setincomes-input"
             />
+            <Button
+              onClick={(e) => setIncomeGoal(e.target.value)}
+              variant="flat"
+              className="button"
+            >
+              Save
+            </Button>
+          </FormBootstrap.Group>
+          <FormBootstrap.Group>
+            <p>Your current goal:</p>
             <FormBootstrap.Control
               required
               size="sm"
-              placeholder="Savings goal"
+              placeholder="Set new goal"
               className="layout__container-background"
               type="text"
-              // value={}
+              value={savingGoal.value}
               role="setsavings-input"
             />
+            <Button
+              onClick={(e) => setSavingGoal(e.target.value)}
+              variant="flat"
+              className="button"
+            >
+              Save
+            </Button>
           </FormBootstrap.Group>
         </Col>
         <Col></Col>

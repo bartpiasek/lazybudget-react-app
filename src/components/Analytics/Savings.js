@@ -20,12 +20,10 @@ const Savings = () => {
 
   const savingsListTransaction = SavingTransactionValues.filter(
     (transaction) => {
-      if (transaction.category === "saving") {
-        return transaction.amount;
-      }
+      return transaction.category === "saving" ? transaction.amount : null;
     }
   );
-
+  // console.log(savingsListTransaction);
   return (
     <Col>
       <h5>Savings</h5>
