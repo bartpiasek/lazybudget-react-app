@@ -47,17 +47,17 @@ function Navbar() {
                   Lazy
                 </Link>
                 <Dropdown>
-                  <div className="mt-2">
+                  <div>
                     <Dropdown.Toggle
                       variant="flat"
-                      className="button-navbar"
                       id="dropdown-basic"
+                      className="button-navbar"
                     >
-                      <p>
+                      <p className="button-navbar">
                         <strong>{currentUser && currentUser.email}</strong>
                       </p>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu className="button-navbar">
                       <Dropdown.Item>Settings</Dropdown.Item>
                       <Dropdown.Item onClick={handleLogout}>
                         Logout

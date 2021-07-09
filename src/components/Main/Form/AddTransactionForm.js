@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useReducer } from "react";
+import { options, categories } from "../Data";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
 import "../../classes.css";
@@ -14,20 +15,6 @@ export const Form = () => {
   const [category, setCategory] = useState();
 
   const inputRef = useRef();
-
-  const options = [
-    { label: "Income", value: "income", key: "1" },
-    { label: "Expense", value: "expense", key: "2" },
-  ];
-
-  const categories = [
-    { label: "Food", value: "food", key: "1" },
-    { label: "Housing", value: "housing", key: "2" },
-    { label: "Bills", value: "bills", key: "3" },
-    { label: "Entertainment", value: "entertainment", key: "4" },
-    { label: "Misc", value: "misc", key: "5" },
-    { label: "Saving", value: "saving", key: "6" },
-  ];
 
   const { addTransaction } = useContext(GlobalContext);
 
