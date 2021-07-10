@@ -18,13 +18,7 @@ const History = () => {
     .reverse()
     .map((transaction) => transaction.amount);
 
-  //TABLE FILTERS
-  // const filtered = Object.keys(raw)
-  // .filter(key => allowed.includes(key))
-  // .reduce((obj, key) => {
-  //   obj[key] = raw[key];
-  //   return obj;
-  // }, {});
+  //FILTER FROM CONTEXT
 
   return (
     <Container>
@@ -51,6 +45,9 @@ const History = () => {
               <div>
                 <h5>Last transactions</h5>
                 <div>
+                  <Button className="button-sort" variant="sort">
+                    All
+                  </Button>
                   <Button className="button-sort" variant="sort">
                     This month
                   </Button>

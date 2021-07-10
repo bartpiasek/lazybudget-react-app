@@ -11,6 +11,8 @@ export const TransactionsProvider = (props) => {
   // const [expenseGoal, setExpenseGoal] = useState({});
   // const [savingGoal, setSavingGoal] = useState({});
 
+  const transactionsValues = Object.values(transactions);
+
   useEffect(() => {
     fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")
       .then((res) => res.json())
