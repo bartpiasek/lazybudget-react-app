@@ -9,5 +9,5 @@ export const categories = [
   { label: "Bills", value: "bills", key: "3" },
   { label: "Entertainment", value: "entertainment", key: "4" },
   { label: "Misc", value: "misc", key: "5" },
-  { label: "Saving", value: "saving", key: "6" },
+  { label: "Savings", value: "savings", key: "6" },
 ];

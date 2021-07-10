@@ -7,11 +7,10 @@ export const TransactionsProvider = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
-  // const [incomeGoal, setIncomeGoal] = useState({});
-  // const [expenseGoal, setExpenseGoal] = useState({});
-  // const [savingGoal, setSavingGoal] = useState({});
-
   const transactionsValues = Object.values(transactions);
+
+  //GLOBAL TRANSACTION FILTERS FOR HISTORY AND DASHBOARD COMPONENT
+  //...
 
   useEffect(() => {
     fetch("https://lazyinput-default-rtdb.firebaseio.com/transactions.json")

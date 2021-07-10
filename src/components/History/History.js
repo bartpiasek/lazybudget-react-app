@@ -1,11 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
 import Total from "../Analytics/Total";
 import Expenses from "../Analytics/Expenses";
 import Incomes from "../Analytics/Incomes";
-import "../classes.css";
 
+import {
+  AllFilter,
+  IncomeFilter,
+  ExpenseFilter,
+  CategoryFoodFilter,
+  CategoryBillsFilter,
+  CategoryEntertainmentFilter,
+  CategoryMiscFilter,
+  CategorySavingsFilter,
+  CategoryHousingFilter,
+} from "./HistoryFilters";
+import "../classes.css";
 import TransactionRow from "./TransactionUI";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -18,7 +30,11 @@ const History = () => {
     .reverse()
     .map((transaction) => transaction.amount);
 
-  //FILTER FROM CONTEXT
+  //FILTER BEFORE IN CONTEXT API - that re-renders Total, Expenses, Income component with filter conditions
+  //...
+
+  //FILTER UI IN COMPONENT
+  const [filterHistory, setFilterHistory] = useState("All");
 
   return (
     <Container>
@@ -34,10 +50,6 @@ const History = () => {
         </Col>
       </Row>
       <Row>
-        <Col></Col>
-        <Col></Col>
-      </Row>
-      <Row>
         <Col>
           <div>
             <hr />
@@ -45,41 +57,97 @@ const History = () => {
               <div>
                 <h5>Last transactions</h5>
                 <div>
-                  <Button className="button-sort" variant="sort">
+                  <Button
+                    value="All"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
                     All
                   </Button>
                   <Button className="button-sort" variant="sort">
                     This month
                   </Button>
-                  <Button className="button-sort" variant="sort">
+                  <Button
+                    value="Expense"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
                     Expense
                   </Button>
-                  <Button className="button-sort" variant="sort">
+                  <Button
+                    value="Income"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
                     Income
                   </Button>
-                  <Button className="button-sort" variant="sort">
-                    Asc
+                  <Button
+                    value="Food"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Food
                   </Button>
-                  <Button className="button-sort" variant="sort">
-                    Desc
+                  <Button
+                    value="Housing"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Housing
+                  </Button>
+                  <Button
+                    value="Bills"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Bills
+                  </Button>
+                  <Button
+                    value="Entertainment"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Entertainment
+                  </Button>
+                  <Button
+                    value="Misc"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Misc
+                  </Button>
+                  <Button
+                    value="Savings"
+                    onClick={(e) => setFilterHistory(e.target.value)}
+                    className="button-sort"
+                    variant="sort"
+                  >
+                    Savings
                   </Button>
                 </div>
-                <div className="table">
-                  {transactionsValues.map((transaction, key) => {
-                    return (
-                      <div key={key}>
-                        <TransactionRow
-                          key={transaction.id}
-                          text={transaction.text}
-                          amount={transaction.amount}
-                          option={transaction.option}
-                          date={transaction.date}
-                          category={transaction.category}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
+                {
+                  <div>
+                    {filterHistory === "All" && <AllFilter />}
+                    {filterHistory === "Income" && <IncomeFilter />}
+                    {filterHistory === "Expense" && <ExpenseFilter />}
+                    {filterHistory === "Food" && <CategoryFoodFilter />}
+                    {filterHistory === "Housing" && <CategoryHousingFilter />}
+                    {filterHistory === "Bills" && <CategoryBillsFilter />}
+                    {filterHistory === "Entertainment" && (
+                      <CategoryEntertainmentFilter />
+                    )}
+                    {filterHistory === "Misc" && <CategoryMiscFilter />}
+                    {filterHistory === "Savings" && <CategorySavingsFilter />}
+                  </div>
+                }
               </div>
             </div>
           </div>
