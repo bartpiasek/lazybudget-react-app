@@ -1,6 +1,6 @@
 # LazyBudget
 
-![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/lazybudget-app.png?raw=true)
+![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/LazyBudget-app.png)
 
 Budget app.
 
