@@ -6,30 +6,29 @@ Budget app.
 
 # Features
 
+
   - Firebase database
   - Dark Mode
-  - Quick transactions (Lazy)
-  - Transaction history
+  - Quick transactions (LazyMode)
+  - Transaction history with filters (by Date, by Category, by Type)
   - Authentication with login/signup (Firebase)
   - Dashboard with charts
+  - Context API
 
 # Tech
 
 * [React] - Build with create-react-app, hooks, contextAPI
 * [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
-* [React-testing] - Testing app
+* [React Testing Library] - Testing app
 
 # Todos
 
- - Table filters
  - Delete transactions button
- - Improve UI
- - Write tests in JEST
- - Finish quick transactions component
+ - Finish quick transactions component (LazyMode)
  - Link transactions database to users database (like Primary Key=Foreign Key)/rebuild the database
  - Change select options (expense/income) to a two separate buttons - to reduce the number of clicks
- - DarkMode by context API
+
 
 ## Available Scripts
 
