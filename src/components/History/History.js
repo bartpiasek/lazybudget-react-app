@@ -57,14 +57,26 @@ const History = () => {
               <div>
                 <h5>Last transactions</h5>
                 <div>
-                  <Button
-                    value="All"
-                    onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
-                    variant="sort"
-                  >
-                    All
-                  </Button>
+                  {filterHistory != "All" ? (
+                    <Button
+                      value="All"
+                      onClick={(e) => setFilterHistory(e.target.value)}
+                      className="button-sort"
+                      variant="sort"
+                    >
+                      X
+                    </Button>
+                  ) : (
+                    <Button
+                      value="All"
+                      onClick={(e) => setFilterHistory(e.target.value)}
+                      className="button-sort"
+                      variant="sort"
+                    >
+                      All
+                    </Button>
+                  )}
+
                   <Button className="button-sort" variant="sort">
                     This month
                   </Button>

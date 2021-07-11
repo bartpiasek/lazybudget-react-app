@@ -8,6 +8,7 @@ import NavbarBootstrap from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
+import DarkModeToggle from "../../DarkMode/DarkModeToggle";
 
 function Navbar() {
   const [error, setError] = useState("");
@@ -44,7 +45,7 @@ function Navbar() {
                   Analytics
                 </Link>
                 <Link className="button-navbar" to="/lazy">
-                  Lazy
+                  LazyMode
                 </Link>
                 <Dropdown>
                   <div>
@@ -58,6 +59,9 @@ function Navbar() {
                       </p>
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="button-navbar">
+                      <Dropdown.Item>
+                        <DarkModeToggle />
+                      </Dropdown.Item>
                       <Dropdown.Item>Settings</Dropdown.Item>
                       <Dropdown.Item onClick={handleLogout}>
                         Logout

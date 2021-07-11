@@ -24,7 +24,6 @@ function App() {
         <TransactionsProvider>
           <Router>
             <Navbar />
-            <DarkModeToggle />
             <Switch>
               <PrivateRoute exact path="/" component={Layout} />
               <Route path="/lazy" component={LazyInput} />
