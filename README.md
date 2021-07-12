@@ -1,6 +1,6 @@
 # LazyBudget
 
-![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/lazybudget-main.png?raw=true)
+![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/LazyBudget-app.png)
 
 Budget app.
 
@@ -14,6 +14,7 @@ Budget app.
   - Authentication with login/signup (Firebase)
   - Dashboard with charts
   - Context API
+  - RWD
 
 # Tech
 
