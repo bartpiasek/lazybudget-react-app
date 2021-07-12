@@ -1,0 +1,29 @@
+$primaryColor: #f00946;
+$secondaryColor: hsla(0, 0%, 70%, 0.25);
+$transition: all 0.3s ease-out;
+$primaryBorder: 1px solid primaryColor;
+
+buttonNavbar {
+  color: $primaryColor;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 5%;
+}
+
+buttonSecondary {
+  color: $primaryColor;
+  background-color: $secondaryColor;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 5%;
+  margin: 2%;
+}
+
+buttonSort {
+  padding: 5px;
+  display: inline-block;
+}
+
+// TABLE HISTORY

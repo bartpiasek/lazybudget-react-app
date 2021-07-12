@@ -18,6 +18,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "recharts": "^2.0.9",
+    "sass": "^1.35.2",
     "use-dark-mode": "^2.3.1",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"

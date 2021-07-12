@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Rent, Salary, Subscriptions } from "./Data";
+import axios from "../../../axios";
 import "../../classes.css";
 
 import FormBootstrap from "react-bootstrap/Form";
@@ -12,43 +13,87 @@ import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 
 export const LazyInput = () => {
-  const [state, setState] = useState();
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState();
+  const [option, setOption] = useState("expense");
+  const [date, setDate] = useState("");
+  const [category, setCategory] = useState();
+
+  // const inputRef = useRef();
 
   const { addTransaction } = useContext(GlobalContext);
 
+  const newExpenseTransaction = {
+    id: Math.floor(Math.random() * 10000),
+    text,
+    amount: -Math.abs(amount),
+    option,
+    date: new Date().toISOString(),
+    category,
+  };
+
+  const newIncomeTransaction = {
+    id: Math.floor(Math.random() * 10000),
+    text,
+    amount: parseInt(amount),
+    option,
+    date: new Date().toISOString(),
+    category,
+  };
+
   const onSubmit = (e) => {
+    axios
+      .post(
+        "/transactions.json",
+        option === "expense"
+          ? Object.assign(newExpenseTransaction)
+          : Object.assign(newIncomeTransaction)
+      )
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
     e.preventDefault();
 
-    const newTransaction = {
-      id: Math.floor(Math.random() * 10000),
-      text: state.text,
-      amount: state.amount,
-      option: state.option,
-    };
-    addTransaction(newTransaction);
-    console.log(addTransaction);
+    option === "expense"
+      ? addTransaction(newExpenseTransaction)
+      : addTransaction(newIncomeTransaction);
   };
 
   return (
     <Container>
       <Row md={4}>
         <Col>
-          <CardDeck>
-            <Card className="lazy__container-background" onSubmit={onSubmit}>
-              <div
-                value={(Salary.option, Salary.amount, Salary.text)}
-                onClick={(e) => setState(Salary)}
-              >
-                <Card.Body>
-                  <Card.Title>{Salary.text}</Card.Title>
-                  <Card.Text>{Salary.amount} PLN</Card.Text>
-                </Card.Body>
-                <Button type="submit" value="Send">
-                  Add
-                </Button>
-              </div>
-            </Card>
-          </CardDeck>
+          <FormBootstrap onSubmit={onSubmit}>
+            <CardDeck>
+              <Card className="lazy__container-background">
+                <div
+                  value={Rent.text}
+                  // onClick={(e) => setState(Rent)}
+                >
+                  <Card.Body>
+                    <Card.Title>{Rent.text}</Card.Title>
+                    <Card.Text>{Rent.category}</Card.Text>
+                    <Card.Text>{Rent.amount} PLN</Card.Text>
+                  </Card.Body>
+                  <Button
+                    variant="flat"
+                    className="button"
+                    type="submit"
+                    value={date.value}
+                    key={date.key}
+                    onClick={
+                      ((e) => setText(Rent.text),
+                      (e) => setAmount(Rent.amount),
+                      (e) => setOption(Rent.option),
+                      (e) => setDate(e.target.value),
+                      (e) => setCategory(Rent.category))
+                    }
+                  >
+                    Add
+                  </Button>
+                </div>
+              </Card>
+            </CardDeck>
+          </FormBootstrap>
         </Col>
         <Col xs={6}></Col>
         <Col></Col>

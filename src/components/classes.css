@@ -87,7 +87,6 @@ form > select {
   padding: 5%;
 }
 .button-navbar:hover {
-  color: #f00606;
   transition: all 0.3s ease-out;
   cursor: pointer;
   text-decoration: none;
@@ -146,7 +145,6 @@ form > select {
   margin: 2%;
 }
 .button-secondary:hover {
-  color: #f00606;
   transition: all 0.3s ease-out;
   cursor: pointer;
   text-decoration: none;

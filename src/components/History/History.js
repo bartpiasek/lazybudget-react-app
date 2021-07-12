@@ -40,13 +40,13 @@ const History = () => {
     <Container>
       <Row>
         <Col>
-          <Total />
+          <Incomes />
         </Col>
         <Col>
           <Expenses />
         </Col>
         <Col>
-          <Incomes />
+          <Total />
         </Col>
       </Row>
       <Row>
