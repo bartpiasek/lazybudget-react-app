@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "../components/classes.css";
+import "../components/classes.scss";
 import { useAuth } from "../context/Auth";
 
 import Container from "react-bootstrap/Container";
@@ -53,7 +53,7 @@ const Login = () => {
                   required
                   size="lg"
                   placeholder="Email"
-                  className="layout__container-background"
+                  className="element-background"
                   type="email"
                   ref={emailRef}
                 />
@@ -63,7 +63,7 @@ const Login = () => {
                   required
                   size="lg"
                   placeholder="Password"
-                  className="layout__container-background"
+                  className="element-background"
                   type="password"
                   ref={passwordRef}
                 />

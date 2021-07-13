@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
 import { Rent, Salary, Subscriptions } from "./Data";
 import axios from "../../../axios";
-import "../../classes.css";
+import "../../classes.scss";
 
 import FormBootstrap from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

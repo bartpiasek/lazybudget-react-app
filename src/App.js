@@ -3,11 +3,11 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 import LazyInput from "./components/Main/LazyInput/LazyInput";
-import Navbar from "./components/Navigation/Navbar/Navbar";
+import NavbarMain from "./components/Navigation/Navbar/Navbar";
 
 import DarkModeToggle from "../src/components/DarkMode/DarkModeToggle";
 
-import "../src/components/classes.css";
+import "../src/components/classes.scss";
 
 import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "../src/context/Auth";
@@ -23,7 +23,7 @@ function App() {
       <GlobalProvider>
         <TransactionsProvider>
           <Router>
-            <Navbar />
+            <NavbarMain />
             <Switch>
               <PrivateRoute exact path="/" component={Layout} />
               <Route path="/lazy" component={LazyInput} />

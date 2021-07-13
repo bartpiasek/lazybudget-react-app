@@ -4,7 +4,7 @@ import Expenses from "./Expenses";
 import Incomes from "./Incomes";
 import Total from "./Total";
 import Savings from "./Savings";
-import "../classes.css";
+import "../classes.scss";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";

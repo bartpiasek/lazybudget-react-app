@@ -1,38 +1,7 @@
 import React, { useContext, useState } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
-import "../classes.css";
+import "../classes.scss";
 import TransactionRow from "./TransactionUI";
-
-//MAIN FUNCTION WITH FUNCTIONS
-// function Filter() {
-//   const [transactions] = useContext(TransactionsContext);
-//   const transactionsValues = Object.values(transactions);
-//   const sumTransactionValues = transactionsValues
-//     .reverse()
-//     .map((transaction) => transaction.amount);
-
-//   const AllFilter = () => {
-//     return (
-//       <div className="table">
-//         {transactionsValues.map((transaction, key) => {
-//           return (
-//             <div key={key}>
-//               <TransactionRow
-//                 key={transaction.id}
-//                 text={transaction.text}
-//                 amount={transaction.amount}
-//                 option={transaction.option}
-//                 date={transaction.date}
-//                 category={transaction.category}
-//               />
-//             </div>
-//           );
-//         })}
-//       </div>
-//     );
-//   };
-// }
-// export default Filter;
 
 //FILTER BY TYPE OF CASHFLOW
 export const AllFilter = () => {

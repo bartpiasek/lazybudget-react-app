@@ -15,7 +15,8 @@ import {
   CategorySavingsFilter,
   CategoryHousingFilter,
 } from "./HistoryFilters";
-import "../classes.css";
+// import "../../styles.scss";
+import "../classes.scss";
 import TransactionRow from "./TransactionUI";
 
 import Container from "react-bootstrap/Container";

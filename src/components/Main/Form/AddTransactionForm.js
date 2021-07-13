@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef, useReducer } from "react";
 import { options, categories } from "../Data";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
-import "../../classes.css";
+import "../../classes.scss";
 
 import FormBootstrap from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -60,7 +60,7 @@ export const Form = () => {
           required
           size="lg"
           placeholder="Name"
-          className="layout__container-background"
+          className="element-background"
           ref={inputRef}
           type="text"
           value={text}
@@ -73,7 +73,7 @@ export const Form = () => {
           required
           size="lg"
           placeholder="PLN"
-          className="layout__container-background"
+          className="element-background"
           type="text"
           value={amount}
           role="amount-input"
@@ -84,17 +84,12 @@ export const Form = () => {
         <select
           as="select"
           size="lg"
-          className="layout__select"
           value={option}
           role="cashflow-select"
           onChange={(e) => setOption(e.target.value)}
         >
           {options.map((option) => (
-            <option
-              className="layout__select"
-              key={option.key}
-              value={option.value}
-            >
+            <option key={option.key} value={option.value}>
               {option.label}
             </option>
           ))}
@@ -109,9 +104,11 @@ export const Form = () => {
                 type="radio"
                 key={category.key}
                 value={category.value}
-                role="radio"
+                role="sort"
               />
-              <label className="button-sort">{category.label}</label>
+              <label role="sort" className="button-sort">
+                {category.label}
+              </label>
             </FormBootstrap.Check>
           ))}
         </radio>
@@ -119,7 +116,6 @@ export const Form = () => {
       <FormBootstrap.Group></FormBootstrap.Group>
       <Button
         variant="flat"
-        className="button"
         type="submit"
         value={date.value}
         key={date.key}

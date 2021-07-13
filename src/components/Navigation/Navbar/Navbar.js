@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import lazybudgetLogo from "../../../assets/svg/006-wallet.svg";
 import { useAuth } from "../../../context/Auth";
-import "../../classes.css";
+import "../../classes.scss";
 
-import NavbarBootstrap from "react-bootstrap/Navbar";
+import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
 import DarkModeToggle from "../../DarkMode/DarkModeToggle";
 
-function Navbar() {
+function NavbarMain() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
@@ -26,15 +26,10 @@ function Navbar() {
   }
 
   return (
-    <NavbarBootstrap
-      collapseOnSelect
-      className="navbar-main"
-      expand="sm"
-      sticky="top"
-    >
+    <Navbar collapseOnSelect className="navbar" expand="sm" sticky="top">
       <Container>
-        <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
-        <NavbarBootstrap.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             {currentUser ? (
               <>
@@ -81,10 +76,10 @@ function Navbar() {
               </>
             )}
           </Nav>
-        </NavbarBootstrap.Collapse>
+        </Navbar.Collapse>
       </Container>
-    </NavbarBootstrap>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default NavbarMain;
