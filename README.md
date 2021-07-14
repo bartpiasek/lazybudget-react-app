@@ -22,6 +22,7 @@ Budget app.
 * [Firebase] - Realtime database with auth
 * [Bootstrap for React] - Frontend UI
 * [React Testing Library] - Testing app
+* [SCSS] - Styling UI
 
 # Todos
 
@@ -29,6 +30,7 @@ Budget app.
  - Finish quick transactions component (LazyMode)
  - Link transactions database to users database (like Primary Key=Foreign Key)/rebuild the database
  - Change select options (expense/income) to a two separate buttons - to reduce the number of clicks
+ - Dashboard
 
 
 ## Available Scripts
