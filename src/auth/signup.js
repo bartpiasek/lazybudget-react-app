@@ -43,7 +43,7 @@ const Signup = () => {
       <Row>
         <Col></Col>
         <Col md={6}>
-          <Card>
+          <Card className="element-background">
             <h2>Sign Up</h2>
             {currentUser ? (
               <p>
@@ -83,7 +83,11 @@ const Signup = () => {
                   ref={passwordConfirmRef}
                 />
               </Form.Group>
-              <Button disabled={loading} className="button" type="submit">
+              <Button
+                disabled={loading}
+                className="element-background"
+                type="submit"
+              >
                 Sign Up
               </Button>
             </Form>

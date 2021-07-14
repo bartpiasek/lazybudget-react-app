@@ -15,9 +15,7 @@ import {
   CategorySavingsFilter,
   CategoryHousingFilter,
 } from "./HistoryFilters";
-// import "../../styles.scss";
 import "../classes.scss";
-import TransactionRow from "./TransactionUI";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -31,7 +29,7 @@ const History = () => {
     .reverse()
     .map((transaction) => transaction.amount);
 
-  //FILTER BEFORE IN CONTEXT API - that re-renders Total, Expenses, Income component with filter conditions
+  //FILTER BEFORE, IN CONTEXT API - that re-renders Total, Expenses, Income component with filter conditions
   //...
 
   //FILTER UI IN COMPONENT
@@ -58,11 +56,11 @@ const History = () => {
               <div>
                 <h5>Last transactions</h5>
                 <div>
-                  {filterHistory != "All" ? (
+                  {filterHistory !== "All" ? (
                     <Button
                       value="All"
                       onClick={(e) => setFilterHistory(e.target.value)}
-                      className="button-sort"
+                      className="button-sort element-background"
                       variant="sort"
                     >
                       X
@@ -71,20 +69,23 @@ const History = () => {
                     <Button
                       value="All"
                       onClick={(e) => setFilterHistory(e.target.value)}
-                      className="button-sort"
+                      className="button-sort element-background"
                       variant="sort"
                     >
                       All
                     </Button>
                   )}
 
-                  <Button className="button-sort" variant="sort">
+                  <Button
+                    className="button-sort element-background"
+                    variant="sort"
+                  >
                     This month
                   </Button>
                   <Button
                     value="Expense"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Expense
@@ -92,7 +93,7 @@ const History = () => {
                   <Button
                     value="Income"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Income
@@ -100,7 +101,7 @@ const History = () => {
                   <Button
                     value="Food"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Food
@@ -108,7 +109,7 @@ const History = () => {
                   <Button
                     value="Housing"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Housing
@@ -116,7 +117,7 @@ const History = () => {
                   <Button
                     value="Bills"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Bills
@@ -124,7 +125,7 @@ const History = () => {
                   <Button
                     value="Entertainment"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Entertainment
@@ -132,7 +133,7 @@ const History = () => {
                   <Button
                     value="Misc"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Misc
@@ -140,7 +141,7 @@ const History = () => {
                   <Button
                     value="Savings"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort"
+                    className="button-sort element-background"
                     variant="sort"
                   >
                     Savings

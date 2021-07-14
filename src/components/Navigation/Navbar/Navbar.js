@@ -53,7 +53,7 @@ function NavbarMain() {
                         <strong>{currentUser && currentUser.email}</strong>
                       </p>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu className="button-navbar">
+                    <Dropdown.Menu className="button-navbar element-background">
                       <Dropdown.Item>
                         <DarkModeToggle />
                       </Dropdown.Item>

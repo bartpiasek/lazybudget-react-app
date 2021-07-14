@@ -27,6 +27,7 @@ const Expenses = () => {
         max={3000}
         label={`${((Math.abs(expenses).toFixed(2) / 7000) * 100).toFixed(2)}%`}
       />
+      <hr />
     </Col>
   );
 };

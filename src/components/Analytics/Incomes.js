@@ -27,6 +27,7 @@ const Incomes = () => {
         max={10000}
         label={`${((incomes.toFixed(2) / 10000) * 100).toFixed(2)}%`}
       />
+      <hr />
     </Col>
   );
 };

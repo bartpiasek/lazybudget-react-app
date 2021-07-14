@@ -38,7 +38,7 @@ const Login = () => {
       <Row>
         <Col></Col>
         <Col md={6}>
-          <Card>
+          <Card className="element-background">
             <h2>Log In</h2>
             {currentUser ? (
               <p>
@@ -68,7 +68,11 @@ const Login = () => {
                   ref={passwordRef}
                 />
               </Form.Group>
-              <Button disabled={loading} className="button" type="submit">
+              <Button
+                disabled={loading}
+                className="element-background"
+                type="submit"
+              >
                 Log In
               </Button>
             </Form>

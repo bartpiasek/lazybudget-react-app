@@ -45,7 +45,7 @@ const Dashboard = () => {
               required
               size="sm"
               placeholder="Set new goal"
-              className="layout__container-background"
+              className="element-background"
               type="text"
               value={expenseGoal.value}
               role="setexpenses-input"
@@ -64,7 +64,7 @@ const Dashboard = () => {
               required
               size="sm"
               placeholder="Set new goal"
-              className="layout__container-background"
+              className="element-background"
               type="text"
               value={incomeGoal.value}
               role="setincomes-input"
@@ -83,7 +83,7 @@ const Dashboard = () => {
               required
               size="sm"
               placeholder="Set new goal"
-              className="layout__container-background"
+              className="element-background"
               type="text"
               value={savingGoal.value}
               role="setsavings-input"

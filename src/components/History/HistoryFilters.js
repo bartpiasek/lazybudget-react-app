@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionListContext";
 import "../classes.scss";
 import TransactionRow from "./TransactionUI";

@@ -64,7 +64,7 @@ export const LazyInput = () => {
         <Col>
           <FormBootstrap onSubmit={onSubmit}>
             <CardDeck>
-              <Card className="lazy__container-background">
+              <Card className="element-background">
                 <div
                   value={Rent.text}
                   // onClick={(e) => setState(Rent)}
@@ -76,7 +76,7 @@ export const LazyInput = () => {
                   </Card.Body>
                   <Button
                     variant="flat"
-                    className="button"
+                    className="element-background"
                     type="submit"
                     value={date.value}
                     key={date.key}
