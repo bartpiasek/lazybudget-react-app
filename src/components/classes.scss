@@ -28,10 +28,11 @@ body.dark-mode {
 /* FORM BUTTON */
 button {
   &[type="submit"] {
+    position: absolute;
+    margin: inherit + 5px;
     background: white;
     color: #{$primaryColor};
     border: #{$primaryBorder};
-    padding: 5px;
     width: 100%;
   }
 
@@ -41,27 +42,14 @@ button {
     transform: scale(1.01);
     transition: #{$transition};
     border: #{$primaryBorder};
-    padding: 5px;
     width: 100%;
     cursor: pointer;
   }
-
-  // &[variant="sort"] {
-  //   padding: 5px;
-  //   display: inline-block;
-  // }
-  // &[variant="sort"]:hover {
-  //   cursor: pointer;
-  // }
-  // &[variant="sort"]:checked {
-  //   color: #1b1b1b;
-  //   border: 1px solid #{$secondaryColor};
-  //   border-radius: 6px;
-  // }
 }
 
 .form {
   display: flexbox;
+  position: relative;
 
   // FORM -> SELECT -> (EXP/INC)
   & select {
@@ -140,38 +128,26 @@ label {
 .transaction-container {
   display: flex;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding: 1em 1em 1em 1em;
+  margin: 1em 1em 1em 1em;
 }
 .transaction-row {
+  font-size: medium;
   display: flex;
   flex-direction: row;
-  text-align: right;
-  height: 2rem;
-  width: max-content;
-}
-.data {
-  display: flex;
-  text-align: right;
   justify-content: space-between;
+
+  height: 2em;
   width: 100%;
 }
 .text {
   display: inline-block;
-  align-items: center;
-  padding-right: 4rem;
-  min-width: 8rem;
+}
+.date {
+  display: inline-block;
 }
 .price {
   display: inline-block;
-  width: 6rem;
 
   &.red {
     color: #{$primaryColor};
@@ -180,9 +156,32 @@ label {
     color: #11d811;
   }
 }
-
 .category {
   display: inline-block;
-  width: 6rem;
-  padding-right: 1rem;
+}
+
+// TABLE on smartphones
+@media only screen and (max-width: 600px) {
+  .transaction-row:only-child {
+    font-size: smaller;
+    // align-items: center;
+    margin h5 {
+      font-size: 10px;
+    }
+
+    .category {
+      width: max-content;
+      display: none;
+    }
+
+    .text {
+      display: inline-block;
+    }
+    .date {
+      display: inline-block;
+    }
+    .price {
+      max-width: max-content;
+    }
+  }
 }
