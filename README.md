@@ -1,6 +1,5 @@
 # LazyBudget
 
-![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/LazyBudget-app.png)
 ![Light Mode menu](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/LazyBudget%20lightmode%20menu.png)
 ![Main](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/LazyBudget%20lightmode.png)
 ![Dark Mode main](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/Lazybudget%20darkmode.png)
