@@ -26,7 +26,12 @@ function NavbarMain() {
   }
 
   return (
-    <Navbar collapseOnSelect className="navbar" expand="sm" sticky="top">
+    <Navbar
+      collapseOnSelect
+      className="navbar element-background element-background-lm"
+      expand="sm"
+      sticky="top"
+    >
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
