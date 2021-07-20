@@ -2,6 +2,11 @@
 
 ![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/LazyBudget-app.png)
 
+<!-- ![RWD with DarkMode](https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-darkmode_(iPhone%20X).png) -->
+<img src="https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-darkmode_(iPhone%20X).png" width="375" height="812">
+
+<!-- ![Menu](https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-lightmode-menu_(iPhone%20X).png) -->
+<img src="https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-lightmode-menu_(iPhone%20X).png)" width="375" height="812">
 Budget app.
 
 # Features
