@@ -2,6 +2,8 @@
 
 $primaryColor: #f00946;
 $secondaryColor: hsla(0, 0%, 70%, 0.25);
+$darkColor: #1b1b1b;
+
 $transition: all 0.3s ease-out;
 $primaryBorder: 1px solid #{$primaryColor};
 
@@ -11,45 +13,45 @@ $primaryBorder: 1px solid #{$primaryColor};
 }
 body.light-mode {
   background-color: #fff;
-  color: #333;
+  color: #{$darkColor};
   transition: background-color 0.3s ease;
 }
 body.dark-mode {
-  background-color: #1b1b1b;
+  background-color: #{$darkColor};
   color: #999;
 
   .element-background {
+    color: #999;
     background-color: #333;
     border-radius: 8px;
     border: none;
   }
 }
-
 /* FORM BUTTON */
 button {
+  // FORM -> SEND BUTTON
   &[type="submit"] {
     position: absolute;
-    margin: inherit + 5px;
+    padding: inherit + 1em;
     background: white;
     color: #{$primaryColor};
     border: #{$primaryBorder};
-    width: 100%;
+    width: 90%;
   }
-
   &[type="submit"]:hover {
     color: white;
     background: #{$primaryColor};
     transform: scale(1.01);
     transition: #{$transition};
     border: #{$primaryBorder};
-    width: 100%;
+    width: 90%;
     cursor: pointer;
   }
 }
-
 .form {
   display: flexbox;
   position: relative;
+  padding: 2em;
 
   // FORM -> SELECT -> (EXP/INC)
   & select {
@@ -60,7 +62,6 @@ button {
     height: 2.2rem;
   }
 }
-
 // FORM -> CATEGORY
 label {
   padding: 0.1rem;
@@ -70,12 +71,12 @@ label {
     cursor: pointer;
   }
   :checked {
-    color: #1b1b1b;
+    color: #{$darkColor};
     border: 1px solid #{$secondaryColor};
     border-radius: 6px;
   }
 }
-
+// HISTORY -> SORT BUTTONS
 .button-sort {
   margin: 0.1rem;
   padding: 0.1rem;
@@ -85,12 +86,11 @@ label {
   cursor: pointer;
 }
 .button-sort:checked {
-  color: #1b1b1b;
+  color: #{$darkColor};
   border: 1px solid #{$secondaryColor};
   border-radius: 6px;
 }
-
-/* NAVBAR - Link*/
+// NAVBAR -> NAVBAR - BUTTONS
 .navbar {
   align-content: space-between;
   color: #{$primaryColor};
@@ -112,25 +112,23 @@ label {
   cursor: pointer;
   text-decoration: none;
 }
-
+// TABLE
 .table {
   overflow-y: scroll;
   height: 300px;
 }
-
 .element-background {
   background-color: #{$secondaryColor};
   border-radius: 8px;
   border: none;
 }
-
-/* TABLE-HISTORY */
 .transaction-container {
   display: flex;
   justify-content: center;
   padding: 1em 1em 1em 1em;
   margin: 1em 1em 1em 1em;
 }
+// TABLE ROW CONTAINER
 .transaction-row {
   font-size: medium;
   display: flex;
@@ -164,16 +162,13 @@ label {
 @media only screen and (max-width: 600px) {
   .transaction-row:only-child {
     font-size: smaller;
-    // align-items: center;
     margin h5 {
       font-size: 10px;
     }
-
     .category {
       width: max-content;
       display: none;
     }
-
     .text {
       display: inline-block;
     }

@@ -14,8 +14,8 @@ const Total = () => {
 
   return (
     <Col>
-      <h5>Total</h5>
-      <h2>{total.toFixed(2)} PLN</h2>
+      <h6>Total</h6>
+      <h3>{total.toFixed(2)} PLN</h3>
       <hr />
     </Col>
   );

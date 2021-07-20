@@ -17,8 +17,8 @@ const Expenses = () => {
 
   return (
     <Col>
-      <h5>Expenses</h5>
-      <h2>{Math.abs(expenses).toFixed(2)} PLN</h2>
+      <h6>Expenses</h6>
+      <h3>{Math.abs(expenses).toFixed(2)} PLN</h3>
       <ProgressBar
         striped
         variant="danger"

@@ -17,8 +17,8 @@ const Incomes = () => {
 
   return (
     <Col>
-      <h5>Incomes</h5>
-      <h2>{incomes.toFixed(2)} PLN</h2>
+      <h6>Incomes</h6>
+      <h3>{incomes.toFixed(2)} PLN</h3>
       <ProgressBar
         striped
         variant="success"
