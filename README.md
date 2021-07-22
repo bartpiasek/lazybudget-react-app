@@ -1,12 +1,9 @@
 # LazyBudget
 
-![LazyBudget](https://github.com/bartpiasek/lazybudget-react-app/blob/master/public/LazyBudget-app.png)
+![Light Mode menu](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/LazyBudget%20lightmode%20menu.png)
+![Main](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/LazyBudget%20lightmode.png)
+![Dark Mode main](https://github.com/bartpiasek/lazybudget-react-app/blob/157e11e2a4816622e04482c0218f6fc41525a27f/public/Lazybudget%20darkmode.png)
 
-<!-- ![RWD with DarkMode](https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-darkmode_(iPhone%20X).png) -->
-<img src="https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-darkmode_(iPhone%20X).png" width="375" height="812">
-
-<!-- ![Menu](https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-lightmode-menu_(iPhone%20X).png) -->
-<img src="https://github.com/bartpiasek/lazybudget-react-app/blob/aa93dc4a1cd9ecb8f934ca221218351e3435f93e/public/lazybudget-lightmode-menu_(iPhone%20X).png)" width="375" height="812">
 Budget app.
 
 # Features
