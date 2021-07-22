@@ -26,8 +26,8 @@ const Savings = () => {
   // console.log(savingsListTransaction);
   return (
     <Col>
-      <h5>Savings</h5>
-      {/* <h2>{Math.abs(savings).toFixed(2)} PLN</h2>
+      {/* <h5>Savings</h5>
+      <h2>{Math.abs(savings).toFixed(2)} PLN</h2>
       <ProgressBar
         striped
         variant="danger"

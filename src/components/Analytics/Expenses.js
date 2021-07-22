@@ -3,7 +3,7 @@ import { TransactionsContext } from "../../context/TransactionListContext";
 import Col from "react-bootstrap/Col";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
-const Expenses = () => {
+const Expenses = (max) => {
   const [transactions] = useContext(TransactionsContext);
   const transactionsValues = Object.values(transactions);
 
@@ -15,6 +15,8 @@ const Expenses = () => {
     .filter((amount) => amount < 0)
     .reduce((a, b) => a + b, 0);
 
+  const maxValue = Object.values(max);
+
   return (
     <Col>
       <h6>Expenses</h6>
@@ -24,8 +26,10 @@ const Expenses = () => {
         variant="danger"
         min={0}
         now={Math.abs(expenses).toFixed(2)}
-        max={3000}
-        label={`${((Math.abs(expenses).toFixed(2) / 7000) * 100).toFixed(2)}%`}
+        max={max}
+        label={`${((Math.abs(expenses).toFixed(2) / maxValue) * 100).toFixed(
+          2
+        )}%`}
       />
       <hr />
     </Col>

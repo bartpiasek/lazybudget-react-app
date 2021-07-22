@@ -15,8 +15,8 @@ import FormBootstrap from "react-bootstrap/Form";
 const Dashboard = () => {
   const [transactions] = useContext(TransactionsContext);
 
-  const [incomeGoal, setIncomeGoal] = useState({});
-  const [expenseGoal, setExpenseGoal] = useState({});
+  const [incomeGoal, setIncomeGoal] = useState(12000);
+  const [expenseGoal, setExpenseGoal] = useState(5000);
   const [savingGoal, setSavingGoal] = useState({});
 
   return (
@@ -26,10 +26,10 @@ const Dashboard = () => {
           <Total />
         </Col>
         <Col>
-          <Expenses />
+          <Expenses max={expenseGoal} />
         </Col>
         <Col>
-          <Incomes />
+          <Incomes max={incomeGoal} />
         </Col>
         <Col>
           <Savings />
@@ -47,15 +47,19 @@ const Dashboard = () => {
               placeholder="Set new goal"
               className="element-background"
               type="text"
-              value={expenseGoal.value}
+              value={expenseGoal}
               role="setexpenses-input"
+              onChange={(e) => setExpenseGoal(e.target.value)}
             />
             <Button
-              onClick={(e) => setExpenseGoal(e.target.value)}
+              onSubmit={(e) => setExpenseGoal(e.target.value)}
+              value={expenseGoal.value}
+              key={expenseGoal.key}
+              type="submit"
               variant="flat"
-              className="button"
+              className="button element-background"
             >
-              Save
+              Set new goal
             </Button>
           </FormBootstrap.Group>
           <FormBootstrap.Group>
@@ -66,15 +70,19 @@ const Dashboard = () => {
               placeholder="Set new goal"
               className="element-background"
               type="text"
-              value={incomeGoal.value}
+              value={incomeGoal}
               role="setincomes-input"
+              onChange={(e) => setIncomeGoal(e.target.value)}
             />
             <Button
-              onClick={(e) => setIncomeGoal(e.target.value)}
+              onSubmit={(e) => setIncomeGoal(e.target.value)}
+              value={incomeGoal.value}
+              key={incomeGoal.key}
+              type="submit"
               variant="flat"
-              className="button"
+              className="button element-background"
             >
-              Save
+              Set new goal
             </Button>
           </FormBootstrap.Group>
           <FormBootstrap.Group>
@@ -83,17 +91,17 @@ const Dashboard = () => {
               required
               size="sm"
               placeholder="Set new goal"
-              className="element-background"
+              className="button element-background"
               type="text"
               value={savingGoal.value}
               role="setsavings-input"
             />
             <Button
-              onClick={(e) => setSavingGoal(e.target.value)}
+              onSubmit={(e) => setSavingGoal(e.target.value)}
               variant="flat"
-              className="button"
+              className="button element-background"
             >
-              Save
+              Set new goal
             </Button>
           </FormBootstrap.Group>
         </Col>
