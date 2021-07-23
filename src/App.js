@@ -16,22 +16,25 @@ import Login from "./auth/login";
 import PrivateRoute from "../src/auth/privateRoute";
 import Dashboard from "./components/Analytics/Dashboard";
 import { TransactionsProvider } from "./context/TransactionListContext";
+import { CashflowProvider } from "./context/CashflowContext";
 
 function App() {
   return (
     <AuthProvider>
       <GlobalProvider>
         <TransactionsProvider>
-          <Router>
-            <NavbarMain />
-            <Switch>
-              <PrivateRoute exact path="/" component={Layout} />
-              <Route path="/lazy" component={LazyInput} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/analytics" component={Dashboard} />
-            </Switch>
-          </Router>
+          <CashflowProvider>
+            <Router>
+              <NavbarMain />
+              <Switch>
+                <PrivateRoute exact path="/" component={Layout} />
+                <Route path="/lazy" component={LazyInput} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/login" component={Login} />
+                <Route path="/analytics" component={Dashboard} />
+              </Switch>
+            </Router>
+          </CashflowProvider>
         </TransactionsProvider>
       </GlobalProvider>
     </AuthProvider>

@@ -19,6 +19,8 @@ const Dashboard = () => {
   const [expenseGoal, setExpenseGoal] = useState(5000);
   const [savingGoal, setSavingGoal] = useState({});
 
+  // CONTEXT API CASHFLOW
+
   return (
     <Container>
       <Row>
@@ -93,7 +95,7 @@ const Dashboard = () => {
               placeholder="Set new goal"
               className="button element-background"
               type="text"
-              value={savingGoal.value}
+              value={savingGoal}
               role="setsavings-input"
             />
             <Button

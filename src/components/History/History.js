@@ -21,9 +21,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { CashflowContext } from "../../context/CashflowContext";
 
 const History = () => {
   const [transactions] = useContext(TransactionsContext);
+  const [incomeGoal] = useContext(CashflowContext);
+  const [expenseGoal] = useContext(CashflowContext);
+
   const transactionsValues = Object.values(transactions);
   const sumTransactionValues = transactionsValues
     .reverse()
@@ -39,10 +43,10 @@ const History = () => {
     <Container>
       <Row>
         <Col>
-          <Incomes />
+          <Incomes max={incomeGoal} />
         </Col>
         <Col>
-          <Expenses />
+          <Expenses max={expenseGoal} />
         </Col>
         <Col>
           <Total />

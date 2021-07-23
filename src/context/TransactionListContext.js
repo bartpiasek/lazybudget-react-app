@@ -7,8 +7,6 @@ export const TransactionsProvider = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [transactions, setTransactions] = useState({});
 
-  //GOALS HOOKS
-
   const transactionsValues = Object.values(transactions);
 
   //GLOBAL TRANSACTION FILTERS FOR HISTORY AND DASHBOARD COMPONENT
