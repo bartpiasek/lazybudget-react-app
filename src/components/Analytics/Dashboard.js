@@ -11,15 +11,20 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import FormBootstrap from "react-bootstrap/Form";
+import { CashflowContext } from "../../context/CashflowContext";
 
 const Dashboard = () => {
   const [transactions] = useContext(TransactionsContext);
+  const {
+    incomeGoal,
+    setIncomeGoal,
+    expenseGoal,
+    setExpenseGoal,
+    savingGoal,
+    setSavingGoal,
+  } = useContext(CashflowContext);
 
-  const [incomeGoal, setIncomeGoal] = useState(12000);
-  const [expenseGoal, setExpenseGoal] = useState(5000);
-  const [savingGoal, setSavingGoal] = useState({});
-
-  // CONTEXT API CASHFLOW
+  // HOOKS FOR SETTING GOALS IN DASHBOARD
 
   return (
     <Container>
@@ -59,9 +64,9 @@ const Dashboard = () => {
               key={expenseGoal.key}
               type="submit"
               variant="flat"
-              className="button element-background"
+              className="element-background"
             >
-              Set new goal
+              Save
             </Button>
           </FormBootstrap.Group>
           <FormBootstrap.Group>
@@ -82,18 +87,18 @@ const Dashboard = () => {
               key={incomeGoal.key}
               type="submit"
               variant="flat"
-              className="button element-background"
+              className="element-background"
             >
-              Set new goal
+              Save
             </Button>
           </FormBootstrap.Group>
-          <FormBootstrap.Group>
+          {/* <FormBootstrap.Group>
             <p>Your current goal:</p>
             <FormBootstrap.Control
               required
               size="sm"
               placeholder="Set new goal"
-              className="button element-background"
+              className="element-background"
               type="text"
               value={savingGoal}
               role="setsavings-input"
@@ -101,11 +106,11 @@ const Dashboard = () => {
             <Button
               onSubmit={(e) => setSavingGoal(e.target.value)}
               variant="flat"
-              className="button element-background"
+              className="element-background"
             >
-              Set new goal
+              Save
             </Button>
-          </FormBootstrap.Group>
+          </FormBootstrap.Group> */}
         </Col>
         <Col></Col>
       </Row>

@@ -6,12 +6,21 @@ export const CashflowProvider = (props) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [incomeGoal, setIncomeGoal] = useState(12000);
-  const [expenseGoal, setExpenseGoal] = useState(5000);
+  const [incomeGoal, setIncomeGoal] = useState(15077);
+  const [expenseGoal, setExpenseGoal] = useState(6706);
   const [savingGoal, setSavingGoal] = useState({});
 
+  const value = {
+    incomeGoal,
+    setIncomeGoal,
+    expenseGoal,
+    setExpenseGoal,
+    savingGoal,
+    setSavingGoal,
+  };
+
   return (
-    <CashflowContext.Provider value={[incomeGoal, expenseGoal, savingGoal]}>
+    <CashflowContext.Provider value={value}>
       {props.children}
     </CashflowContext.Provider>
   );

@@ -24,10 +24,12 @@ import Button from "react-bootstrap/Button";
 import { CashflowContext } from "../../context/CashflowContext";
 
 const History = () => {
+  // CONTEXT API STATES
   const [transactions] = useContext(TransactionsContext);
-  const [incomeGoal] = useContext(CashflowContext);
-  const [expenseGoal] = useContext(CashflowContext);
+  // const [incomeGoal] = useContext(CashflowContext);
+  // const [expenseGoal] = useContext(CashflowContext);
 
+  const { incomeGoal, expenseGoal } = useContext(CashflowContext);
   const transactionsValues = Object.values(transactions);
   const sumTransactionValues = transactionsValues
     .reverse()
