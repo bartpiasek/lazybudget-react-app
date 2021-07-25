@@ -24,8 +24,6 @@ const Dashboard = () => {
     setSavingGoal,
   } = useContext(CashflowContext);
 
-  // HOOKS FOR SETTING GOALS IN DASHBOARD
-
   return (
     <Container>
       <Row>
@@ -47,12 +45,12 @@ const Dashboard = () => {
         <Col>
           <h5>Goals</h5>
           <FormBootstrap.Group>
-            <p>Your current goal:</p>
+            <p>Your current spending target:</p>
             <FormBootstrap.Control
               required
               size="sm"
               placeholder="Set new goal"
-              className="element-background"
+              className="element-darkmode"
               type="text"
               value={expenseGoal}
               role="setexpenses-input"
@@ -64,18 +62,18 @@ const Dashboard = () => {
               key={expenseGoal.key}
               type="submit"
               variant="flat"
-              className="element-background"
+              className="button-sort element-darkmode"
             >
               Save
             </Button>
           </FormBootstrap.Group>
           <FormBootstrap.Group>
-            <p>Your current goal:</p>
+            <p>Your current income target:</p>
             <FormBootstrap.Control
               required
               size="sm"
               placeholder="Set new goal"
-              className="element-background"
+              className="element-darkmode"
               type="text"
               value={incomeGoal}
               role="setincomes-input"
@@ -87,7 +85,7 @@ const Dashboard = () => {
               key={incomeGoal.key}
               type="submit"
               variant="flat"
-              className="element-background"
+              className="button-sort element-darkmode"
             >
               Save
             </Button>

@@ -3,7 +3,7 @@ import "../classes.scss";
 
 const TransactionRow = ({ text, amount, option, date, category, id }) => {
   return (
-    <div className="transaction-container element-background">
+    <div className="transaction-container element-darkmode">
       <div className="transaction-row">
         <div className="text">
           <h5>{text}</h5>

@@ -28,7 +28,7 @@ function NavbarMain() {
   return (
     <Navbar
       collapseOnSelect
-      className="navbar element-background element-background-lm"
+      className="navbar element-darkmode element-lightmode"
       expand="sm"
       sticky="top"
     >
@@ -58,7 +58,7 @@ function NavbarMain() {
                         <strong>{currentUser && currentUser.email}</strong>
                       </p>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu className="button-navbar element-background">
+                    <Dropdown.Menu className="button-navbar element-darkmode">
                       <Dropdown.Item>
                         <DarkModeToggle />
                       </Dropdown.Item>

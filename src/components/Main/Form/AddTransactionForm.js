@@ -60,7 +60,7 @@ export const Form = () => {
           required
           size="lg"
           placeholder="Name"
-          className="element-background"
+          className="element-darkmode"
           ref={inputRef}
           type="text"
           value={text}
@@ -73,7 +73,7 @@ export const Form = () => {
           required
           size="lg"
           placeholder="PLN"
-          className="element-background"
+          className="element-darkmode"
           type="text"
           value={amount}
           role="amount-input"
@@ -85,6 +85,7 @@ export const Form = () => {
           as="select"
           size="lg"
           value={option}
+          className="element-darkmode"
           role="cashflow-select"
           onChange={(e) => setOption(e.target.value)}
         >
@@ -115,9 +116,10 @@ export const Form = () => {
       </FormBootstrap.Group>
       <FormBootstrap.Group></FormBootstrap.Group>
       <Button
-        className="element-background"
+        className="element-darkmode"
         variant="flat"
         type="submit"
+        role="button-submit"
         value={date.value}
         key={date.key}
         onClick={(e) => setDate(e.target.value)}

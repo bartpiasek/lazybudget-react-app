@@ -38,7 +38,7 @@ const Login = () => {
       <Row>
         <Col></Col>
         <Col md={6}>
-          <Card className="element-background">
+          <Card className="element-darkmode">
             <h2>Log In</h2>
             {currentUser ? (
               <p>
@@ -53,7 +53,7 @@ const Login = () => {
                   required
                   size="lg"
                   placeholder="Email"
-                  className="element-background"
+                  className="element-darkmode"
                   type="email"
                   ref={emailRef}
                 />
@@ -63,14 +63,14 @@ const Login = () => {
                   required
                   size="lg"
                   placeholder="Password"
-                  className="element-background"
+                  className="element-darkmode"
                   type="password"
                   ref={passwordRef}
                 />
               </Form.Group>
               <Button
                 disabled={loading}
-                className="element-background"
+                className="element-darkmode"
                 type="submit"
               >
                 Log In

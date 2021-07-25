@@ -66,7 +66,7 @@ const History = () => {
                     <Button
                       value="All"
                       onClick={(e) => setFilterHistory(e.target.value)}
-                      className="button-sort element-background"
+                      className="button-sort element-darkmode"
                       variant="sort"
                     >
                       X
@@ -75,7 +75,7 @@ const History = () => {
                     <Button
                       value="All"
                       onClick={(e) => setFilterHistory(e.target.value)}
-                      className="button-sort element-background"
+                      className="button-sort element-darkmode"
                       variant="sort"
                     >
                       All
@@ -83,7 +83,7 @@ const History = () => {
                   )}
 
                   <Button
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     This month
@@ -91,7 +91,7 @@ const History = () => {
                   <Button
                     value="Expense"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Expense
@@ -99,7 +99,7 @@ const History = () => {
                   <Button
                     value="Income"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Income
@@ -107,7 +107,7 @@ const History = () => {
                   <Button
                     value="Food"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Food
@@ -115,7 +115,7 @@ const History = () => {
                   <Button
                     value="Housing"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Housing
@@ -123,7 +123,7 @@ const History = () => {
                   <Button
                     value="Bills"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Bills
@@ -131,7 +131,7 @@ const History = () => {
                   <Button
                     value="Entertainment"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Entertainment
@@ -139,7 +139,7 @@ const History = () => {
                   <Button
                     value="Misc"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Misc
@@ -147,7 +147,7 @@ const History = () => {
                   <Button
                     value="Savings"
                     onClick={(e) => setFilterHistory(e.target.value)}
-                    className="button-sort element-background"
+                    className="button-sort element-darkmode"
                     variant="sort"
                   >
                     Savings

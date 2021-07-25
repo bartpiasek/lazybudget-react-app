@@ -43,7 +43,7 @@ const Signup = () => {
       <Row>
         <Col></Col>
         <Col md={6}>
-          <Card className="element-background">
+          <Card className="element-darkmode">
             <h2>Sign Up</h2>
             {currentUser ? (
               <p>
@@ -58,7 +58,7 @@ const Signup = () => {
                   required
                   size="lg"
                   placeholder="Email"
-                  className="element-background"
+                  className="element-darkmode"
                   type="email"
                   ref={emailRef}
                 />
@@ -68,7 +68,7 @@ const Signup = () => {
                   required
                   size="lg"
                   placeholder="Password"
-                  className="element-background"
+                  className="element-darkmode"
                   type="password"
                   ref={passwordRef}
                 />
@@ -78,14 +78,14 @@ const Signup = () => {
                   required
                   size="lg"
                   placeholder="Confirm password"
-                  className="element-background"
+                  className="element-darkmode"
                   type="password"
                   ref={passwordConfirmRef}
                 />
               </Form.Group>
               <Button
                 disabled={loading}
-                className="element-background"
+                className="element-darkmode"
                 type="submit"
               >
                 Sign Up

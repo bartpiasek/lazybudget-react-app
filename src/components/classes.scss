@@ -16,7 +16,7 @@ body.light-mode {
   color: #{$darkColor};
   transition: background-color 0.3s ease;
 
-  .element-background-lm {
+  .element-lightmode {
     background-color: #ececec;
   }
 }
@@ -24,7 +24,7 @@ body.dark-mode {
   background-color: #{$darkColor};
   color: #999;
 
-  .element-background {
+  .element-darkmode {
     color: #999;
     background-color: #333;
     border-radius: 8px;
@@ -34,7 +34,7 @@ body.dark-mode {
 /* FORM BUTTON */
 button {
   // FORM -> SEND BUTTON
-  &[type="submit"] {
+  &[role="button-submit"] {
     position: absolute;
     padding: inherit + 1em;
     background: white;
@@ -42,13 +42,21 @@ button {
     border: #{$primaryBorder};
     width: 90%;
   }
-  &[type="submit"]:hover {
+  &[role="button-submit"]:hover {
     color: white;
     background: #{$primaryColor};
     transform: scale(1.01);
     transition: #{$transition};
     border: #{$primaryBorder};
     width: 90%;
+    cursor: pointer;
+  }
+  &[role="button-secondary"] {
+    margin: 0.1rem;
+    padding: 0.1rem;
+    display: inline-block;
+  }
+  &[role="button-secondary"]:hover {
     cursor: pointer;
   }
 }
