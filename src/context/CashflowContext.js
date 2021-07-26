@@ -1,14 +1,12 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
+import { useLocalStorage } from "./LocalStorage";
 
 export const CashflowContext = createContext();
 
 export const CashflowProvider = (props) => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const [incomeGoal, setIncomeGoal] = useState(15077);
-  const [expenseGoal, setExpenseGoal] = useState(6706);
-  const [savingGoal, setSavingGoal] = useState({});
+  const [incomeGoal, setIncomeGoal] = useState(15077 || []);
+  const [expenseGoal, setExpenseGoal] = useState(6706 || []);
+  const [savingGoal, setSavingGoal] = useState(5000 || []);
 
   const value = {
     incomeGoal,
