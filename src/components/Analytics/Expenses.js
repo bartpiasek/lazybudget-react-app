@@ -25,8 +25,8 @@ const Expenses = (max) => {
         striped
         variant="danger"
         min={0}
-        now={Math.abs(expenses).toFixed(2)}
-        max={max}
+        now={Math.abs(expenses)}
+        max={maxValue}
         label={`${((Math.abs(expenses).toFixed(2) / maxValue) * 100).toFixed(
           2
         )}%`}

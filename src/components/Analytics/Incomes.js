@@ -25,8 +25,8 @@ const Incomes = (max) => {
         striped
         variant="success"
         min={0}
-        now={incomes.toFixed(2)}
-        max={max}
+        now={incomes}
+        max={maxValue}
         label={`${((incomes.toFixed(2) / maxValue) * 100).toFixed(2)}%`}
       />
       <hr />
