@@ -37,7 +37,7 @@ const Dashboard = () => {
           <Incomes max={incomeGoal} />
         </Col>
         <Col>
-          <Savings />
+          <Savings max={savingGoal} />
         </Col>
       </Row>
       <hr />
@@ -90,25 +90,29 @@ const Dashboard = () => {
               Save
             </Button>
           </FormBootstrap.Group>
-          {/* <FormBootstrap.Group>
-            <p>Your current goal:</p>
+          <FormBootstrap.Group>
+            <p>Your current saving target:</p>
             <FormBootstrap.Control
               required
               size="sm"
               placeholder="Set new goal"
-              className="element-background"
+              className="element-darkmode"
               type="text"
               value={savingGoal}
               role="setsavings-input"
+              onChange={(e) => setSavingGoal(e.target.value)}
             />
             <Button
               onSubmit={(e) => setSavingGoal(e.target.value)}
+              value={savingGoal.value}
+              key={savingGoal.key}
+              type="submit"
               variant="flat"
-              className="element-background"
+              className="button-sort element-darkmode"
             >
               Save
             </Button>
-          </FormBootstrap.Group> */}
+          </FormBootstrap.Group>
         </Col>
         <Col></Col>
       </Row>

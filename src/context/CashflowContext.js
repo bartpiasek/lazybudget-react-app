@@ -3,10 +3,12 @@ import React, { useState, createContext, useEffect } from "react";
 export const CashflowContext = createContext();
 
 export const CashflowProvider = (props) => {
+  // HOOKS FOR GOALS WITH INITIAL STATE
   const [incomeGoal, setIncomeGoal] = useState(16000 || []);
   const [expenseGoal, setExpenseGoal] = useState(6706 || []);
   const [savingGoal, setSavingGoal] = useState(5000 || []);
 
+  // USEFFECTS - SAVING GOALS IN LOCAL STORAGE
   useEffect(() => {
     const localIncomeGoal = localStorage.getItem("local-incomeGoal");
     const localExpenseGoal = localStorage.getItem("local-expenseGoal");

@@ -3,39 +3,32 @@ import { TransactionsContext } from "../../context/TransactionListContext";
 import Col from "react-bootstrap/Col";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
-const Savings = () => {
+const Savings = (max) => {
   const [transactions] = useContext(TransactionsContext);
   const transactionsValues = Object.values(transactions);
 
-  const sumTransactionValues = transactionsValues
-    .reverse()
-    .map((transaction) => transaction.amount);
-
-  const SavingTransactionValues = transactionsValues
-    .reverse()
-    .map((transaction) => ({
-      amount: transaction.amount,
-      category: transaction.category,
-    }));
-
-  const savingsListTransaction = SavingTransactionValues.filter(
-    (transaction) => {
-      return transaction.category === "saving" ? transaction.amount : null;
-    }
+  const findTransactionSavings = transactionsValues.map((transaction) =>
+    transaction.category === "saving" ? transaction.amount : null
   );
-  // console.log(savingsListTransaction);
+  const savings = findTransactionSavings.reduce((a, b) => a + b, 0);
+
+  console.log(savings);
+  const maxValue = Object.values(max);
+
   return (
     <Col>
-      {/* <h5>Savings</h5>
+      <h5>Savings</h5>
       <h2>{Math.abs(savings).toFixed(2)} PLN</h2>
       <ProgressBar
         striped
-        variant="danger"
+        variant="info"
         min={0}
-        now={Math.abs(savings).toFixed(2)}
-        max={3000}
-        label={`${((Math.abs(savings).toFixed(2) / 7000) * 100).toFixed(2)}%`}
-      /> */}
+        now={savings}
+        max={maxValue}
+        label={`${((Math.abs(savings).toFixed(2) / maxValue) * 100).toFixed(
+          2
+        )}%`}
+      />
     </Col>
   );
 };
