@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
+import { options, categories } from "../../Main/Data";
 import { Rent, Salary, Subscriptions } from "./Data";
 import axios from "../../../axios";
 import "../../classes.scss";
@@ -19,7 +20,7 @@ export const LazyInput = () => {
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();
 
-  // const inputRef = useRef();
+  const inputRef = useRef();
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -61,6 +62,102 @@ export const LazyInput = () => {
   return (
     <Container>
       <Row md={4}>
+        {/* <Col>
+          <FormBootstrap onSubmit={onSubmit}>
+            <CardDeck>
+              <Card className="element-darkmode">
+                <div
+                  value={Rent.text}
+                  // onClick={(e) => setState(Rent)}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      <FormBootstrap.Group>
+                        <FormBootstrap.Control
+                          required
+                          size="lg"
+                          placeholder="Name"
+                          className="element-darkmode"
+                          ref={inputRef}
+                          type="text"
+                          value={text}
+                          role="text-input"
+                          onChange={(e) => setText(e.target.value)}
+                        />
+                      </FormBootstrap.Group>
+                    </Card.Title>
+                    <Card.Text>
+                      <FormBootstrap.Group>
+                        <select
+                          as="select"
+                          size="lg"
+                          value={option}
+                          className="element-darkmode"
+                          role="cashflow-select"
+                          onChange={(e) => setOption(e.target.value)}
+                        >
+                          {options.map((option) => (
+                            <option key={option.key} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </FormBootstrap.Group>
+                    </Card.Text>
+                    <Card.Text>
+                      <FormBootstrap.Group>
+                        <select
+                          as="select"
+                          size="lg"
+                          value={category}
+                          className="element-darkmode"
+                          role="cashflow-select"
+                          onChange={(e) => setCategory(e.target.value)}
+                        >
+                          {categories.map((category) => (
+                            <option key={category.key} value={category.value}>
+                              {category.label}
+                            </option>
+                          ))}
+                        </select>
+                      </FormBootstrap.Group>
+                    </Card.Text>
+                    <Card.Text>
+                      <FormBootstrap.Group>
+                        <FormBootstrap.Control
+                          required
+                          size="lg"
+                          placeholder="PLN"
+                          className="element-darkmode"
+                          type="text"
+                          value={amount}
+                          role="amount-input"
+                          onChange={(e) => setAmount(e.target.value)}
+                        />
+                      </FormBootstrap.Group>
+                    </Card.Text>
+                  </Card.Body>
+                  <Button
+                    variant="flat"
+                    className="button-sort element-darkmode"
+                    type="submit"
+                    value={date.value}
+                    key={date.key}
+                    onClick={
+                      ((e) => setText(Rent.text),
+                      (e) => setAmount(Rent.amount),
+                      (e) => setOption(Rent.option),
+                      (e) => setDate(e.target.value),
+                      (e) => setCategory(Rent.category))
+                    }
+                  >
+                    Add new
+                  </Button>
+                </div>
+              </Card>
+            </CardDeck>
+          </FormBootstrap>
+        </Col> */}
         <Col>
           <FormBootstrap onSubmit={onSubmit}>
             <CardDeck>
@@ -95,8 +192,6 @@ export const LazyInput = () => {
             </CardDeck>
           </FormBootstrap>
         </Col>
-        <Col xs={6}></Col>
-        <Col></Col>
       </Row>
     </Container>
   );

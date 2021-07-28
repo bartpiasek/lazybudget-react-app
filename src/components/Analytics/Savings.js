@@ -12,13 +12,12 @@ const Savings = (max) => {
   );
   const savings = findTransactionSavings.reduce((a, b) => a + b, 0);
 
-  console.log(savings);
   const maxValue = Object.values(max);
 
   return (
     <Col>
-      <h5>Savings</h5>
-      <h2>{Math.abs(savings).toFixed(2)} PLN</h2>
+      <h6>Savings</h6>
+      <h3>{Math.abs(savings).toFixed(2)} PLN</h3>
       <ProgressBar
         striped
         variant="info"
