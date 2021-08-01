@@ -16,6 +16,7 @@ Budget app.
   - Authentication with login/signup (Firebase)
   - Dashboard with charts
   - Context API
+  - Local storage (settings)
   - RWD
 
 # Tech
