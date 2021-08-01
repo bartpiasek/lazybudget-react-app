@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { TransactionsContext } from "../../context/TransactionListContext";
 import Total from "../Analytics/Total";
 import Expenses from "../Analytics/Expenses";
 import Incomes from "../Analytics/Incomes";
@@ -25,15 +24,7 @@ import { CashflowContext } from "../../context/CashflowContext";
 
 const History = () => {
   // CONTEXT API STATES
-  const [transactions] = useContext(TransactionsContext);
-  // const [incomeGoal] = useContext(CashflowContext);
-  // const [expenseGoal] = useContext(CashflowContext);
-
   const { incomeGoal, expenseGoal } = useContext(CashflowContext);
-  const transactionsValues = Object.values(transactions);
-  const sumTransactionValues = transactionsValues
-    .reverse()
-    .map((transaction) => transaction.amount);
 
   //FILTER BEFORE, IN CONTEXT API - that re-renders Total, Expenses, Income component with filter conditions
   //...

@@ -1,7 +1,6 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
-import { options, categories } from "../../Main/Data";
-import { Rent, Salary, Subscriptions } from "./Data";
+import { Rent } from "./Data";
 import axios from "../../../axios";
 import "../../classes.scss";
 
@@ -19,8 +18,6 @@ export const LazyInput = () => {
   const [option, setOption] = useState("expense");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState();
-
-  const inputRef = useRef();
 
   const { addTransaction } = useContext(GlobalContext);
 

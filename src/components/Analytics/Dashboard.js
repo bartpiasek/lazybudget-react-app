@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { TransactionsContext } from "../../context/TransactionListContext";
+import React, { useContext } from "react";
 import Expenses from "./Expenses";
 import Incomes from "./Incomes";
 import Total from "./Total";
@@ -14,7 +13,6 @@ import FormBootstrap from "react-bootstrap/Form";
 import { CashflowContext } from "../../context/CashflowContext";
 
 const Dashboard = () => {
-  const [transactions] = useContext(TransactionsContext);
   const {
     incomeGoal,
     setIncomeGoal,

@@ -1,14 +1,9 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-
 import Layout from "./components/Layout/Layout";
 import LazyInput from "./components/Main/LazyInput/LazyInput";
 import NavbarMain from "./components/Navigation/Navbar/Navbar";
-
-import DarkModeToggle from "../src/components/DarkMode/DarkModeToggle";
-
 import "../src/components/classes.scss";
-
 import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "../src/context/Auth";
 import Signup from "./auth/signup";

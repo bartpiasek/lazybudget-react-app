@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useReducer } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { options, categories } from "../Data";
 import { GlobalContext } from "../../../context/GlobalState";
 import axios from "../../../axios";
