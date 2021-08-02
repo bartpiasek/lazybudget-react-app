@@ -240,21 +240,32 @@ export const CategorySavingsFilter = () => {
 };
 
 // //FILTER BY TIME
-// export const thisMonthFilter = (
-//   <div className="table">
-//     {transactionsValues.map((transaction, key) => {
-//       return transaction.category === "saving" ? (
-//         <div key={key}>
-//           <TransactionRow
-//             key={transaction.id}
-//             text={transaction.text}
-//             amount={transaction.amount}
-//             option={transaction.option}
-//             date={transaction.date}
-//             category={transaction.category}
-//           />
-//         </div>
-//       ) : null;
-//     })}
-//   </div>
-// );
+
+export const ThisMonth = () => {
+  const [transactions] = useContext(TransactionsContext);
+  const transactionsValues = Object.values(transactions);
+  const sumTransactionValues = transactionsValues
+    .reverse()
+    .map((transaction) => transaction.amount);
+
+  //LAST MONTH -> SLICE TOISOSTRINGDATE TO GET NAME OF MONTH
+
+  return (
+    <div className="table">
+      {transactionsValues.map((transaction, key) => {
+        return transaction.date === transaction.date ? (
+          <div key={key}>
+            <TransactionRow
+              key={transaction.id}
+              text={transaction.text}
+              amount={transaction.amount}
+              option={transaction.option}
+              date={transaction.date}
+              category={transaction.category}
+            />
+          </div>
+        ) : null;
+      })}
+    </div>
+  );
+};

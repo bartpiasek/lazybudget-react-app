@@ -13,6 +13,7 @@ import {
   CategoryMiscFilter,
   CategorySavingsFilter,
   CategoryHousingFilter,
+  ThisMonth,
 } from "./HistoryFilters";
 import "../classes.scss";
 
@@ -74,6 +75,8 @@ const History = () => {
                   )}
 
                   <Button
+                    value="This month"
+                    onClick={(e) => setFilterHistory(e.target.value)}
                     className="button-sort element-darkmode"
                     variant="sort"
                   >
@@ -147,6 +150,7 @@ const History = () => {
                 {
                   <div>
                     {filterHistory === "All" && <AllFilter />}
+                    {filterHistory === "Last 30 days" && <ThisMonth />}
                     {filterHistory === "Income" && <IncomeFilter />}
                     {filterHistory === "Expense" && <ExpenseFilter />}
                     {filterHistory === "Food" && <CategoryFoodFilter />}
